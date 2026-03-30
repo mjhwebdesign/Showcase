@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+<head>
+   <!-- Google Tag Manager -->
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KBG28B4');</script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="description"
+      content="O RIF Storage foi estabelecido para criar a camada de base de uma Internet verdadeiramente descentralizada. Anteriormente, falamos sobre a parceria entre o RIF Storage e o Swarm no que diz respeito ao funcionamento de alto nível do protocolo, as melhorias com relação ao incentivo ao protocolo e o lançamento de nossa rede de teste incentivada. ">
+   <meta name="keywords" content="">
+   <meta name="author" content="RIF">
+   <title>Como lançar um site sem servidor usando o RIF Storage</title>
+   <!-- og info -->
+   <meta property="og:title" content="Como lançar um site sem servidor usando o RIF Storage">
+   <meta property="og:description"
+      content="O RIF Storage foi estabelecido para criar a camada de base de uma Internet verdadeiramente descentralizada. Anteriormente, falamos sobre a parceria entre o RIF Storage e o Swarm no que diz respeito ao funcionamento de alto nível do protocolo, as melhorias com relação ao incentivo ao protocolo e o lançamento de nossa rede de teste incentivada. ">
+   <meta property="og:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <meta property="og:url"
+      content="https://www.rifos.org/pt-pt/blog/how-to-launch-a-serverless-website-using-rif-storage.html">
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@rif_os">
+   <meta name="twitter:creator" content="@rif_os">
+   <meta name="twitter:domain" content="https://www.rifos.org/">
+   <meta name="twitter:title" content="Como lançar um site sem servidor usando o RIF Storage">
+   <meta name="twitter:description"
+      content="O RIF Storage foi estabelecido para criar a camada de base de uma Internet verdadeiramente descentralizada. Anteriormente, falamos sobre a parceria entre o RIF Storage e o Swarm no que diz respeito ao funcionamento de alto nível do protocolo, as melhorias com relação ao incentivo ao protocolo e o lançamento de nossa rede de teste incentivada. ">
+   <meta name="twitter:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+   <link rel="manifest" href="../../assets/favicons/site.webmanifest">
+   <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link rel="shortcut icon" href="../../assets/favicons/favicon.ico">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="../../assets/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Main Stylesheet File -->
+   <!-- build:css -->
+   <link rel="stylesheet" href="../../assets/css/theming.css">
+   <!-- endbuild -->
+   <!-- OwlCarrousel CSS Files -->
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.theme.default.min.css">
+   <!-- Libraries CSS Files -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBG28B4" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+   <script>(function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+   <!-- Ends Facebook SDK for JavaScript -->
+   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="../"><img src="../../assets/img/logo.svg" class="logo" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#vision">Visão</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#build-on-rif">Desenvolvedores</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#rif-token">RIF Token</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#roadmap">Roadmap</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#get-start">Introdução</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../marketplace.html" class="nav-link">Marketplace</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../directory.html" class="nav-link">Directory</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../payments.html" class="nav-link">Payments</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../storage.html" class="nav-link">Storage</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../gateways.html" class="nav-link">Gateways</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../communications.html" class="nav-link">Communications</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle lang_nav active" href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Português
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item"
+                        href="../../blog/how-to-launch-a-serverless-website-using-rif-storage.html">English</a>
+                     <a class="dropdown-item"
+                        href="../../ko/blog/how-to-launch-a-serverless-website-using-rif-storage.html">한국어</a>
+                     <a class="dropdown-item"
+                        href="../../zh-hans/blog/how-to-launch-a-serverless-website-using-rif-storage.html">简体中文</a>
+                     <a class="dropdown-item"
+                        href="../../ja/blog/how-to-launch-a-serverless-website-using-rif-storage.html">日本語</a>
+                     <a class="dropdown-item"
+                        href="../../es/blog/how-to-launch-a-serverless-website-using-rif-storage.html">Español</a>
+                     <a class="dropdown-item"
+                        href="../../ru/blog/how-to-launch-a-serverless-website-using-rif-storage.html">Pусский</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">Assistir ao
+                     Video</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <nav id="vertical-nav" class="nav flex-column">
+      <a href="../marketplace.html" class="nav-link">Marketplace</a>
+      <a href="../directory.html" class="nav-link">Directory</a>
+      <a href="../payments.html" class="nav-link">Payments</a>
+      <a href="../storage.html" class="nav-link">Storage</a>
+      <a href="../gateways.html" class="nav-link">Gateways</a>
+      <a href="../communications.html" class="nav-link">Communications</a>
+   </nav>
+   <section id="blog">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row mb-5">
+               <div class="col-lg-9">
+                  <h1>Como lançar um site sem servidor usando o <span class="bold">RIF Storage</span></h1>
+                  <span class="blue_rif  d-block mb-3"><i>Por Rinke Hendriksen- Proprietário do Produto Swarm</i></span>
+                  <h6>10 de abril de 2020</h6>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-9">
+                  <p>O RIF Storage foi estabelecido para criar a camada de base de uma Internet verdadeiramente
+                     descentralizada. Anteriormente, falamos sobre a <a
+                        href="https://medium.com/ethereum-swarm/partnership-between-swarm-and-rsk-infrastructure-framework-rif-to-develop-a-breakthrough-storage-3901734fdd41"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">parceria</a>entre o RIF Storage e o
+                     Swarm no que diz respeito ao <a
+                        href="https://www.rifos.org/pt-pt/blog/rif-storage-the-first-chunks" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">funcionamento de alto nível do protocolo</a>, as <a
+                        href="https://www.rifos.org/pt-pt/blog/rif-storage-and-swarms-swap-swips" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer"> melhorias</a> com relação ao incentivo ao protocolo e
+                     o <a href="https://www.rifos.org/pt-pt/blog/rif-storage-testnet-launch" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">lançamento de nossa rede de teste incentivada</a>. Em
+                     nossa <a href="https://developers.rsk.co/rif/storage/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">documentação</a>, você pode conferir como iniciar seu próprio nó RIF
+                     Storage e participar de nossa rede de teste incentivada, mas... como você pode lançar seu próprio
+                     site sem servidor?</p>
+                  <p>Fazê-lo é de fato surpreendentemente fácil. Tão fácil, talvez, que já deveríamos ter criado um
+                     tutorial simples e prático para você experimentar!</p>
+                  <p>Podemos prometer a você o seguinte: Todo mundo é capaz de lançar agora um site imparável e sem
+                     servidor. Como? Por favor, continue lendo para descobrir!</p>
+                  <h3 class="mt-5 mb-3">Hello World HTML</h3>
+                  <p>Para aproveitar ao máximo a hospedagem de um site de maneira descentralizada, ele não deve exigir
+                     conexões com nenhum back-end (centralizado). Para quem nunca criou um site assim, vamos criar um
+                     site muito (muito!) simples:</p>
+                  <pre>
+                        &lt;html&gt;
+                           &lt;header&gt;
+                              &lt;title&gt;My first website&lt;/title&gt;
+                           &lt;/header&gt;
+                           &lt;body&gt;
+                              Hello world
+                           &lt;/body&gt;
+                        &lt;/html&gt;
+                     </pre>
+                  <p>Embora este site seja muito fácil, todos os componentes usados na Web normal podem ser utilizados
+                     com o RIF Storage!</p>
+                  <p>Se você salvar este arquivo como <code>index.html</code> e abri-lo no navegador, verá a
+                     interpretação do navegador do que acabou de escrever.</p>
+                  <p>Tradicionalmente, o exemplo Olá, mundo agora continuaria com a configuração de um servidor Web
+                     básico. Em poucas palavras, um servidor é um programa de computador que envia um arquivo (como
+                     <code>index.html</code>) mediante solicitação; se você visitar um site, envia uma solicitação para
+                     um servidor, que envia uma página da Web em troca.</p>
+                  <img src="../../assets/img/blog/serverless-1.png"
+                     class="img-fluid img-blog-style-1 text-center mb-5 mt-5">
+                  <p class="img-blog-style-1"><i>Comparação entre o modelo cliente-servidor centralizado tradicional
+                        (arquitetura web1.0 e web2.0) e o modelo descentralizado (web3.0)</i></p>
+                  <h3 class="mt-5 mb-3">Sites sem servidor</h3>
+                  <p>O RIF Storage permite a configuração de um site sem servidor: Não existe um servidor controlado
+                     centralmente que envie o arquivo <code>index.html</code> mediante solicitação, mas sim uma coleção
+                     de nós colaboradores e incentivados. Para os fins deste blog, não entraremos em detalhes de como
+                     isso funciona. Essencialmente, seu arquivo será cortado em vários pedaços, todos armazenados em
+                     computadores separados e reunidos, mediante solicitação. Essa arquitetura oferece muitos
+                     benefícios, o principal é que os dados nesta Web não são mais de propriedade e controlados por uma
+                     única parte, tornando-os resistentes à censura e imparáveis!</p>
+                  <p>Primeiramente, vamos fazer uma preparação. Altere seu arquivo <code>index.html</code> para dizer
+                     “Olá, mundo descentralizado”:</p>
+                  <pre>
+                        &lt;html&gt;
+                           &lt;header&gt;
+                              &lt;title&gt;My first website&lt;/title&gt;
+                           &lt;/header&gt;
+                           &lt;body&gt;
+                              Hello decentralized world
+                           &lt;/body&gt;
+                        &lt;/html&gt;
+                     </pre>
+                  <p>Agora, navegue até <a href="https://swarm.rifgateways.org/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">swarm.rifgateways.org</a> e pressione o botão de upload. Navegue até
+                     seu arquivo index.html atualizado e faça o upload do arquivo.</p>
+                  <p>Se você agora clicar em “Copiar link para a área de transferência” e colar esse link na barra de
+                     endereços do seu navegador, poderá ver o site sem servidor. Muito fácil, não?</p>
+                  <p>OBSERVAÇÃO! Seu link deve se parecer com
+                     <code>&lt;long_sequence_of_characters/index.html&gt;</code></p>
+                  <h3 class="mt-5 mb-3">DNS sem servidor</h3>
+                  <p>O link que você acabou de copiar no navegador parece bastante complexo e não é muito fácil de
+                     memorizar. Seu amigo poderá visitar seu site colando este link no navegador dele, mas não seria
+                     mais fácil criar um site real com um nome memorizável?</p>
+                  <p>No mundo centralizado, isso é resolvido por um servidor DNS. Ele basicamente mantém um registro de
+                     endereços de sites e endereços IP: se você digitar <code>https://www.iovlabs.org/</code> no
+                     navegador, primeiro envie uma solicitação ao servidor DNS, solicitando o <span
+                        class="bold">endereço IP</span> por trás deste site e, consequentemente, você envia uma
+                     solicitação ao servidor real.</p>
+                  <img src="../../assets/img/blog/serverless-2.png"
+                     class="img-fluid img-blog-style-1 text-center mb-5 mt-5">
+                  <p>Isso também é possível de maneira descentralizada, utilizando contratos inteligentes na blockchain:
+                     o RIF facilita isso com o RIF Name Service (RNS), que permite resolver qualquer nome legível por
+                     humanos (terminando com a extensão <code>.rsk</code> em um identificador de conteúdo (o endereço do
+                     seu site). Confira <a href="https://www.rifos.org/pt-pt/blog/rns-user-interface-update"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">nosso blogpost mais recente</a> que
+                     explica esse processo, se você ainda não o fez. Seguindo as etapas descritas no blog, você poderá
+                     usar seu próprio nome de domínio para o site recém-criado. É surpreendente!</p>
+                  <img src="../../assets/img/blog/serverless-3.png"
+                     class="img-fluid img-blog-style-1 text-center mb-5 mt-5">
+                  <p>Após adquirir o domínio, você precisa adicionar a resolução do conteúdo. É simples através do novo
+                     gerente de RNS. Faça login no <a href="https://manager.rns.rifos.org/admin" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">seu console de administrador</a> (como mostrado
+                     abaixo).</p>
+                  <img src="../../assets/img/blog/serverless-4.png"
+                     class="img-fluid img-blog-style-1 text-center mb-5 mt-5">
+                  <p>Pressione “editar” para definir o conteúdo. Como conteúdo, você precisa definir o endereço de
+                     conteúdo do seu index.html. O endereço do conteúdo é essa longa sequência de caracteres e números,
+                     anteriormente na barra de endereços do navegador. O RNS requer que esse endereço comece com 0x.
+                     Basta adicioná-lo!</p>
+                  <p>Se você não tem tempo para fazer isso, mas ainda quer ver a mágica acontecer, pode navegar para <a
+                        href="https://swarm.rifgateways.org/bzz:/manifesto.rsk/index.html" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">manifesto.rks</a></p>
+                  <p>Magia!</p>
+                  <h3 class="mt-5 mb-3">E com relação aos gateways?</h3>
+                  <p>Se você chegou até aqui e conseguiu criar seu próprio site sem servidor e adicionar uma resolução
+                     de nomes descentralizada, parabéns! Entretanto, alguns de vocês já devem ter notado que ainda há um
+                     componente centralizado envolvido. Exatamente, nossos gateways.</p>
+                  <p>Até agora, usamos um site “tradicional”, como um portal para a rede descentralizada. Chamamos esse
+                     sistema de servidor de gateway. O servidor de gateway executa o software RIF Storage Swarm e o
+                     expõe à Internet, para que você não precise executá-lo. Obviamente, esse servidor não é um
+                     requisito para acessar a Internet descentralizada, apenas facilita o acesso!</p>
+                  <img src="../../assets/img/blog/serverless-5.png"
+                     class="img-fluid img-blog-style-1 text-center mb-5 mt-5">
+                  <p class="img-blog-style-1"><i>Um exemplo ilustrativo de como os gateways interagem com armazenamento
+                        descentralizado e clientes</i></p>
+                  <p class="mt-5">Para quem realmente deseja ter uma experiência totalmente descentralizada, o software
+                     Swarm, que está sendo executado em nosso gateway, está bem documentado (no nosso <a
+                        href="https://developers.rsk.co/rif/storage/providers/swarm/testnet-network/" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">portal de desenvolvedores</a> ou neste <a
+                        href="https://www.rifos.org/pt-pt/blog/rif-storage-testnet-launch" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">artigo do RIF</a>). Aconselhamos que você leia essas
+                     informações e tente sozinho. Além disso, a equipe da RIF está sempre disponível para responder a
+                     qualquer pergunta ou ajudar na sua implementação.</p>
+                  <p>Você pode assistir ao tutorial do meu workshop sobre como iniciar um site no RIF Storage usando seu
+                     próprio nó através deste link: <a href="https://www.youtube.com/watch?v=dXMEHi5cjck&t=2281s"
+                        class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">https://www.youtube.com/watch?v=dXMEHi5cjck&t=2281s</a></p>
+                  <h3 class="mt-5 mb-3">Em breve:</h3>
+                  <p>Muitas coisas interessantes estão surgindo para tornar a experiência na Web descentralizada ainda
+                     melhor, mas duas coisas exigem a nossa atenção especial no futuro próximo. Siga-nos no Twitter <a
+                        href="https://twitter.com/rif_os" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">@rif_os</a> para se manter informado e ser o primeiro a conhecer
+                     nossos lançamentos!</p>
+                  <p class="bold">RIF Publish</p>
+                  <p>O RIF Publish é uma maneira (ainda mais fácil) de publicar e consumir principalmente conteúdo
+                     estático (como artigos e sites) em armazenamento descentralizado. O objetivo é combater a censura
+                     ao conteúdo e aos criadores de conteúdo, especialmente em certas jurisdições onde isso representa
+                     um problema mais significativo.</p>
+                  <p class="bold">Fixação global</p>
+                  <p>Uma rede descentralizada como backbone da Internet é ótima em alguns casos, mas a descentralização
+                     vem com a perda de algum controle: como alguns de seus arquivos são armazenados em outros nós da
+                     rede, pode acontecer que eles se percam. Por fim, isso nunca pode ser totalmente evitado, por esse
+                     motivo a fixação global é um recurso tão importante. A fixação global permite o reparo automático
+                     dos seus arquivos em caso de perda, permitindo a persistência dos arquivos, desde que um nó (o
+                     fixador) armazene o arquivo.</p>
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div style="top: -6px;" class="fb-share-button" data-layout="button" data-size="large">
+                        </div>
+                        <a class="twitter-share-button btn btn btn-primary mr-3" href="https://twitter.com/intent/tweet"
+                           data-size="large">
+                           Tweet</a>
+                        <script async src="https://telegram.org/js/telegram-widget.js?8"
+                           data-telegram-share-url="https://www.rifos.org/pt-pt/blog/how-to-launch-a-serverless-website-using-rif-storage.html"
+                           data-size="large"></script>
+                     </div>
+                     <div class="col-lg-12 mt-5">
+                        <a class="btn btn btn-primary mr-3" href="./">Voltar</a>
+                     </div>
+                     <div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="twitter-news">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row text-center">
+               <div class="col-lg-12">
+                  <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                        class="fab fa-twitter"></i></a>
+                  <h3 class="bold">Follow our news!</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer -->
+   <footer id="footer" class="section-bg">
+      <div class="footer-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <img src="../../assets/img/powered_by_iov.svg" class="img-fluid powered_by">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-sm-7">
+                        <div class="footer-info">
+                           <p>O RIF OS fornece ampla interoperabilidade e um tempo de implementação mais rápido,
+                              eliminando a lacuna entre as tecnologias blockchain e sua adoção em massa.</p>
+                        </div>
+                     </div>
+                     <div class="col-sm-5"></div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../../assets/whitepapers/rif-whitepaper-pt.pdf" target="_blank"
+                                    rel="noopener noreferrer">Whitepaper</a></li>
+                              <li><a href="../blog/index.html">Blog</a></li>
+                              <li><a href="../index.html#roadmap">Roteiro</a></li>
+                              <li><a href="https://github.com/riflabs" rel="noopener noreferrer"
+                                    target="_blank">Github</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../faqs.html">Dúvidas frequentes</a></li>
+                              <li><a href="../../assets/guidelines/RIF_FullBrandGuidelines_Pt.pdf"
+                                    rel="nofollow noopener noreferrer" target="_blank">Manual da marca</a></li>
+                              <li><a class="medium" href="https://www.rsk.co/pt-pt/index.html" rel="noopener noreferrer"
+                                    target="_blank">RSK</a></li>
+                              <li><a class="medium" href="https://www.iovlabs.org/pt/index.html"
+                                    rel="noopener noreferrer" target="_blank">Sobre a IOV Labs,</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a class="medium" href="https://www.iovlabs.org/pt/contact.html"
+                                    rel="noopener noreferrer" target="_blank">
+                                    Entre em contato com IOVlabs</a>
+                              </li>
+                              <li><a href="../terms-conditions.html">Termos e condições</a></li>
+                              <li><a href="../privacy-policy.html">Privacidade</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                           class="fab fa-twitter"></i></a>
+                     <a href="https://t.me/rif_os_community" rel="noopener noreferrer" target="_blank"
+                        class="telegram"><i class="fab fa-telegram"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-6 col-xs-12 pl-0-mobile">
+                     <p class="copyright mb-0">Copyright © 2015 - 2019 Rif. Todos os direitos reservados.</p>
+                     <p class="copyright mt-0">By <a href="https://taniebrand.com" target="_blank">Taniebrand®</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </footer>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="RIFVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="../../assets/videos/pt/RIF_CorpoVideo.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="../../assets/js/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>

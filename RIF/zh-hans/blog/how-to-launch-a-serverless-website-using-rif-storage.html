@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+   <!-- Google Tag Manager -->
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KBG28B4');</script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="description" content="作者：Rinke Hendriksen- Swarm 产品负责人">
+   <meta name="keywords" content="">
+   <meta name="author" content="RIF">
+   <title>如何使用 RIF 存储启动无服务器网站</title>
+   <!-- og info -->
+   <meta property="og:title" content="如何使用 RIF 存储启动无服务器网站">
+   <meta property="og:description" content="作者：Rinke Hendriksen- Swarm 产品负责人">
+   <meta property="og:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <meta property="og:url"
+      content="https://www.rifos.org/zh-hans/blog/how-to-launch-a-serverless-website-using-rif-storage.html">
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@rif_os">
+   <meta name="twitter:creator" content="@rif_os">
+   <meta name="twitter:domain" content="https://www.rifos.org/">
+   <meta name="twitter:title" content="如何使用 RIF 存储启动无服务器网站">
+   <meta name="twitter:description" content="作者：Rinke Hendriksen- Swarm 产品负责人">
+   <meta name="twitter:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+   <link rel="manifest" href="../../assets/favicons/site.webmanifest">
+   <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link rel="shortcut icon" href="../../assets/favicons/favicon.ico">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="../../assets/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Main Stylesheet File -->
+   <!-- build:css -->
+   <link rel="stylesheet" href="../../assets/css/theming.css">
+   <!-- endbuild -->
+   <!-- OwlCarrousel CSS Files -->
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.theme.default.min.css">
+   <!-- Libraries CSS Files -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBG28B4" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+   <script>(function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+   <!-- Ends Facebook SDK for JavaScript -->
+   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="../"><img src="../../assets/img/logo.svg" class="logo" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#vision">愿景</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#build-on-rif">开发人员</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#rif-token">RIF 代币</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#roadmap">Roadmap</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#get-start">入门指南</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../marketplace.html" class="nav-link">Marketplace</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../directory.html" class="nav-link">Directory</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../payments.html" class="nav-link">Payments</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../storage.html" class="nav-link">Storage</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../gateways.html" class="nav-link">Gateways</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../communications.html" class="nav-link">Communications</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle lang_nav active" href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     简体中文
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item"
+                        href="../../blog/how-to-launch-a-serverless-website-using-rif-storage.html">English</a>
+                     <a class="dropdown-item"
+                        href="../../ko/blog/how-to-launch-a-serverless-website-using-rif-storage.html">한국어</a>
+                     <a class="dropdown-item"
+                        href="../../ja/blog/how-to-launch-a-serverless-website-using-rif-storage.html">日本語</a>
+                     <a class="dropdown-item"
+                        href="../../es/blog/how-to-launch-a-serverless-website-using-rif-storage.html">Español</a>
+                     <a class="dropdown-item"
+                        href="../../pt-pt/blog/how-to-launch-a-serverless-website-using-rif-storage.html">Português</a>
+                     <a class="dropdown-item"
+                        href="../../ru/blog/how-to-launch-a-serverless-website-using-rif-storage.html">Pусский</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">观看视频</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <nav id="vertical-nav" class="nav flex-column">
+      <a href="../marketplace.html" class="nav-link">Marketplace</a>
+      <a href="../directory.html" class="nav-link active">Directory</a>
+      <a href="../payments.html" class="nav-link">Payments</a>
+      <a href="../storage.html" class="nav-link">Storage</a>
+      <a href="../gateways.html" class="nav-link">Gateways</a>
+      <a href="../Communications.html" class="nav-link">Communications</a>
+   </nav>
+   <section id="blog">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row mb-5">
+               <div class="col-lg-9">
+                  <h1>如何使用<span class="bold"> RIF </span>存储启动无服务器网站</h1>
+                  <span class="blue_rif  d-block mb-3"><i>作者：Rinke Hendriksen- Swarm 产品负责人</i></span>
+                  <h6>2020 年 4 月 10 日</h6>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-9">
+                  <p>RIF 存储已设置为创建真正去中心化互联网的基础层。我们之前讨论过关于 RIF 存储和 Swarm 之间的<a
+                        href="https://medium.com/ethereum-swarm/partnership-between-swarm-and-rsk-infrastructure-framework-rif-to-develop-a-breakthrough-storage-3901734fdd41"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">合作伙伴关系</a>，主要是关于<a
+                        href="https://www.rifos.org/zh-hans/blog/rif-storage-the-first-chunks" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">协议之高级工作</a>、关于协议激励之<a
+                        href="https://www.rifos.org/zh-hans/blog/rif-storage-and-swarms-swap-swips" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">改进</a>，以及<a
+                        href="https://www.rifos.org/zh-hans/blog/rif-storage-testnet-launch" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">启动我们的激励测试网</a>。在我们的<a
+                        href="https://developers.rsk.co/rif/storage/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">文件</a>中，您会了解我们如何开始您自己的 RIF 存储节点并参与我们的激励测试网… 但您如何启动自己的无服务器网站呢？</p>
+                  <p>这项操作出乎意料的简单。如此简单，也许我们早就应该创建一个简单、亲身实践的教程，让您亲自试试看！</p>
+                  <p>我们可以为您提供下列承诺：每个人现在都能够启动无法停止和无服务器的网站。做法是？请继续阅读下文以了解！</p>
+                  <h3 class="mt-5 mb-3">Hello World HTML</h3>
+                  <p>为了以去中心化的方式，充分利用托管网站的优势，应该不需要连接到任何（中心化）后端。对于从未创建过此类网站的人，让我们来创建一个非常（非常）简单的网站：</p>
+                  <pre>
+                        &lt;html&gt;
+                           &lt;header&gt;
+                              &lt;title&gt;My first website&lt;/title&gt;
+                           &lt;/header&gt;
+                           &lt;body&gt;
+                              Hello world
+                           &lt;/body&gt;
+                        &lt;/html&gt;
+                     </pre>
+                  <p>由于此网站非常简单，在正规 Web 上使用的所有构建区块也能为 RIF 存储所用！</p>
+                  <p>如果您将此文档存储为 <code>index.html</code> 并在浏览器中开启它，您就会看到浏览器对于您刚刚书写文字的解释。</p>
+                  <p>传统上，Hello World 示例可能会继续设置基本 Web 服务器。简而言之，服务器是一个会按请求传送文档（例如
+                     <code>index.html</code>）的计算机程序。如果您访问网站，您就会传送请求至服务器，而服务器会回传网页给您。</p>
+                  <img src="../../assets/img/blog/serverless-1.png"
+                     class="img-fluid img-blog-style-1 text-center mb-5 mt-5">
+                  <p class="img-blog-style-1"><i>传统中心化客户机-服务器模型（web1.0 和 web2.0 架构）和去中心化模型（web3.0）的比较</i></p>
+                  <h3 class="mt-5 mb-3">无服务器网站</h3>
+                  <p>RIF 存储可设置无服务器网站：没有会按请求传送 <code>index.html</code>
+                     文档的集中控制服务器，而有协作和激励节点的集合。基于此博客的目的，我们不会具体探讨此网站的运作方式。基本上，您的文档会被分为许多片段，这些片段全都存储在不同的计算机，而且可按请求组合起来。此架构有许多好处，主要好处是此
+                     Web 上的数据不是由单一方的任何人拥有和控制，因此可抗审查且无法停止！</p>
+                  <p>让我们先作一些准备。请将 <code>index.html</code> 文档变更为 “Hello decentralized world”：</p>
+                  <pre>
+                        &lt;html&gt;
+                           &lt;header&gt;
+                              &lt;title&gt;My first website&lt;/title&gt;
+                           &lt;/header&gt;
+                           &lt;body&gt;
+                              Hello decentralized world
+                           &lt;/body&gt;
+                        &lt;/html&gt;
+                     </pre>
+                  <p>现在，导航到 <a href="https://swarm.rifgateways.org/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">swarm.rifgateways.org</a> 并按下上传按钮。导航到您的文档 <code>index.html</code>
+                     并上传文档。</p>
+                  <p>如果您现在点击 “复制链接到剪贴板” 并将此链接贴到浏览器的地址栏，您就能看到自己的无服务器网站。很简单，对吧？</p>
+                  <p>注意！您的链接外观必须类似于 <code>&lt;long_sequence_of_characters/index.html&gt;</code></p>
+                  <h3 class="mt-5 mb-3">无服务器 DNS</h3>
+                  <p>您刚刚复制到浏览器的链接看起来很复杂，而且不容易记住。您的朋友可通过将此链接贴到浏览器来访问您的网站，但用好记的名称制造一个真正的网站，这样不是更简单吗？</p>
+                  <p>在集中化世界中，这可由 DNS 服务器解决。基本上，DNS 服务器会保留网站地址和 IP 地址的记录。如果您在浏览器中输入
+                     <code>https://www.iovlabs.org/</code>，您会先传送请求到 DNS 服务器，请求此网站背后的 <span class="bold">IP
+                        地址</span>，之后您就会传送请求到实际的服务器。</p>
+                  <img src="../../assets/img/blog/serverless-2.png"
+                     class="img-fluid img-blog-style-1 text-center mb-5 mt-5">
+                  <p>这也可通过使用区块链的智能合约，以去中心化的方式进行。RIF 可利用 RIF 名称服务 (RNS) 轻松进行此操作，而可让您解析内容标识符（您网址的地址）的任何人类可读名称（以
+                     <code>.rsk</code>副档名结尾)。请查看 <a href="https://www.rifos.org/zh-hans/blog/rns-user-interface-update"
+                        class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">我们最新的博客帖子</a>，其中会说明此程序，如果您尚未这么做的话。通过按照博客所述步骤，您就能对新创建的网站使用自己的网域名称。真让人惊奇！
+                  </p>
+                  <img src="../../assets/img/blog/serverless-3.png"
+                     class="img-fluid img-blog-style-1 text-center mb-5 mt-5">
+                  <p>购买此域名后，您需要新增内容解析。可通过新的 RNS 管理员简单完成。登录<a href="https://manager.rns.rifos.org/admin" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">您的管理控制台</a>（如下所述）。</p>
+                  <img src="../../assets/img/blog/serverless-4.png"
+                     class="img-fluid img-blog-style-1 text-center mb-5 mt-5">
+                  <p>按下 “编辑” 设置内容。作为内容，您需要设定 index.html 的内容地址。内容地址是长序列的字符及数字，之前位于浏览器的地址栏。RNS 要求此种地址以 0x 开头。只要加上去即可！</p>
+                  <p>如果您没有时间这么做，但仍想看到神奇的事物发生，您可以导航到 <a
+                        href="https://swarm.rifgateways.org/bzz:/manifesto.rsk/index.html" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">manifesto.rks</a></p>
+                  <p>太神奇了！</p>
+                  <h3 class="mt-5 mb-3">如何安排网关？</h3>
+                  <p>如果您已经走到这一步，而且已经努力创建自己的无服务器网站，然后新增去中心化名称解析，恭喜您！然而，你们当中某些人可能已经注意到仍涉及一个集中化部件。没错，就是我们的网关。</p>
+                  <p>直到现在，我们一直都使用 “传统” 网站，作为通往去中心化网络的门户。我们将此类系统称为网关服务器。网关服务器会执行 RIF 存储 Swarm
+                     软件并让它暴露在互联网，您就不需要自己执行。当然，不一定要有此类服务器才能访问去中心化互联网，这只是让访问互联网变得更简单！</p>
+                  <img src="../../assets/img/blog/serverless-5.png"
+                     class="img-fluid img-blog-style-1 text-center mb-5 mt-5">
+                  <p class="img-blog-style-1"><i>网关如何与去中心化存储和客户端交互的图例说明</i></p>
+                  <p class="mt-5">对于那些确实想要体验完全去中心化的人，在网关上执行的 Swarm 软件有详尽记录（在<a
+                        href="https://developers.rsk.co/rif/storage/providers/swarm/testnet-network/" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">开发人员门户</a>上或是在 <a
+                        href="https://www.rifos.org/zh-hans/blog/rif-storage-testnet-launch" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">RIF 文章</a>中）。我们建议您阅读此信息并自己试试。此外，RIF
+                     团队始终会为您回答任何问题或帮助您进行实施。</p>
+                  <p>您可以观看我的研习会教程，了解如何通过此链接使用您自己的节点，在 RIF 存储上启动网站：<a
+                        href="https://www.youtube.com/watch?v=dXMEHi5cjck&t=2281s" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">https://www.youtube.com/watch?v=dXMEHi5cjck&t=2281s</a></p>
+                  <h3 class="mt-5 mb-3">即将推出：</h3>
+                  <p>即将推出许多令人振奋的内容，以提升去中心化 Web 体验，但有两件事需要我们在不久的将来特别留意。关注我们的推特 Twitter <a
+                        href="https://twitter.com/rif_os" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">@rif_os</a>，随时掌握最新动态并抢先得知我们的启动计划！</p>
+                  <p class="bold">RIF Publish</p>
+                  <p>RIF Publish 是发布和使用大部分静态内容（例如文章和网站）到去中心化存储的（更简单方法）。其目标是阻止内容和内容创建者的审查，特别是在产生更严重问题的某些法域内。</p>
+                  <p class="bold">全球锁定</p>
+                  <p>作为互联网骨干的去中心化网络在某些用例中很出色，但去中心化会丧失一些控制能力：您文档的片段会存储在网络的其他节点上，可能会在片段遗失时发生。最后，可能无法绝对完全防止这一点，这也是全球锁定之所以如此重要的原因。全球锁定可在文档遗失时进行自动修复，因此只要有一个节点（锁定程序）存储文档，就能保持文档持续存在。
+                  </p>
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div style="top: -6px;" class="fb-share-button" data-layout="button" data-size="large">
+                        </div>
+                        <a class="twitter-share-button btn btn btn-primary mr-3" href="https://twitter.com/intent/tweet"
+                           data-size="large">
+                           Tweet</a>
+                        <script async src="https://telegram.org/js/telegram-widget.js?8"
+                           data-telegram-share-url="https://www.rifos.org/zh-hans/blog/how-to-launch-a-serverless-website-using-rif-storage.html"
+                           data-size="large"></script>
+                     </div>
+                     <div class="col-lg-12 mt-5">
+                        <div class="row">
+                           <div class="col-lg-12">
+                              <div style="top: -6px;" class="fb-share-button" data-layout="button" data-size="large">
+                              </div>
+                              <a class="twitter-share-button btn btn btn-primary mr-3"
+                                 href="https://twitter.com/intent/tweet" data-size="large">
+                                 Tweet</a>
+                              <script async src="https://telegram.org/js/telegram-widget.js?8"
+                                 data-telegram-share-url="https://www.rifos.org/zh-hans/blog/how-to-launch-a-serverless-website-using-rif-storage.html"
+                                 data-size="large"></script>
+                           </div>
+                           <div class="col-lg-12 mt-5">
+                              <a class="btn btn btn-primary mr-3" href="./">背部</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="twitter-news">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row text-center">
+               <div class="col-lg-12">
+                  <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                        class="fab fa-twitter"></i></a>
+                  <h3 class="bold">Follow our news!</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer -->
+   <footer id="footer" class="section-bg">
+      <div class="footer-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <img src="../../assets/img/powered_by_iov.svg" class="img-fluid powered_by">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-sm-7">
+                        <div class="footer-info">
+                           <p>RIF OS互用性广，部署更快，轻松解决区块链技术与其大规模市场采用之间的差距。</p>
+                        </div>
+                     </div>
+                     <div class="col-sm-5"></div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../../assets/whitepapers/rif-whitepaper-zh.pdf" target="_blank"
+                                    rel="noopener noreferrer">白皮书</a></li>
+                              <li><a href="../blog/index.html">博客</a></li>
+                              <li><a href="../index.html#roadmap">Roadmap</a></li>
+                              <li><a href="https://github.com/riflabs" rel="noopener noreferrer"
+                                    target="_blank">Github</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../faqs.html">常见问题解答</a></li>
+                              <li><a href="../../assets/guidelines/RIF_FullBrandGuidelines_Zh.pdf"
+                                    rel="nofollow noopener noreferrer" target="_blank">品牌手册</a></li>
+                              <li><a class="medium" href="https://www.rsk.co/zh-Hans/index.html"
+                                    rel="noopener noreferrer" target="_blank">RSK 链接</a></li>
+                              <li><a class="medium" href="https://www.iovlabs.org/zh-Hans/index.html"
+                                    rel="noopener noreferrer" target="_blank">关于 IOV Labs， 请访问</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a class="medium" href="https://www.iovlabs.org/zh-Hans/contact.html"
+                                    rel="noopener noreferrer" target="_blank">联络信息链接</a></li>
+                              <li><a href="../terms-conditions.html">条款与条件</a></li>
+                              <li><a href="../privacy-policy.html">隐私</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                           class="fab fa-twitter"></i></a>
+                     <a href="https://t.me/rif_os_community" rel="noopener noreferrer" target="_blank"
+                        class="telegram"><i class="fab fa-telegram"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-6 col-xs-12 pl-0-mobile">
+                     <p class="copyright mb-0">版权所有 © 2015 - 2026 Rif. 保留一切权利。</p>
+                     <p class="copyright mt-0">By <a href="https://taniebrand.com" target="_blank">Taniebrand®</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </footer>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="RIFVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="../../assets/videos/zh/RIF_CorpoVideo.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="../../assets/js/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>

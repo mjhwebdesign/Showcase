@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+   <!-- Google Tag Manager -->
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KBG28B4');</script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="description" content="Rinke Hendriksen- Swarm Product所有者。">
+   <meta name="keywords" content="">
+   <meta name="author" content="RIF">
+   <title>RIF Storage を利用してサーバーレスのウェブサイトを立ち上げる方法</title>
+   <!-- og info -->
+   <meta property="og:title" content="RIF Storage を利用してサーバーレスのウェブサイトを立ち上げる方法">
+   <meta property="og:description" content="Rinke Hendriksen- Swarm Product所有者。">
+   <meta property="og:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <meta property="og:url"
+      content="https://www.rifos.org/ja/blog/how-to-launch-a-serverless-website-using-rif-storage.html">
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@rif_os">
+   <meta name="twitter:creator" content="@rif_os">
+   <meta name="twitter:domain" content="https://www.rifos.org/">
+   <meta name="twitter:title" content="RIF Storage を利用してサーバーレスのウェブサイトを立ち上げる方法">
+   <meta name="twitter:description" content="Rinke Hendriksen- Swarm Product所有者。">
+   <meta name="twitter:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+   <link rel="manifest" href="../../assets/favicons/site.webmanifest">
+   <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link rel="shortcut icon" href="../../assets/favicons/favicon.ico">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="../../assets/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Main Stylesheet File -->
+   <!-- build:css -->
+   <link rel="stylesheet" href="../../assets/css/theming.css">
+   <!-- endbuild -->
+   <!-- OwlCarrousel CSS Files -->
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.theme.default.min.css">
+   <!-- Libraries CSS Files -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBG28B4" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+   <script>(function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+   <!-- Ends Facebook SDK for JavaScript -->
+   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="../"><img src="../../assets/img/logo.svg" class="logo" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#vision">ビジョン</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#build-on-rif">開発者</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#rif-token">RIF トークン </a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#roadmap">Roadmap</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#get-start">開始</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../marketplace.html" class="nav-link">Marketplace</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../directory.html" class="nav-link">Directory</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../payments.html" class="nav-link">Payments</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../storage.html" class="nav-link">Storage</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../gateways.html" class="nav-link">Gateways</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../communications.html" class="nav-link">Communications</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle lang_nav active" href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     日本語
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item"
+                        href="../../blog/how-to-launch-a-serverless-website-using-rif-storage.html">English</a>
+                     <a class="dropdown-item"
+                        href="../../ko/blog/how-to-launch-a-serverless-website-using-rif-storage.html">한국어</a>
+                     <a class="dropdown-item"
+                        href="../../zh-hans/blog/how-to-launch-a-serverless-website-using-rif-storage.html">简体中文</a>
+                     <a class="dropdown-item"
+                        href="../../es/blog/how-to-launch-a-serverless-website-using-rif-storage.html">Español</a>
+                     <a class="dropdown-item"
+                        href="../../pt-pt/blog/how-to-launch-a-serverless-website-using-rif-storage.html">Português</a>
+                     <a class="dropdown-item"
+                        href="../../ru/blog/how-to-launch-a-serverless-website-using-rif-storage.html">Pусский</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">ご連絡いただけます</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <nav id="vertical-nav" class="nav flex-column">
+      <a href="../marketplace.html" class="nav-link">Marketplace</a>
+      <a href="../directory.html" class="nav-link">Directory</a>
+      <a href="../payments.html" class="nav-link">Payments</a>
+      <a href="../storage.html" class="nav-link">Storage</a>
+      <a href="../gateways.html" class="nav-link">Gateways</a>
+      <a href="../communications.html" class="nav-link">Communications</a>
+   </nav>
+   <section id="blog">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row mb-5">
+               <div class="col-lg-9">
+                  <h1><span class="bold">RIF Storage</span>を利用してサーバーレスのウェブサイトを立ち上げる方法</h1>
+                  <span class="blue_rif  d-block mb-3"><i>Rinke Hendriksen- Swarm Product所有者</i></span>
+                  <h6>2020年4月10日</h6>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-9">
+                  <p>RIF Storageは、真の分散型インターネットのベースレイヤーを構築するために設計されました。 <a
+                        href="https://medium.com/ethereum-swarm/partnership-between-swarm-and-rsk-infrastructure-framework-rif-to-develop-a-breakthrough-storage-3901734fdd41"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">高水準のプロトコル機能</a>、プロトコルのインセンティブ化に関する<a
+                        href="https://www.rifos.org/ja/blog/rif-storage-the-first-chunks" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">改善</a>、ならびに<a
+                        href="https://www.rifos.org/ja/blog/rif-storage-and-swarms-swap-swips" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">インセンティブ化されたテストネットの立ち上げ</a> に関するRIF StorageとSwarmの<a
+                        href="https://www.rifos.org/ja/blog/rif-storage-testnet-launch" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">パートナーシップ</a>については、すでにご説明しました。当社の<a
+                        href="https://developers.rsk.co/rif/storage/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">ドキュメンテーション</a>では、自分独自のRIF
+                     Storageノードを起動し、当社のインセンティブ化されたテストネットに参加する方法をを確認できます。しかし、独自のサーバーレスウェブサイトを立ち上げる方法とは？</p>
+                  <p>実は、それは驚くほど容易です。その容易さがゆえ、立ち上げを試すためのシンプルで実践的なチュートリアルをすでにご用意しておくべきでした。</p>
+                  <p>当社は、停止せずかつサーバーレスのウェブサイトを誰もが立ち上げることができるようにすることをお約束できます。その方法は以下でご説明します。</p>
+                  <h3 class="mt-5 mb-3">Hello World HTML</h3>
+                  <p>分散方式で完全にウェブサイトのホストを行うためには、いかなる（集中型）バックエンドへの接続も不要です。そのようなウェブサイトを作成したことがない方のために、非常にシンプルなものを作成してみましょう：
+                  </p>
+                  <pre>
+                        &lt;html&gt;
+                           &lt;header&gt;
+                              &lt;title&gt;My first website&lt;/title&gt;
+                           &lt;/header&gt;
+                           &lt;body&gt;
+                              Hello world
+                           &lt;/body&gt;
+                        &lt;/html&gt;
+                     </pre>
+                  <p>このウェブサイトは非常に簡単ですが、通常のウェブで使用されるすべての構成要素をRIF Storageで利用できます。</p>
+                  <p>このファイルを<code>index.html</code>として保存してブラウザで開くと、入力された内容に対するブラウザの解釈が表示されます。</p>
+                  <p>従来、Hello
+                     Worldの例では、ここから基本的なウェブサーバーの設定を続行することになります。要するに、サーバーはリクエストに応じてファイル（例えば<code>index.html</code>)を送信するコンピューター・プログラムです。つまり、ウェブサイトにアクセスするとサーバーにリクエストが送信され、サーバーがウェブページを返すわけです。
+                  </p>
+                  <img src="../../assets/img/blog/serverless-1.png"
+                     class="img-fluid img-blog-style-1 text-center mb-5 mt-5">
+                  <p class="img-blog-style-1"><i>従来の集中型クライアント・サーバーのモデル（web1.0 and web2.0アーキテクチャ）と分散型モデル（web3.0）の比較</i>
+                  </p>
+                  <h3 class="mt-5 mb-3">サーバーレス・ウェブサイト</h3>
+                  <p>RIF
+                     Storageは、サーバーレス・ウェブサイト設定を可能にします。つまりそれは、リクエストに応じて<code>index.html</code>ファイルを送信する中央管理型のサーバーではなく、協調ノードとインセンティブ化されたノードの集合体のことです。本ブログにおいては、この仕組みに関する詳細まではお話ししません。基本的に、ファイルは多くの部分に分割されて別々のコンピューターに保存さると、リクエストに応じて元通りにつなぎ合わされます。このアーキテクチャには多くの利点がありますが、主なものとして、このウェブ上のデータは単一の作成者が所有や管理を行っていないため、耐検閲性があり、かつ停止不可能であるということがあります。
+                  </p>
+                  <p>それでは、まず準備をしましょう。index.htmlファイルを、「Hello decentralized world（分散型の世界にこんにちは）」と表示されるように変更してください。</p>
+                  <pre>
+                        &lt;html&gt;
+                           &lt;header&gt;
+                              &lt;title&gt;My first website&lt;/title&gt;
+                           &lt;/header&gt;
+                           &lt;body&gt;
+                              Hello decentralized world
+                           &lt;/body&gt;
+                        &lt;/html&gt;
+                     </pre>
+                  <p>次に、<a href="https://swarm.rifgateways.org/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">swarm.rifgateways.org</a>
+                     に移動し、「Upload（アップロード）」をクリックします。それから更新された<code>index.html</code>に移動し、ファイルをアップロードしてください。</p>
+                  <p>次に、「Copy link to
+                     clipboard（リンクをクリップボードにコピー）」をクリックし、ブラウザのアドレスバーにこのリンクをペーストすると、サーバーレス・ウェブサイトを表示できます。簡単でしょう？</p>
+                  <p>ご注意！ディレクトリおよびファイル名は、<code>&lt;long_sequence_of_characters/index.html&gt;</code>となっているはずです。</p>
+                  <h3 class="mt-5 mb-3">サーバーレスDNS</h3>
+                  <p>ブラウザにコピーしたリンクは長く複雑なため、覚えるのは容易ではありません。他の人はこのリンクをブラウザにペースすればウェブサイトにアクセスが可能でしょうが、覚えやすい名称で実際のウェブサイトを作成する方が簡単ではないでしょうか？
+                  </p>
+                  <p>集中型ウェブサイトでは、この問題はDNSサーバーが解決します。基本的に、DNSサーバーはウェブサイト・アドレスおよび<span
+                        class="bold">IPアドレス</span>の記録を保持します：ブラウザに<code>https://www.iovlabs.org/</code>と入力すると、DNSサーバーにリクエストを送信され、このウェブサイトの後ろにあるIPアドレスをリクエストするDNSサーバーにリクエストが送信され、実際のサーバーにリクエストが送信されます。
+                  </p>
+                  <img src="../../assets/img/blog/serverless-2.png"
+                     class="img-fluid img-blog-style-1 text-center mb-5 mt-5">
+                  <p>ブロックチェーン上のスマート・コントラクトを利用することで、分散型の方法においても同様のことが可能です。つまり、RIFは、RSK Name
+                     Service（RNS）によってこれを容易にします。そうすることで、人間が読み取れるあらゆる名称（拡張子<code>.rsk</code>で終わるもの）をコンテンツ識別子（ウェブサイトのアドレス）に転換することが可能になります。このプロセスを説明する<a
+                        href="https://www.rifos.org/ja/blog/rns-user-interface-update" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">当社の最新ブログ投稿</a>を未読の場合は、ぜひ目を通してください。ブログで説明されているステップに従うことで、新しく作成したウェブサイトには独自のドメイン名を使用できます。素晴らしいことです。
+                  </p>
+                  <img src="../../assets/img/blog/serverless-3.png"
+                     class="img-fluid img-blog-style-1 text-center mb-5 mt-5">
+                  <p>ドメイン購入後は、コンテンツ解像度を追加する必要があります。しかし、新しいRNSマネージャーを使用すれば簡単です。<a
+                        href="https://manager.rns.rifos.org/admin" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">Your admin console（管理コンソール）</a>にログインしてください（以下を参照）。</p>
+                  <img src="../../assets/img/blog/serverless-4.png"
+                     class="img-fluid img-blog-style-1 text-center mb-5 mt-5">
+                  <p>コンテンツ設定は、「Edit（編集）」をクリックます。それから、index.htmlのコンテンツアドレスを設定する必要があります。コンテンツアドレスとはこの長い文字列と数字列のことで、ブラウザのアドレスバーに表示されていたものです。RNSは、0xで始まるコンテンツアドレスを必要とします。それを追加するだけでOKです。
+                  </p>
+                  <p>時間を省略したい場合は、 <a href="https://swarm.rifgateways.org/bzz:/manifesto.rsk/index.html" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">manifesto.rks</a>にアクセスすることで同じ作業を行うことができます。</p>
+                  <p>とても簡単ですね。</p>
+                  <h3 class="mt-5 mb-3">ゲートウェイについてはどうでしょうか？</h3>
+                  <p>これまで説明したステップに従い独自のサーバーレス・ウェブサイトを作成し、分散型の名称解決を追加できたのであれば、素晴らしいことです。しかし、また一つの集中型構成要素が関係していることに気付かれたかもしれません。その構成要素とは、当社のゲートウェイです。
+                  </p>
+                  <p>これまで、当社は分散型ネットワークへのポータルとして「従来の」ウェブサイトを使用してきました。当社は、そのようなシステムをゲートウェイ・サーバーと呼びます。ゲートウェイ・サーバーはRIF
+                     Storage
+                     Swarmソフトウェアを実行してインターネットに公開するため、自分で実行する必要はありません。ゲートウェイ・サーバーは分散型インターネットへのアクセスに必須なわけではありませんが、利用すればアクセスが容易になります。
+                  </p>
+                  <img src="../../assets/img/blog/serverless-5.png"
+                     class="img-fluid img-blog-style-1 text-center mb-5 mt-5">
+                  <p class="img-blog-style-1"><i>ゲートウェイが分散型ストレージおよびクライアントとどのように相互作用するかの例</i></p>
+                  <p class="mt-5">完全な分散型体験を望む方向けに、ゲートウェイで実行されているSwarmソフトウェアは十分に文書化されています（当社の <a
+                        href="https://developers.rsk.co/rif/storage/providers/swarm/testnet-network/" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">開発者ポータル</a>や、この<a
+                        href="https://www.rifos.org/ja/blog/rif-storage-testnet-launch" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">RIF記事</a>内）。情報をすべて読み、お試しになることをお勧めします。また、ご質問や実装の支援につきましては、当社RIFチームまでお気軽にお問い合わせください。
+                  </p>
+                  <p>独自のノードを使用してRIFストレージでウェブサイトを立ち上げる方法に関する私のワークショップチュートリアルは、以下のリンクで公開しています：<a
+                        href="https://www.youtube.com/watch?v=dXMEHi5cjck&t=2281s" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">https://www.youtube.com/watch?v=dXMEHi5cjck&t=2281s</a></p>
+                  <h3 class="mt-5 mb-3">次回：</h3>
+                  <p>分散型ウェブ体験をさらに向上させるために盛り沢山な内容でお届けしますが、近い将来については、特に以下の2項目に焦点を当てます。ツイッター<a
+                        href="https://twitter.com/rif_os" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">@rif_os</a>で当社をフォローして最新情報を入手し、当社の立ち上げについての情報をいち早くチェックしましょう！</p>
+                  <p class="bold">RIF Publish</p>
+                  <p>RIF
+                     Publishは、多くの場合、分散型ストレージに静的コンテンツ（例えば、記事やウェブサイト）を公開し、消費する（さらに容易な）方法です。目的は、検閲がより重大な問題を引き起こす特定の法域において、コンテンツおよびコンテンツ作成者に対する検閲と戦うことです。
+                  </p>
+                  <p class="bold">グローバル・ピンニング</p>
+                  <p>インターネットの骨格としての分散型ネットワークは、場合によっては優れていますが、分散型では制御が失われます。例えば、ファイルの一部がネットワーク内の他のノードに保存されているため、ファイルが失われる可能性があります。最終的に、これを完全に予防することはできません。だからこそ、グローバル・ピンニングが非常に重要な役割を担います。グローバル・ピンニングは、ファイルが失われた場合にファイルを自動的に修復するため、、1つのノード（ピンナー）がファイルを格納している限り、ファイルの永続性が保たれます。
+                  </p>
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div style="top: -6px;" class="fb-share-button" data-layout="button" data-size="large">
+                        </div>
+                        <a class="twitter-share-button btn btn btn-primary mr-3" href="https://twitter.com/intent/tweet"
+                           data-size="large">
+                           Tweet</a>
+                        <script async src="https://telegram.org/js/telegram-widget.js?8"
+                           data-telegram-share-url="https://www.rifos.org/ja/blog/how-to-launch-a-serverless-website-using-rif-storage.html"
+                           data-size="large"></script>
+                     </div>
+                     <div class="col-lg-12 mt-5">
+                        <a class="btn btn btn-primary mr-3" href="./">戻る</a>
+                     </div>
+                     <div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="twitter-news">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row text-center">
+               <div class="col-lg-12">
+                  <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                        class="fab fa-twitter"></i></a>
+                  <h3 class="bold">Follow our news!</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer -->
+   <footer id="footer" class="section-bg">
+      <div class="footer-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <img src="../../assets/img/powered_by_iov.svg" class="img-fluid powered_by">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-sm-7">
+                        <div class="footer-info">
+                           <p>RIF OSにより幅広い相互運用性と展開までの時間の短縮を可能となるため、ブロックチェーンテクノロジーと大衆市場での採用との間の溝を埋めるのです。</p>
+                        </div>
+                     </div>
+                     <div class="col-sm-5"></div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../../assets/whitepapers/rif-whitepaper-ja.pdf" target="_blank"
+                                    rel="noopener noreferrer">ホワイトペーパー</a></li>
+                              <li><a href="index.html">ブログ
+                                 </a>
+                              </li>
+                              <li><a href="../index.html#roadmap">Roadmap
+                                 </a>
+                              </li>
+                              <li><a href="https://github.com/riflabs" rel="noopener noreferrer"
+                                    target="_blank">Github</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../faqs.html">よくある質問
+                                 </a>
+                              </li>
+                              <li><a href="../../assets/guidelines/RIF_FullBrandGuidelines_Ja.pdf"
+                                    rel="nofollow noopener noreferrer" target="_blank">ブランドマニュアルa</a></li>
+                              <li><a class="medium" href="https://www.rsk.co/ja/index.html" rel="noopener noreferrer"
+                                    target="_blank">RSK</a></li>
+                              <li><a class="medium" href="https://www.iovlabs.org/ja/index.html"
+                                    rel="noopener noreferrer" target="_blank">IOV ラボへのリンク</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a class="medium" href="https://www.iovlabs.org/ja/contact.html"
+                                    rel="noopener noreferrer" target="_blank">お問合せリンク</a></li>
+                              <li><a href="../terms-conditions.html">利用規約</a></li>
+                              <li><a href="../privacy-policy.html">プライバシー</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                           class="fab fa-twitter"></i></a>
+                     <a href="https://t.me/rif_os_community" rel="noopener noreferrer" target="_blank"
+                        class="telegram"><i class="fab fa-telegram"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-6 col-xs-12 pl-0-mobile">
+                     <p class="copyright">Copyright © 2015 - 2026 Rif. 禁無断転載</p>
+                     <p class="copyright mt-0">By <a href="https://taniebrand.com" target="_blank">Taniebrand®</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </footer>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="RIFVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="../../assets/videos/ja/RIF_CorpoVideo.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="../../assets/js/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>

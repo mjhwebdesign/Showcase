@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <!-- Google Tag Manager -->
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KBG28B4');</script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="description" content="이 게시물에서는 RIF Lumino 결제의 확장성에 대한 접근법을 간단하게 분석해 보겠습니다.">
+   <meta name="keywords" content="">
+   <meta name="author" content="RIF">
+   <title>확장성: RIF Lumino 결제가 이루려고 하는 것은 무엇인가?</title>
+   <!-- og info -->
+   <meta property="og:title" content="확장성: RIF Lumino 결제가 이루려고 하는 것은 무엇인가?">
+   <meta property="og:description" content="이 게시물에서는 RIF Lumino 결제의 확장성에 대한 접근법을 간단하게 분석해 보겠습니다.">
+   <meta property="og:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <meta property="og:url"
+      content="https://www.rifos.org/ko/blog/the-need-for-scalability-beyond-the-main-chain-what-is-rif-lumino-payments-trying-to-achieve.html">
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@rif_os">
+   <meta name="twitter:creator" content="@rif_os">
+   <meta name="twitter:domain" content="https://www.rifos.org/">
+   <meta name="twitter:title" content="확장성: RIF Lumino 결제가 이루려고 하는 것은 무엇인가?">
+   <meta name="twitter:description" content="이 게시물에서는 RIF Lumino 결제의 확장성에 대한 접근법을 간단하게 분석해 보겠습니다.">
+   <meta name="twitter:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+   <link rel="manifest" href="../../assets/favicons/site.webmanifest">
+   <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link rel="shortcut icon" href="../../assets/favicons/favicon.ico">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="../../assets/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Main Stylesheet File -->
+   <!-- build:css -->
+   <link rel="stylesheet" href="../../assets/css/theming.css">
+   <!-- endbuild -->
+   <!-- OwlCarrousel CSS Files -->
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.theme.default.min.css">
+   <!-- Libraries CSS Files -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBG28B4" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+   <script>(function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+   <!-- Ends Facebook SDK for JavaScript -->
+   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="../"><img src="../../assets/img/logo.svg" class="logo" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#vision">비전</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="https://developers.rsk.co/rif/" target="_blank"
+                     rel="noreferrer noopener">개발자</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#rif-token">RIF Token</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#roadmap">Roadmap</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#get-start">시작하기</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../marketplace.html" class="nav-link">Marketplace</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../directory.html" class="nav-link">Directory</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../payments.html" class="nav-link">Payments</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../storage.html" class="nav-link">Storage</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../gateways.html" class="nav-link">Gateways</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../communications.html" class="nav-link">Communications</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle lang_nav active" href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     한국어
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item"
+                        href="../../blog/the-need-for-scalability-beyond-the-main-chain-what-is-rif-lumino-payments-trying-to-achieve.html">English</a>
+                     <a class="dropdown-item"
+                        href="../../zh-hans/blog/the-need-for-scalability-beyond-the-main-chain-what-is-rif-lumino-payments-trying-to-achieve.html">简体中文</a>
+                     <a class="dropdown-item"
+                        href="../../ja/blog/the-need-for-scalability-beyond-the-main-chain-what-is-rif-lumino-payments-trying-to-achieve.html">日本語</a>
+                     <a class="dropdown-item"
+                        href="../../es/blog/the-need-for-scalability-beyond-the-main-chain-what-is-rif-lumino-payments-trying-to-achieve.html">Español</a>
+                     <a class="dropdown-item"
+                        href="../../pt-pt/blog/the-need-for-scalability-beyond-the-main-chain-what-is-rif-lumino-payments-trying-to-achieve.html">Português</a>
+                     <a class="dropdown-item"
+                        href="../../ru/blog/the-need-for-scalability-beyond-the-main-chain-what-is-rif-lumino-payments-trying-to-achieve.html">Pусский</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">비디오 보기</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <nav id="vertical-nav" class="nav flex-column">
+      <a href="../marketplace.html" class="nav-link">Marketplace</a>
+      <a href="../directory.html" class="nav-link">Directory</a>
+      <a href="../payments.html" class="nav-link">Payments</a>
+      <a href="../storage.html" class="nav-link">Storage</a>
+      <a href="../gateways.html" class="nav-link">Gateways</a>
+      <a href="../communications.html" class="nav-link">Communications</a>
+   </nav>
+   <section id="blog">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row mb-5">
+               <div class="col-lg-9">
+                  <h1><span class="bold">확장성</span>: RIF Lumino 결제가 이루려고 하는 것은 무엇인가?</h1>
+                  <span class="blue_rif  d-block mb-3"><i>이 게시물에서는 RIF Lumino 결제의 확장성에 대한 접근법을 간단하게 분석해
+                        보겠습니다.</i></span>
+                  <h6>2019 년 5 월 28 일</h6>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-9">
+                  <p>비트코인 확장성 솔루션에 있어서 바로 떠오르는 것은 SegWit와 라이트닝 네트워크입니다. 그렇지만 확장성은 모든 블록체인이 직면하는 장애물이기도 합니다. 예를 들어 이더리움은
+                     지난 2년 간 확장성과 씨름해 왔습니다. 최근 이더리움에서는 <a
+                        href="https://www.coindesk.com/loveable-digital-kittens-clogging-ethereums-blockchain"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer"> 크립토키티(Cryptokitties)</a>라는 현상으로 인한
+                     높은 정체가 발생했습니다. 비슷한 정체 문제가 다른 블록체인에도 발생했기 때문에, 전문가들은 확장성이 블록체인 기술이 마주하는 가장 중요한 장애물 중 하나라는 것에 동의합니다.
+                     분산화에 대한 타협을 하지 않는 동시에 많은 양의 거래를 빠르고 저렴하게 처리할 수 있는 블록체인을 고안하는 것은 어려운 작업입니다. 하지만 이는 우리가 블록체인 기술이 전통적인
+                     결제 프로세서와 경쟁하기를 원한다면 꼭 달성해야 하는 중요한 문제입니다. 비트코인의 가치 저장에 대한 이야기는 강력하지만, 사회에 대한 실제 혜택은 수백만 명의 사람이 비트코인을
+                     이용할 수 있어야만 발생할 수 있습니다. 최종적으로 모든 것은 널리 퍼진 사용 사례라는 간단한 하나의 문제에 달려 있습니다. 블록체인 기술이 전통적인 대안과 경쟁하기를 기대한다면
+                     TPS 비율(초당 거래 수)을 늘리는 것은 절대적으로 필수입니다. 이런 면에서는 RIF Lumino가 변화를 일으킬 수 있습니다. RIF Lumino 네트워크는 무엇이고 그 가치
+                     제안은 무엇일까요? 자세한 사항을 설명하기 전에 확장성에 대한 과거의 비트코인 개선 사항을 짚고 넘어가는 것이 유용할 것 같습니다. 2017년 7월, 비트코인 네트워크에서는
+                     비트코인 네트워크 내 확장성을 약간 더 개선하고 다른 프로토콜 문제를 수정하기 위한 SegWit 소프트 포크가 활성화되었습니다. 그런데 SegWit는 무엇이고 어떻게 작용할까요?
+                     거래가 비트코인 네트워크에 전파될 때마다, 해당 거래는 보낼 비용, 자금을 수신할 주소, 그리고 거래 이동을 보장할 수 있는 보유 자금의 사용을 허용하는 전자 서명 한 개 이상과
+                     같은 정보를 포함합니다. 평균적으로 서명은 거래 공간의 약 25%를 소비할 수 있습니다. 비트코인 블록의 최대 규모는 1 메가바이트입니다. SegWit는 서명을 블록 규모 한도의
+                     제한을 받지 않는 블록의 다른 부분으로 이동하여 약간의 규모 증가를 제공하며, 이에 따라 블록에 더 많은 거래를 추가할 수 있는 가능성이 생깁니다. 또한 비트코인 커뮤니티는 여러
+                     개의 서명을 하나로 통합해 거래 규모를 더 줄일 수 있는 <a href="https://en.wikipedia.org/wiki/Schnorr_signature"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">Schnorr 서명</a>, 의 사용을 활성화하는 새로운 소프트
+                     포크를 평가하고 있습니다.
+                  </p>
+                  <p>그럼 이미 온 체인 거래 규모를 줄일 수 있는데 왜 라이트닝 네트워크가 필요할까요? </p>
+                  <p>라이트닝 네트워크는 간단하게 결제 채널의 컨셉에서 개발된 2차 레이어 네트워크라고 할 수 있습니다. 두 명의 비트코인 사용자는 결제 채널을 연 다음, 거의 즉각적으로 검증이
+                     가능한 거래를 교환할 수 있습니다. 이때 거래는 일반적인 블록체인 대기 시간 없이 오프 체인에서 발생합니다. 결제 채널에 연관된 모든 당사자는 채널의 최종 잔액에 대한 기록을
+                     유지하게 됩니다. 이 과정은 올바른 검증과 확인 후에 메인 체인에서 잔액의 결산을 완료했다는 정보가 메인 체인에 전달되었을 때 종료됩니다. 따라서 수천 개의 오프 체인 거래가
+                     결제 채널을 관리하는 몇 가지의 온 체인 거래로 통합될 수 있습니다. 하지만 라이트닝 네트워크와 SegWit는 확장성과 더 저렴한 거래 면에서 아주 훌륭한 기여를 하는 반면,
+                     비트코인 프로토콜이 설립한 특정 제한 사항을 넘어서 비트코인을 확장할 수는 없습니다. 여기서 바로 RIF Lumino 결제가 활약을 하게 됩니다. 그럼 다 자세히 설명해 보도록
+                     하겠습니다. 먼저 일반적으로 발생하는 오해를 방지하기 위해 몇 가지 주요 컨셉을 다시 짚고 넘어가도록 하겠습니다. IOV Labs의 CEO께서 설명하신 것처럼 RIF OS(RSK
+                     인프라 프레임워크 공개 표준)는 블록체인 기반 스마트 컨트랙트에 의존해 더 빠르고, 쉽고, 확장 가능한 분산 응용 프로그램(dApps)의 개발을 가능하게 하는 개방되고 분산된
+                     인프라 프로토콜의 모임입니다. 초기 프로토콜은 RIF 디렉토리(네이밍 서비스 프로토콜), RIF 결제(오프체인 결제 프로토콜), RIF 데이터(데이터 저장소 및 스트리밍
+                     프로토콜), RIF 커뮤니케이션(안전한 라우팅, 세션 및 암호화된 커뮤니케이션 프로토콜), 그리고 RIF 게이트웨이(체인 간의 거래와 오라클링 서비스를 포함하는 상호 운용
+                     프로토콜)를 포함합니다. 하지만 이것은 공식의 한 부분에 불과합니다. RIF는 이러한 서비스 모두에 대한 접근을 허용하는 유틸리티 토큰이기도 합니다. 요약하자면 RIF 결제는
+                     생태계 내 RIF OS 제안 중의 한 프로토콜입니다. RIF 결제는 RIF 토큰이 필요한 일부 남은 구성 요소가 제공하는 서비스에 대한 비용을 효율적으로 지불할 수 있도록 돕는
+                     주요 서비스입니다. </p>
+                  <p>하지만 아직 빠진 게 하나 있지 않나요? Lumino란 무엇일까요?</p>
+                  <p>기존 백서 <a href="https://docs.rsk.co/LuminoTransactionCompressionProtocolLTCP.pdf" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">기존 백서</a> 에서 RSK 및 RIF 수석 과학자 Sergio Lerner가 설명했듯이
+                     Lumino 결제 압축은 높은 압축률을 달성하는 블록체인 확장 대안입니다. Sergio와 그의 팀은 불필요한 서명을 제거하고 사용자 정의 초기 설정을 이용해 거래를 압축하는 <a
+                        href="https://github.com/rsksmart/RSKIPs/blob/master/IPs/RSKIP53.md" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">LTCP</a> 에서 RSK 및 RIF 수석 과학자 Sergio Lerner가 설명했듯이
+                     Lumino 결제 압축은 높은 압축률을 달성하는 블록체인 확장 대안입니다. Sergio와 그의 팀은 불필요한 서명을 제거하고 사용자 정의 초기 설정을 이용해 거래를 압축하는
+                     LTCP(Lumino 거래 압축 프로토콜)을 개발하였습니다. <a href="https://blog.rsk.co/noticia/sergio-lerner-ama-session/"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">서명이 RSK의 거래 공간 중 70%를 차지한</a>, 다는 것을
+                     생각했을 때, 이 프로토콜이 왜 가치가 있는지를 쉽게 이해할 수 있습니다.</p>
+                  <p>어디서 들어본 적 있는 것 같지 않나요? 전에 각 블록 내 사용 가능 공간과 TPS 비율을 늘리기 위한 SegWig & LN 기여에 대해 의논한 적이 있는데요. RIF
+                     Lumino 네트워크는 그와 비슷하게 여러 당사자가 결제 채널을 이용해 오프 체인 거래를 할 수 있도록 합니다. 이미 라이트닝 네트워크가 있는데 왜 또 RIF Lumino
+                     네트워크가 필요할까요? 왜냐하면 <a href="https://lightning.network/lightning-network-paper.pdf" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">라이트닝</a> 은 원래 비트코인 네트워크의 추가 확장성을 제공하기 위해 고안된 존재이고,
+                     Lumino는 그와 같은 컨셉을 비트코인 블록체인 위에 구축된 사이드 체인이라는 존재로 해석하며, 그것이 바로 RSK의 목적이기 때문입니다. </p>
+                  <p>LN과 RIF Lumino 네트워크는 경쟁 상대가 아닙니다. 두 가지는 함께 작용하여 서로를 보완하고 여러 가지 레이어에서(메인 체인, 사이드 체인 등) 추가 확장성을
+                     제공합니다. 왜 메인 체인이 아닌 다른 레이어에서 확장성을 제공하고 싶어할까요? 이더리움이나 다른 블록체인과 달리, 비트코인의 네트워크는 기본적으로 개발자가 스마트 컨트랙트를
+                     코딩하고 실행할 수 있도록 고안되지 않았기 때문입니다. RSK는 그 역할을 할 수 있으며 RIF Lumino 네트워크는 네트워크를 사용하고자 하고 거래 비용이 RBTC로 지불되는
+                     여러 RRC-20 토큰에 모두 확장성을 제공하는 기구입니다. RIF Lumino 네트워크는 RSK 네트워크 내 존재하는 모든 토큰에 대한 오프 체인 결제를 활성화할 것이며 이것은
+                     네트워크 정체 없이 결제 수를 확장하는 데 절대적으로 필요한 존재입니다.</p>
+                  <p> 요약하자면 RIF Lumino 네트워크는 RSK에 구축된 모든 토큰의 결제 채널을 허용하고 거래 처리량을 증가시키는 동시에 해당 비용을 축소하는 세 번째 레이어 솔루션입니다.
+                     더 자세한 내용은 <a href="https://www.rifos.org/rif-lumino-network/" target="_blank"
+                        rel="noreferrer noopener">https://www.rifos.org/rif-lumino-network/</a>. 를 방문하셔서 확인하시기 바랍니다. 오늘
+                     바로 시작하셔서 RIF Lumino 네트워크로 여러 가지를 실험해 보십시오.</p>
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div style="top: -6px;" class="fb-share-button" data-layout="button" data-size="large">
+                        </div>
+                        <a class="twitter-share-button btn btn btn-primary mr-3" href="https://twitter.com/intent/tweet"
+                           data-size="large">
+                           Tweet</a>
+                        <script async src="https://telegram.org/js/telegram-widget.js?8"
+                           data-telegram-share-url="https://www.rifos.org/ko/blog/the-need-for-scalability-beyond-the-main-chain-what-is-rif-lumino-payments-trying-to-achieve.html"
+                           data-size="large"></script>
+                     </div>
+                     <div class="col-lg-12 mt-5">
+                        <a class="btn btn btn-primary mr-3" href="./">뒤로</a>
+                     </div>
+                     <div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="twitter-news">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row text-center">
+               <div class="col-lg-12">
+                  <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                        class="fab fa-twitter"></i></a>
+                  <h3 class="bold">Follow our news!</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer -->
+   <footer id="footer" class="section-bg">
+      <div class="footer-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <img src="../../assets/img/powered_by_iov.svg" class="img-fluid powered_by">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-sm-7">
+                        <div class="footer-info">
+                           <p>RIF OS는 광범위한 상호 운용성과 더 빠른 배포 시간을 제공해 블록체인 기술과 해당 기술의 대중 시장 채택 간의 격차를 해소한다. </p>
+                        </div>
+                     </div>
+                     <div class="col-sm-5"></div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../../assets/whitepapers/rif-whitepaper-ko.pdf" target="_blank"
+                                    rel="noopener noreferrer">백서</a></li>
+                              <li><a href="../blog/">블로그</a></li>
+                              <li><a href="../index.html#roadmap">Roadmap</a></li>
+                              <li><a href="https://github.com/riflabs" rel="noopener noreferrer"
+                                    target="_blank">Github</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../faqs.html">자주 묻는 질문</a></li>
+                              <li><a href="../../assets/guidelines/RIF_FullBrandGuidelines_Ko.pdf"
+                                    rel="nofollow noopener noreferrer" target="_blank">브랜드 매뉴얼</a></li>
+                              <li><a class="medium" href="https://www.rsk.co/ko/" rel="noopener noreferrer"
+                                    target="_blank">RSK</a></li>
+                              <li><a class="medium" href="https://www.iovlabs.org/ko/index.html"
+                                    rel="noopener noreferrer" target="_blank">IOVlabs 소개</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a class="medium" href="https://www.iovlabs.org/ko/contact.html"
+                                    rel="noopener noreferrer" target="_blank">IOVlabs에 문의</a></li>
+                              <li><a href="../terms-conditions.html">이용 약관</a></li>
+                              <li><a href="../privacy-policy.html">개인 정보 보호 정책</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                           class="fab fa-twitter"></i></a>
+                     <a href="https://t.me/rif_os_community" rel="noopener noreferrer" target="_blank"
+                        class="telegram"><i class="fab fa-telegram"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-6 col-xs-12 pl-0-mobile">
+                     <p class="copyright mb-0">Copyright © 2015 - 2026 Rif. All rights reserved.</p>
+                     <p class="copyright mt-0">By <a href="https://taniebrand.com" target="_blank">Taniebrand®</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </footer>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="RIFVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="../../assets/videos/ko/RIF_CorpoVideo.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="../../assets/js/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>

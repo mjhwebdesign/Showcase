@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <!-- Google Tag Manager -->
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KBG28B4');</script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="description"
+      content="Служба имен RIF (RNS) — это децентрализованная служба, которая позволяет пользователям получить домен с удобным для чтения названием в любом блокчейне. Ее можно использовать для идентификации определенного элемента блокчейна, просто связав имя с адресом (описание регистрации домена см. в этой статье).">
+   <meta name="keywords" content="">
+   <meta name="author" content="RIF">
+   <title>Как упростить блокчейн для разработчиков: библиотека RNS JS</title>
+   <!-- og info -->
+   <meta property="og:title" content="Как упростить блокчейн для разработчиков: библиотека RNS JS">
+   <meta property="og:description"
+      content="Служба имен RIF (RNS) — это децентрализованная служба, которая позволяет пользователям получить домен с удобным для чтения названием в любом блокчейне. Ее можно использовать для идентификации определенного элемента блокчейна, просто связав имя с адресом (описание регистрации домена см. в этой статье).">
+   <meta property="og:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <meta property="og:url"
+      content="https://www.rifos.org/ru/blog/making-blockchain-easy-for-developers-rns-js-library.html">
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@rif_os">
+   <meta name="twitter:creator" content="@rif_os">
+   <meta name="twitter:domain" content="https://www.rifos.org/">
+   <meta name="twitter:title" content="Как упростить блокчейн для разработчиков: библиотека RNS JS">
+   <meta name="twitter:description"
+      content="Служба имен RIF (RNS) — это децентрализованная служба, которая позволяет пользователям получить домен с удобным для чтения названием в любом блокчейне. Ее можно использовать для идентификации определенного элемента блокчейна, просто связав имя с адресом (описание регистрации домена см. в этой статье).">
+   <meta name="twitter:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+   <link rel="manifest" href="../../assets/favicons/site.webmanifest">
+   <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link rel="shortcut icon" href="../../assets/favicons/favicon.ico">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="../../assets/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Main Stylesheet File -->
+   <!-- build:css -->
+   <link rel="stylesheet" href="../../assets/css/theming.css">
+   <!-- endbuild -->
+   <!-- OwlCarrousel CSS Files -->
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.theme.default.min.css">
+   <!-- Libraries CSS Files -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBG28B4" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+   <script>(function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+   <!-- Ends Facebook SDK for JavaScript -->
+   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="../"><img src="../../assets/img/logo.svg" class="logo" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#vision">Концепция
+                  </a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#build-on-rif">Разработчики</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#rif-token">RIF Token
+                  </a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#roadmap">Roadmap
+                  </a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#get-start">Начало работы
+                  </a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../marketplace.html" class="nav-link">Marketplace</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../directory.html" class="nav-link">Directory</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../payments.html" class="nav-link">Payments</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../storage.html" class="nav-link">Storage</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../gateways.html" class="nav-link">Gateways</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../communications.html" class="nav-link">Communications</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle lang_nav active" href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Pусский
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item"
+                        href="../../blog/making-blockchain-easy-for-developers-rns-js-library.html">English</a>
+                     <a class="dropdown-item"
+                        href="../../ko/blog/making-blockchain-easy-for-developers-rns-js-library.html">한국어</a>
+                     <a class="dropdown-item"
+                        href="../../zh-hans/blog/making-blockchain-easy-for-developers-rns-js-library.html">简体中文</a>
+                     <a class="dropdown-item"
+                        href="../../ja/blog/making-blockchain-easy-for-developers-rns-js-library.html">日本語</a>
+                     <a class="dropdown-item"
+                        href="../../es/blog/making-blockchain-easy-for-developers-rns-js-library.html">Español</a>
+                     <a class="dropdown-item"
+                        href="../../pt-pt/blog/making-blockchain-easy-for-developers-rns-js-library.html">Português</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">Смотреть
+                     Видео</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <nav id="vertical-nav" class="nav flex-column">
+      <a href="../marketplace.html" class="nav-link">Marketplace</a>
+      <a href="../directory.html" class="nav-link">Directory</a>
+      <a href="../payments.html" class="nav-link">Payments</a>
+      <a href="../storage.html" class="nav-link">Storage</a>
+      <a href="../gateways.html" class="nav-link">Gateways</a>
+      <a href="../communications.html" class="nav-link">Communications</a>
+   </nav>
+   <section id="blog">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row mb-5">
+               <div class="col-lg-9">
+                  <h1>Как упростить блокчейн для разработчиков: библиотека RNS JS<span class="bold">: библиотека RNS
+                        JS</span></h1>
+                  <span class="blue_rif  d-block mb-3"><i>Подготовлено Хави Эссесом, разработчиком RIF</i></span>
+                  <h6>14 апреля 2020 года</h6>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-9">
+                  <p>Служба имен RIF (RNS) — это децентрализованная служба, которая позволяет пользователям получить
+                     домен с удобным для чтения названием в любом блокчейне. Ее можно использовать для идентификации
+                     определенного элемента блокчейна, просто связав имя с адресом (описание регистрации домена см. в
+                     этой <a href="https://www.rifos.org/es/blog/rns-user-interface-update" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">статье</a>). Звучит хорошо, но все мы знаем, что
+                     напрямую взаимодействовать со смарт-контрактами может быть непросто, особенно если вы не являетесь
+                     разработчиком блокчейна. Для взаимодействия со всей децентрализованной системой требуется большой
+                     объем знаний. Перед началом работы даже для создания одного смарт-контракта необходима знание основ
+                     блокчейна. Именно поэтому мы создали библиотеку <span class="bold">RNS JS</span>. Мы считаем, что,
+                     если работать блокчейном станет проще, люди станут охотнее пользоваться этой технологией.
+                  </p>
+                  <img src="../../assets/img/blog/rns-js-librairy-1.png"
+                     class="img-fluid img-blog-style-1 text-center mb-5 mt-5">
+                  <p>Поэтому теперь для создания экземпляров контрактов не нужен двоичный интерфейс приложения и адреса
+                     контрактов, нужна только библиотека: <span class="bold">RNS JS</span>. В библиотеке содержатся все
+                     необходимые предварительные параметры для работы с RSK Mainnet и RSK Testnet без дополнительной
+                     настройки. Нет необходимости ждать, давайте попробуем.
+                  </p>
+                  <p><iframe width="100%" height="300"
+                        src="//jsfiddle.net/javiesses/pxby1796/13/embedded/js,html,result/dark/"
+                        allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe></p>
+                  <p>Мы только что привели один простой пример, но в библиотеке присутствует множество операций, с
+                     которыми можно поэкспериментировать, посмотрите <a
+                        href="https://developers.rsk.co/rif/rns/libs/javascript/Operations/" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">здесь</a> и используйте их в JS Fiddle.
+                  </p>
+                  <p>Вы хотите запустить эту операцию на локальном компьютере? Это действительно очень просто —
+                     воспользуйтесь нашим <a href="https://developers.rsk.co/rif/rns/libs/javascript/Getting-started/"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">Руководством по началу работы</a>. В
+                     нем подробно описан процесс установки и запуска среды <i>RNS Привет, Мир!</i></p>
+                  <img src="../../assets/img/blog/rns-js-librairy-2.png"
+                     class="img-fluid img-blog-style-1 text-center mb-5 mt-5">
+                  <p>Разработчики блокчейнов, вероятно, захотят запустить локальный узел со всем набором RNS, чтобы
+                     использовать библиотеку для своего локального блокчейна. У нас также есть пакет для установки
+                     полного комплекта контрактов одной командой. Он находится по <a
+                        href="https://www.npmjs.com/package/@rsksmart/rns-suite" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">ссылке</a>, а вот по этой <a
+                        href="https://developers.rsk.co/rif/rns/libs/javascript/RNS-instance/" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">ссылке</a> можно узнать, как создать экземпляр
+                     библиотеки <span class="bold">RNS JS</span> для использования с локальным пакетом, и это всего лишь
+                     один дополнительный параметр!
+                  </p>
+                  <p>Библиотека <span class="bold">RNS JS</span> главным образом интегрируется в существующие приложения
+                     dapps и кошельки. Только представьте, насколько просто будет конечным пользователям отправить
+                     средства на «alice.rsk» вместо «1LcwUei5JgqQX4dGvszELEVX2Ggs54MhQ1» или
+                     «0x52bc44d5378309ee2abf1539bf71de1b7d7be3b5»? Да, вы видели адреса Биткойн и Эфириум. С помощью
+                     <span class="bold">RNS JS</span> вы можете работать с адресами из любого блокчейна, а не только
+                     RSK. Давайте заглянем в <a href="https://developers.rsk.co/rif/rns/integrate/" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">Руководство по интеграции</a>, чтобы узнать больше об
+                     интеграции RNS с dApps и кошельками.</p>
+                  <img src="../../assets/img/blog/rns-js-librairy-3.png"
+                     class="img-fluid img-blog-style-1 text-center mb-5 mt-5">
+                  <p>Библиотека <span class="bold">RNS JS</span> предназначена не только для разработчиков, поэтому мы
+                     всегда рады заинтересованным участникам. Обращайтесь к нам с любыми предложениями, проблемами и
+                     запросами по адресу <a href="https://github.com/rnsdomains/rns-js" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">https://github.com/rnsdomains/rns-js</a>.</p>
+                  <p>Будьте в курсе последних новостей RIF, подписывайтесь на Twitter <a
+                        href="https://twitter.com/rif_os" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">@rif_os</a>.</p>
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div style="top: -6px;" class="fb-share-button" data-layout="button" data-size="large">
+                        </div>
+                        <a class="twitter-share-button btn btn btn-primary mr-3" href="https://twitter.com/intent/tweet"
+                           data-size="large">
+                           Tweet</a>
+                        <script async src="https://telegram.org/js/telegram-widget.js?8"
+                           data-telegram-share-url="https://www.rifos.org/ru/blog/making-blockchain-easy-for-developers-rns-js-library.html"
+                           data-size="large"></script>
+                     </div>
+                     <div class="col-lg-12 mt-5">
+                        <a class="btn btn btn-primary mr-3" href="./">возвращайся</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="twitter-news">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row text-center">
+               <div class="col-lg-12">
+                  <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                        class="fab fa-twitter"></i></a>
+                  <h3 class="bold">Follow our news!</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer -->
+   <footer id="footer" class="section-bg">
+      <div class="footer-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <img src="../../assets/img/powered_by_iov.svg" class="img-fluid powered_by">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-sm-7">
+                        <div class="footer-info">
+                           <p>RIF OS обеспечивает взаимную согласованность и ускоренное развертывание, а также позволяет
+                              преодолеть разрыв между современными технологиями блокчейн и их массовым использованием.
+                           </p>
+                        </div>
+                     </div>
+                     <div class="col-sm-5"></div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../../assets/whitepapers/rif-whitepaper-ru.pdf" target="_blank"
+                                    rel="noopener noreferrer">Проектный документ</a></li>
+                              <li><a href="../blog/index.html">Блог
+                                 </a>
+                              </li>
+                              <li><a href="../index.html#roadmap">Roadmap
+                                 </a>
+                              </li>
+                              <li><a href="https://github.com/riflabs" rel="noopener noreferrer"
+                                    target="_blank">Github</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../faqs.html">Часто задаваемые вопросы
+                                 </a>
+                              </li>
+                              <li><a href="../../assets/guidelines/RIF_FullBrandGuidelines_Ru.pdf"
+                                    rel="nofollow noopener noreferrer" target="_blank">Руководство по стилю
+                                 </a>
+                              </li>
+                              <li><a class="medium" href="https://www.rsk.co/ru/index.html" rel="noopener noreferrer"
+                                    target="_blank">RSK</a></li>
+                              <li><a class="medium" href="https://www.iovlabs.org/ru/index.html"
+                                    rel="noopener noreferrer" target="_blank">О компании IOV Labs</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a class="medium" href="https://www.iovlabs.org/ru/contact.html"
+                                    rel="noopener noreferrer" target="_blank">Контакты IOVlabs</a></li>
+                              <li><a href="../terms-conditions.html">Правила и условия</a></li>
+                              <li><a href="../privacy-policy.html">Конфиденциальность</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                           class="fab fa-twitter"></i></a>
+                     <a href="https://t.me/rif_os_community" rel="noopener noreferrer" target="_blank"
+                        class="telegram"><i class="fab fa-telegram"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-6 col-xs-12 pl-0-mobile">
+                     <p class="copyright mb-0">Copyright © 2015 - 2026 Rif. Все права защищены.</p>
+                     <p class="copyright mt-0">By <a href="https://taniebrand.com" target="_blank">Taniebrand®</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </footer>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="RIFVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="../../assets/videos/ru/RIF_CorpoVideo.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="../../assets/js/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>

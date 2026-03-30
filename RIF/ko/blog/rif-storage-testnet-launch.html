@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <!-- Google Tag Manager -->
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KBG28B4');</script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="description" content="저희는 RIF 저장소 팀이출범한 이래 분산화된 인터넷이라는 비전을 현실화하고자 열심히 일해왔습니다.">
+   <meta name="keywords" content="">
+   <meta name="author" content="RIF">
+   <title>RIF 저장소 테스트넷 출시</title>
+   <!-- og info -->
+   <meta property="og:title" content="RIF 저장소 테스트넷 출시">
+   <meta property="og:description" content="저희는 RIF 저장소 팀이출범한 이래 분산화된 인터넷이라는 비전을 현실화하고자 열심히 일해왔습니다.">
+   <meta property="og:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <meta property="og:url" content="https://www.rifos.org/ko/blog/rif-storage-testnet-launch.html">
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@rif_os">
+   <meta name="twitter:creator" content="@rif_os">
+   <meta name="twitter:domain" content="https://www.rifos.org/">
+   <meta name="twitter:title" content="RIF 저장소 테스트넷 출시">
+   <meta name="twitter:description" content="저희는 RIF 저장소 팀이출범한 이래 분산화된 인터넷이라는 비전을 현실화하고자 열심히 일해왔습니다.">
+   <meta name="twitter:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+   <link rel="manifest" href="../../assets/favicons/site.webmanifest">
+   <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link rel="shortcut icon" href="../../assets/favicons/favicon.ico">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="../../assets/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Main Stylesheet File -->
+   <!-- build:css -->
+   <link rel="stylesheet" href="../../assets/css/theming.css">
+   <!-- endbuild -->
+   <!-- OwlCarrousel CSS Files -->
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.theme.default.min.css">
+   <!-- Libraries CSS Files -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBG28B4" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+   <script>(function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+   <!-- Ends Facebook SDK for JavaScript -->
+   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="../"><img src="../../assets/img/logo.svg" class="logo" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#vision">비전</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="https://developers.rsk.co/rif/" target="_blank"
+                     rel="noreferrer noopener">개발자</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#rif-token">RIF Token</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#roadmap">Roadmap</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#get-start">시작하기</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../marketplace.html" class="nav-link">Marketplace</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../directory.html" class="nav-link">Directory</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../payments.html" class="nav-link">Payments</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../storage.html" class="nav-link">Storage</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../gateways.html" class="nav-link">Gateways</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../communications.html" class="nav-link">Communications</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle lang_nav active" href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     한국어
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item" href="../../blog/rif-storage-testnet-launch.html">English</a>
+                     <a class="dropdown-item" href="../../zh-hans/blog/rif-storage-testnet-launch.html">简体中文</a>
+                     <a class="dropdown-item" href="../../ja/blog/rif-storage-testnet-launch.html">日本語</a>
+                     <a class="dropdown-item" href="../../es/blog/rif-storage-testnet-launch.html">Español</a>
+                     <a class="dropdown-item" href="../../pt-pt/blog/rif-storage-testnet-launch.html">Português</a>
+                     <a class="dropdown-item" href="../../ru/blog/rif-storage-testnet-launch.html">Pусский</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">비디오 보기</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <nav id="vertical-nav" class="nav flex-column">
+      <a href="../marketplace.html" class="nav-link">Marketplace</a>
+      <a href="../directory.html" class="nav-link">Directory</a>
+      <a href="../payments.html" class="nav-link">Payments</a>
+      <a href="../storage.html" class="nav-link">Storage</a>
+      <a href="../gateways.html" class="nav-link">Gateways</a>
+      <a href="../communications.html" class="nav-link">Communications</a>
+   </nav>
+   <section id="blog">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row mb-5">
+               <div class="col-lg-9">
+                  <h1><span class="bold">RIF 저장소</span> 테스트넷 출시</h1>
+                  <h6>2020년 1월 7일</h6>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-9">
+                  <p>저희는 RIF 저장소 팀이<a
+                        href="https://www.iovlabs.org/ko/press/partnership-between-swarm-and-rsk-infrastructure-framework-rif-to-develop-a-breakthrough-storage-solution.html"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">출범</a>한 이래 분산화된 인터넷이라는 비전을 현실화하고자 열심히
+                     일해왔습니다. IOV Labs는 지난 주<a href="https://www.labitconf.com/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">laBITconf</a>에서 RIF 저장소 테스트넷을 공식적으로 출시했으며, 이는 분산화된 인터넷을 향해 나아가는 아주 중요한
+                     이벤트입니다!<br>이 블로그 게시물에서는 저희가 이 이벤트를 어떻게 달성했는지에 대한 약간의 배경 정보를 설명하려고 합니다. 그리고 마지막에는 연결 및 다운로드방법과 저장소의
+                     멋진 사진을 제공해 드립니다!
+                  </p>
+                  <h4 class="mb-3">RIF 저장소 테스트넷이란?</h4>
+                  <p>RIF 저장소 테스넷은 개발자와 최종 사용자가 분산화된 저장소 프르토콜을 이용하는 것이 어떤 느낌인지 알아볼 수 있게 해줍니다. RIF 저장소는 현재 <a
+                        href="https://swarm.ethereum.org/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">Swarm</a>과 통합되었습니다. 이 기초 위에서 <a href="https://ipfs.io/"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">IPFS</a> 와의 통합도 예정되어 있으며(곧 추가 소식을 전해
+                     드릴 예정입니다!), <a href="https://www.rifos.org/ko/gateways" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">게이트웨이</a>, <a href="https://www.rifos.org/ko/marketplace"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">마켓플레이스</a> 및 <a
+                        href="https://docs.ipfs.io/guides/concepts/pinning/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer"> 피닝 서비</a><br>
+                     저희가 막 출시한 테스트넷과 Swarm 공식 테스트넷 간의 중요한 차이는 RIF 저장소 테스트넷 내에서 대역폭 관리를 인센티브화하기 위해 이용하는 RIF Token에 있습니다.
+                     최종적으로 Swarm과 RIF의 비전은 모두 같은 네트워크 아래 여러 통화를 지원하는 것이지만, 이러한 비전이 현실이 될 때까지 RIF 생태계 내의 개발자들에게 RIF (테스트)
+                     토큰을 이용하는 RIF 저장소 사용자 환경을 시험해볼 기회를 제공하고자 합니다.
+                  </p>
+                  <h4 class="mb-3 mt-5">연혁 및 당사의 기여</h4>
+                  <p>IOV Labs가 Swarm과의 파트너십을 <a href="https://www.rifos.org/ko/blog/rif-storage-the-first-chunks"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">발표한</a> 이후 어느 정도 시간이 지났습니다. 그 이후 RIF
+                     저장소 팀은 Swarm 내에 인센티브 트랙을 생성했으며 Swarm 회계 프로토콜을 구현하고자 열심히 노력해 왔습니다(추가 정보는 <a
+                        href="https://www.rifos.org/blog/rif-storage-the-first-chunks" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">여기</a>). 테스트넷의 출시는 중요한 이벤트이지만, 이것이 끝은 아닙니다. 현재 인센티브 트랙은 영구 저장소(피닝 및 우송
+                     추첨을 통한) 기능과 대역폭 관리에 대한 가격을 책정하는 네트워크의 마켓 매커니즘에 대한 작업을 진행하는 중입니다.</p>
+                  <h4 class="mb-3 mt-5">직접 시도하기</h4>
+                  <p>Swarm 테스트넷을 이용하는 첫 번째 대열에 합류하고 특별한 서프라이즈를 다운로드해 보세요!</p>
+                  <h3 class="mb-3 mt-5">게이트웨이</h3>
+                  <p>쉽게 말해서 RIF 저장소는 여러분이 소프트웨어를 직접 실행하지 않고도 Swarm을 이용할 수 있는 게이트웨이 서비스를 운영하는 것입니다.<a
+                        href="https://swarm.rifgateways.org/" target="_blank" rel="noopener noreferrer">여기</a>로 이동해 <br>
+                     <code>anthem.rsk/Bitcoin_Anthem_Oflow_Show.mp3</code> 파일을 다운로드할 수 있는지 확인해 주시기 바랍니다.
+                  </p>
+                  <h3 class="mb-3 mt-5">Swarm 다운로드하기</h3>
+                  <ul class="custom-dot">
+                     <li>Swarm의 최신 버전은 <a href="https://swarm.ethereum.org/downloads" target="_blank"
+                           rel="noopener noreferrer" class="blue_rif">여기</a>서 다운로드하실 수 있습니다(0.5.5 이상의 출시 버전 모두, 체크섬:
+                        0f3debd195b01505e59d246515dd57b5). 참고: 에지 바이너리는 Linux에서만 제공됩니다.</li>
+                     <li>바이너리 풀기(예: <code>tar -xvf swarm-.(...)tar.gz</code>)</li>
+                     <li>바이너리 실행 가능하게 만들기: 폴더로 변경하고(<code>cd</code>) <code>swarm</code> folder and execute
+                        <code>chmod +x swarm</code>실행
+                     </li>
+                  </ul>
+                  <h3 class="mb-3 mt-5">RSK 계정 펀딩:</h3>
+                  <p>RIF 저장소 네트워크는 인센티브화되어 있기 때문에 네트워크를 이용하려면 tRIF와 tRBTC 둘이 다 필요합니다. tRIF는 네트워크 내의 대역폭 비용을 지불하는 데
+                     사용되며(노드 호스팅 및 요청하는 파일 전달), tRBTC는 RSK 내 거래 비용을 지불하는 데 사용됩니다.</p>
+                  <p>코인은 포셋을 통해 아무 주소에서나 획득 가능합니다.</p>
+                  <ul class="custom-dot">
+                     <li>tRBTC: <a href="https://faucet.rsk.co/" target="_blank" rel="noopener noreferrer"
+                           class="blue_rif">https://faucet.rsk.co/</a></li>
+                     <li>tRIF: <a href="https://faucet.rifos.org/" target="_blank" rel="noopener noreferrer"
+                           class="blue_rif">https://faucet.rifos.org/</a></li>
+                  </ul>
+                  <p>코인을 보유한 주소를 기억해 두십시오. 이 주소는 다음 단계에 필요합니다.</p>
+                  <h3 class="mb-3 mt-5">Rskj deamon 시작하기</h3>
+                  <p>Swarm을 이용하려면 블록체인 백엔드와의 연결이 필요합니다. <a href="https://github.com/rsksmart/rskj/wiki" target="_blank"
+                        rel="noopener noreferrer" class="blue_rif">RSKj WIKI</a>로 이동해 RSK 노드를 로컬로 설치하고, 수집하고, 실행하는 단계를
+                     따르십시오. 이때 RSK 테스트넷으로 전환하는 것을 잊지 마시기 바랍니다(전환 지침은 <a
+                        href="https://github.com/rsksmart/rskj/wiki/Switching-networks" target="_blank"
+                        rel="noopener noreferrer" class="blue_rif">여기 </a>참조).</p>
+                  <p>노드가 네트워크와 동기화될 때까지는 약간의 시간이 걸립니다(± 8시간). 현재 노드:<br>
+                     <code>curl -H"Content-type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}' 127.0.0.1:4444</code>
+                     and comparing 의 블록 높이를 요청하고,<a href="https://explorer.testnet.rsk.co/" target="_blank"
+                        rel="noopener noreferrer" class="blue_rif">공식 익스플로러</a>에 언급된 블록 높이에 이를 비교하면 동기화되었는지를 확인할 수 있습니다.
+                  </p>
+                  <h3 class="mb-3 mt-5">Swarm 시작하기</h3>
+                  <p class="bold">완전히 동기화된 RSKj 노드 없이는 이 단계를 시작하지 마십시오!</p>
+                  <p>
+                     다음 명령을 실행합니다.<br>
+                     <code>
+                           ./swarm --swap --swap-chequebook-factory 0x7EFa429447180c491aD1BB0b481D90534B74A3f6 --bzznetworkid 5 --bzzaccount 
+                           <your account here>
+                              --swap-backend-url http://localhost:4444 --ws --wsaddr=0.0.0.0 --bootnodes enode://846c424961adc146d54861bdf1eb6015e6908b689fd12d01c61307fffc848c22e514f5c898dc9243fbb17aa80750b556772599d84fe86a4b715f40ebc4c049bf@3.136.239.137:30399 --wsapi=accounting,bzz,swap,admin --wsport 8546 --wsorigins='*' --tracing --rns-api=99a12be4C89CbF6CFD11d1F2c029904a7B644368@https://public-node.rsk.co
+                           </code>
+                  </p>
+                  <h3 class="mb-3 mt-5">업로드</h3>
+                  <p>
+                     파일을 업로드하려면 명령줄에서
+                     <code>
+                              ./swarm up 
+                              <name_of_file>
+                           </code>
+                     을 실행하십시오. 완료 후에는 여러분의 파일에 대한 <code>swarm hash</code> 해시 레퍼런스를 얻게 됩니다<br>
+                     아니면 브라우저에서 <code>http://localhost:8500</code>로 이동해 그래픽 사용자 인터페이스로 파일을 업로드하십시오.
+                  </p>
+                  <h3 class="mb-3 mt-5">다운로드</h3>
+                  파일을 다운로드하려면 명령줄에서
+                  <code>
+                           curl http://localhost:8500/bzz:/
+                           <swarm_hash_or_RNS>
+                           /
+                           <file_name>
+                        </code>
+                  를 실행하십시오. 아니면 브라우저에서 <code>http://localhost:8500</code> 으로 이동해 그래픽 사용자 인터페이스를 사용하거나, 브라우저 주소창에
+                  <code>
+                           http://localhost:8500/bzz:/
+                           <swarm_hash_or_RNS>
+                           /
+                           <file_name>
+                        </code>
+                  을 직접 붙여넣으십시오.
+                  <h3 class="mb-3 mt-5">서프라이즈!</h3>
+                  <p>자습서 초반에 여러분께 서프라이즈를 약속해 드렸는데요. 여기까지 읽으셨다면 해시
+                     <code>9c8335dbcdadb5c853fa82177afbca3f3b26ade6763eb3c99dbfec7ad3e95823</code> (또는
+                     RNS:<code>anthem.rsk</code>) 제목 <code>Bitcoin_Anthem_Oflow_Show.mp3</code>. 의 파일을 다운로드해 보시기 바랍니다.
+                     즐거운 시간 보내세요!
+                  </p>
+                  <h3 class="mb-3 mt-5">더 알아보기</h3>
+                  <p>RSK 개발자 포털의 <a href="https://developers.rsk.co/rif/storage/" target="_blank"
+                        rel="noopener noreferrer" class="blue_rif">공식 개발자 가이드</a> 를 참고해 주시기 바랍니다!</p>
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div style="top: -6px;" class="fb-share-button" data-layout="button" data-size="large">
+                        </div>
+                        <a class="twitter-share-button btn btn btn-primary mr-3" href="https://twitter.com/intent/tweet"
+                           data-size="large">
+                           Tweet</a>
+                        <script async src="https://telegram.org/js/telegram-widget.js?8"
+                           data-telegram-share-url="https://www.rifos.org/ko/blog/rif-storage-testnet-launch.html"
+                           data-size="large"></script>
+                     </div>
+                     <div class="col-lg-12 mt-5">
+                        <a class="btn btn btn-primary mr-3" href="./">뒤로</a>
+                     </div>
+                     <div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="twitter-news">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row text-center">
+               <div class="col-lg-12">
+                  <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                        class="fab fa-twitter"></i></a>
+                  <h3 class="bold">Follow our news!</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer -->
+   <footer id="footer" class="section-bg">
+      <div class="footer-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <img src="../../assets/img/powered_by_iov.svg" class="img-fluid powered_by">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-sm-7">
+                        <div class="footer-info">
+                           <p>RIF OS는 광범위한 상호 운용성과 더 빠른 배포 시간을 제공해 블록체인 기술과 해당 기술의 대중 시장 채택 간의 격차를 해소한다. </p>
+                        </div>
+                     </div>
+                     <div class="col-sm-5"></div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../../assets/whitepapers/rif-whitepaper-ko.pdf" target="_blank"
+                                    rel="noopener noreferrer">백서</a></li>
+                              <li><a href="../blog/">블로그</a></li>
+                              <li><a href="../index.html#roadmap">Roadmap</a></li>
+                              <li><a href="https://github.com/riflabs" rel="noopener noreferrer"
+                                    target="_blank">Github</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../faqs.html">자주 묻는 질문</a></li>
+                              <li><a href="../../assets/guidelines/RIF_FullBrandGuidelines_Ko.pdf"
+                                    rel="nofollow noopener noreferrer" target="_blank">브랜드 매뉴얼</a></li>
+                              <li><a class="medium" href="https://www.rsk.co/ko/" rel="noopener noreferrer"
+                                    target="_blank">RSK</a></li>
+                              <li><a class="medium" href="https://www.iovlabs.org/ko/index.html"
+                                    rel="noopener noreferrer" target="_blank">IOVlabs 소개</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a class="medium" href="https://www.iovlabs.org/ko/contact.html"
+                                    rel="noopener noreferrer" target="_blank">IOVlabs에 문의</a></li>
+                              <li><a href="../terms-conditions.html">이용 약관</a></li>
+                              <li><a href="../privacy-policy.html">개인 정보 보호 정책</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                           class="fab fa-twitter"></i></a>
+                     <a href="https://t.me/rif_os_community" rel="noopener noreferrer" target="_blank"
+                        class="telegram"><i class="fab fa-telegram"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-6 col-xs-12 pl-0-mobile">
+                     <p class="copyright mb-0">Copyright © 2015 - 2026 Rif. All rights reserved.</p>
+                     <p class="copyright mt-0">By <a href="https://taniebrand.com" target="_blank">Taniebrand®</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </footer>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="RIFVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="../../assets/videos/ko/RIF_CorpoVideo.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="../../assets/js/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>

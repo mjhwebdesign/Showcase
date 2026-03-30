@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+<head>
+   <!-- Google Tag Manager -->
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KBG28B4');</script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="description"
+      content="O RIF Name Service (RNS) é um serviço descentralizado que permite que os usuários tenham um domínio legível em qualquer blockchain. Em outras palavras, o RNS é a lista telefônica do blockchain.">
+   <meta name="keywords" content="">
+   <meta name="author" content="RIF">
+   <title>Atualização da interface do usuário do RNS</title>
+   <!-- og info -->
+   <meta property="og:title" content="Atualização da interface do usuário do RNS">
+   <meta property="og:description"
+      content="O RIF Name Service (RNS) é um serviço descentralizado que permite que os usuários tenham um domínio legível em qualquer blockchain. Em outras palavras, o RNS é a lista telefônica do blockchain.">
+   <meta property="og:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <meta property="og:url" content="https://www.rifos.org/pt-pt/blog/rns-user-interface-update.html">
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@rif_os">
+   <meta name="twitter:creator" content="@rif_os">
+   <meta name="twitter:domain" content="https://www.rifos.org/">
+   <meta name="twitter:title" content="Atualização da interface do usuário do RNS">
+   <meta name="twitter:description"
+      content="O RIF Name Service (RNS) é um serviço descentralizado que permite que os usuários tenham um domínio legível em qualquer blockchain. Em outras palavras, o RNS é a lista telefônica do blockchain.">
+   <meta name="twitter:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+   <link rel="manifest" href="../../assets/favicons/site.webmanifest">
+   <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link rel="shortcut icon" href="../../assets/favicons/favicon.ico">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="../../assets/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Main Stylesheet File -->
+   <!-- build:css -->
+   <link rel="stylesheet" href="../../assets/css/theming.css">
+   <!-- endbuild -->
+   <!-- OwlCarrousel CSS Files -->
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.theme.default.min.css">
+   <!-- Libraries CSS Files -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBG28B4" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+   <script>(function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+   <!-- Ends Facebook SDK for JavaScript -->
+   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="../"><img src="../../assets/img/logo.svg" class="logo" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#vision">Visão</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#build-on-rif">Desenvolvedores</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#rif-token">RIF Token</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#roadmap">Roadmap</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#get-start">Introdução</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../marketplace.html" class="nav-link">Marketplace</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../directory.html" class="nav-link">Directory</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../payments.html" class="nav-link">Payments</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../storage.html" class="nav-link">Storage</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../gateways.html" class="nav-link">Gateways</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../communications.html" class="nav-link">Communications</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle lang_nav active" href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Português
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item" href="../../blog/rns-user-interface-update.html">English</a>
+                     <a class="dropdown-item" href="../../ko/blog/rns-user-interface-update.html">한국어</a>
+                     <a class="dropdown-item" href="../../zh-hans/blog/rns-user-interface-update.html">简体中文</a>
+                     <a class="dropdown-item" href="../../ja/blog/rns-user-interface-update.html">日本語</a>
+                     <a class="dropdown-item" href="../../es/blog/rns-user-interface-update.html">Español</a>
+                     <a class="dropdown-item" href="../../ru/blog/rns-user-interface-update.html">Pусский</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">Assistir ao
+                     Video</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <nav id="vertical-nav" class="nav flex-column">
+      <a href="../marketplace.html" class="nav-link">Marketplace</a>
+      <a href="../directory.html" class="nav-link">Directory</a>
+      <a href="../payments.html" class="nav-link">Payments</a>
+      <a href="../storage.html" class="nav-link">Storage</a>
+      <a href="../gateways.html" class="nav-link">Gateways</a>
+      <a href="../communications.html" class="nav-link">Communications</a>
+   </nav>
+   <section id="blog">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row mb-5">
+               <div class="col-lg-9">
+                  <h1>Atualização da interface do usuário do <span class="bold">RNS</span></h1>
+                  <span class="blue_rif  d-block mb-3"><i>Por Ilan Olkies - RNS Product Owner</i></span>
+                  <h6>8 de abril de 2020</h6>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-9">
+                  <p>O RIF Name Service (RNS) é um serviço descentralizado que permite que os usuários tenham um domínio
+                     legível em qualquer blockchain. Em outras palavras, o RNS é a lista telefônica do blockchain. Os
+                     seres humanos acessam informações online através de nomes de domínio, como alice.rsk ou bob.rsk. As
+                     carteiras interagem através do protocolo blockchain usando endereços. O RNS converte nomes de
+                     domínio em endereços para que os usuários possam enviar fundos e interagir com dapps e pessoas que
+                     usam esses nomes de domínio.<br>
+                     Digamos que você queira enviar alguns RIF tokens para Alice. Você pode começar abrindo sua carteira
+                     e pedindo o endereço de Alice.
+                     <br>
+                     <code>0xfDB628524AD95c95a2C1f8dA9b8Bd92b6478CF6F</code>
+                  </p>
+                  <p>Quando você clica no botão enviar, a carteira pega o endereço digitado e assina uma transação
+                     enviando dinheiro para esse endereço.<br>
+                     No entanto, essa não é a única opção para enviar dinheiro! Alice registrou seu domínio para poder
+                     digitar seu domínio na entrada da carteira e enviar dinheiro instantaneamente.
+                     <br>
+                     <code>alice.rsk</code>
+                  </p>
+                  <p>A carteira usa o RNS para obter o endereço do domínio, ela o procura na <i>lista telefônica
+                        pública</i> do RNS. Depois de obter o endereço, você assinará uma transação usando o
+                     destinatário do dinheiro a ser enviado.
+                  </p>
+                  <h3 class="mt-5 mb-3">Como registro um domínio?</h3>
+                  <p>Você pode registrar domínios usando o RNS Manager. Você precisará:</p>
+                  <ul class="custom-dot">
+                     <li>Uma carteira de navegador. Recomendamos usar a <a
+                           href="https://chrome.google.com/webstore/detail/nifty-wallet/jbdaocneiiinmjbjlgalhcelgbejmnid"
+                           class="blue_rif custom-dot-blog-link" target="_blank" rel="noopener noreferrer">Nifty
+                           wallet</a>.</li>
+                     <li><a href="https://developers.rsk.co/rsk/rbtc/" class="blue_rif custom-dot-blog-link"
+                           target="_blank" rel="noopener noreferrer">R-BTC</a> para pagar por taxas de transação da rede
+                        RSK e</li>
+                     <li><a href="https://developers.rsk.co/rif/token/" class="blue_rif custom-dot-blog-link"
+                           target="_blank" rel="noopener noreferrer">RIF Tokens</a> para pagar pelo serviço de domínio
+                        RNS.</li>
+                  </ul>
+                  <p>Com isso, estamos prontos. Vamos registrar um domínio!</p>
+                  <ul class="custom-counter">
+                     <li>Navegue para o <a href="https://manager.rns.rifos.org/" class="blue_rif" target="_blank"
+                           rel="noopener noreferrer">RNS Manager</a> e procure o domínio desejado:</li>
+                     <img src="../../assets/img/blog/rns-user-interface-update-1.png"
+                        class="img-fluid img-blog-style-1 mb-5 mt-5">
+                     <li>Se o domínio estiver disponível, clique em registrar! Se não estiver, tente com outro.</li>
+                     <img src="../../assets/img/blog/rns-user-interface-update-2.png"
+                        class="img-fluid img-blog-style-1 mb-5 mt-5">
+                     <li>Escolha os anos para os quais deseja registrar o domínio e solicite o domínio. Assine a
+                        transação na sua carteira.</li>
+                     <img src="../../assets/img/blog/rns-user-interface-update-3.png"
+                        class="img-fluid img-blog-style-1 mb-5 mt-5">
+                     <li>Aguarde até o domínio ser solicitado. Pode demorar um ou dois minutos.</li>
+                     <img src="../../assets/img/blog/rns-user-interface-update-4.png"
+                        class="img-fluid img-blog-style-1 mb-5 mt-5">
+                     <li>Conclua o registro do domínio, clique em registrar e assine a última transação necessária.</li>
+                     <img src="../../assets/img/blog/rns-user-interface-update-5.png"
+                        class="img-fluid img-blog-style-1 mb-5 mt-5">
+                     <li>Pronto! Agora você possui um domínio RNS!</li>
+                     <img src="../../assets/img/blog/rns-user-interface-update-6.png"
+                        class="img-fluid img-blog-style-1 mb-5 mt-5">
+                  </ul>
+                  <h3 class="mt-5 mb-3">Experimente gratuitamente na testnet</h3>
+                  <p>Podemos usar a rede RSK Testnet para experimentar o serviço RNS. Para fazer isso, conecte a
+                     carteira do navegador à RSK Testnet (alterne a rede no Nifty ou <a
+                        href="https://developers.rsk.co/develop/apps/wallets/metamask/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">leia como fazê-lo no Metamask</a>). Então pegue fundos nas torneiras:
+                  </p>
+                  <ul class="custom-dot">
+                     <li><a href="https://faucet.rsk.co/" class="blue_rif custom-dot-blog-link" target="_blank"
+                           rel="noopener noreferrer">RSK Faucet</a> para obter a testnet R-bTC</li>
+                     <li><a href="https://faucet.rsk.co/" class="blue_rif custom-dot-blog-link" target="_blank"
+                           rel="noopener noreferrer">RIF Faucet</a> para obter RIF Tokens da testnet</li>
+                  </ul>
+                  <h3 class="mt-5 mb-3">Benefícios de usar o RNS</h3>
+                  <ul class="custom-dot">
+                     <li><span class="bold">Flexível</span>: você pode atualizar seu domínio quantas vezes forem
+                        necessárias. Continue usando o mesmo domínio ao alterar o endereço da sua carteira – <a
+                           href="https://developers.rsk.co/rif/rns/operations/set-addr/"
+                           class="blue_rif custom-dot-blog-link" target="_blank" rel="noopener noreferrer">como posso
+                           alterar o endereço do domínio</a>?</li>
+                     <li><span class="bold">Descentralizado</span>: você não precisa pedir permissão a ninguém para
+                        gerenciar seu domínio. Quando você o tiver, basta interagir com o blockchain para atualizá-lo -
+                        leia mais <a href="https://developers.rsk.co/rif/rns/" class="blue_rif custom-dot-blog-link"
+                           target="_blank" rel="noopener noreferrer">sobre o serviço</a></li>
+                     <li><span class="bold">Fácil de usar</span>: permite que qualquer pessoa envie dinheiro a você,
+                        evitando o uso de endereços longos e propensos a erros.</li>
+                     <li><span class="bold">Barato</span>: Registrar um domínio hoje custa menos de um dólar. Depois de
+                        ter seu domínio, você poderá criar quantos subdomínios precisar - <a
+                           href="https://developers.rsk.co/rif/rns/operations/register-subdomain/"
+                           class="blue_rif custom-dot-blog-link" target="_blank" rel="noopener noreferrer">como faço
+                           para criar subdomínios</a>?</li>
+                     <li><span class="bold">Portátil</span>: use o RNS no seu dapp ou carteira. Integre-se ao serviço
+                        usando nossas bibliotecas – leia as <a href="https://developers.rsk.co/rif/rns/integrate/"
+                           class="blue_rif custom-dot-blog-link" target="_blank" rel="noopener noreferrer">diretrizes de
+                           integração</a>
+                  </ul>
+                  </li>
+                  <h3 class="mt-5 mb-3">Planos do RNS</h3>
+                  <p>Atualmente, estamos trabalhando em uma reformulação total da nossa plataforma. Para experimentar
+                     todas as nossas atualizações mais recentes, clique em “experimentar o novo administrador!”, na
+                     parte inferior da página do administrador.</p>
+                  <img src="../../assets/img/blog/rns-user-interface-update-7.png"
+                     class="img-fluid img-blog-style-1 mb-5 mt-5">
+                  <p>Estamos trabalhando em muitos outros projetos incríveis. Estamos desenvolvendo ativamente nossa
+                     biblioteca JavaScript para tornar a integração de dapps e carteiras muito mais rápida e eficaz.
+                     <a href="https://developers.rsk.co/rif/rns/libs/javascript/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">Experimente a biblioteca javascript rns de código aberto</a>!
+                  </p>
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div style="top: -6px;" class="fb-share-button" data-layout="button" data-size="large">
+                        </div>
+                        <a class="twitter-share-button btn btn btn-primary mr-3" href="https://twitter.com/intent/tweet"
+                           data-size="large">
+                           Tweet</a>
+                        <script async src="https://telegram.org/js/telegram-widget.js?8"
+                           data-telegram-share-url="https://www.rifos.org/pt-pt/blog/rns-user-interface-update.html"
+                           data-size="large"></script>
+                     </div>
+                     <div class="col-lg-12 mt-5">
+                        <a class="btn btn btn-primary mr-3" href="./">Voltar</a>
+                     </div>
+                     <div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="twitter-news">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row text-center">
+               <div class="col-lg-12">
+                  <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                        class="fab fa-twitter"></i></a>
+                  <h3 class="bold">Follow our news!</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer -->
+   <footer id="footer" class="section-bg">
+      <div class="footer-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <img src="../../assets/img/powered_by_iov.svg" class="img-fluid powered_by">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-sm-7">
+                        <div class="footer-info">
+                           <p>O RIF OS fornece ampla interoperabilidade e um tempo de implementação mais rápido,
+                              eliminando a lacuna entre as tecnologias blockchain e sua adoção em massa.</p>
+                        </div>
+                     </div>
+                     <div class="col-sm-5"></div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../../assets/whitepapers/rif-whitepaper-pt.pdf" target="_blank"
+                                    rel="noopener noreferrer">Whitepaper</a></li>
+                              <li><a href="../blog/index.html">Blog</a></li>
+                              <li><a href="../index.html#roadmap">Roteiro</a></li>
+                              <li><a href="https://github.com/riflabs" rel="noopener noreferrer"
+                                    target="_blank">Github</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../faqs.html">Dúvidas frequentes</a></li>
+                              <li><a href="../../assets/guidelines/RIF_FullBrandGuidelines_Pt.pdf"
+                                    rel="nofollow noopener noreferrer" target="_blank">Manual da marca</a></li>
+                              <li><a class="medium" href="https://www.rsk.co/pt-pt/index.html" rel="noopener noreferrer"
+                                    target="_blank">RSK</a></li>
+                              <li><a class="medium" href="https://www.iovlabs.org/pt/index.html"
+                                    rel="noopener noreferrer" target="_blank">Sobre a IOV Labs,</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a class="medium" href="https://www.iovlabs.org/pt/contact.html"
+                                    rel="noopener noreferrer" target="_blank">
+                                    Entre em contato com IOVlabs</a>
+                              </li>
+                              <li><a href="../terms-conditions.html">Termos e condições</a></li>
+                              <li><a href="../privacy-policy.html">Privacidade</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                           class="fab fa-twitter"></i></a>
+                     <a href="https://t.me/rif_os_community" rel="noopener noreferrer" target="_blank"
+                        class="telegram"><i class="fab fa-telegram"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-6 col-xs-12 pl-0-mobile">
+                     <p class="copyright mb-0">Copyright © 2015 - 2019 Rif. Todos os direitos reservados.</p>
+                     <p class="copyright mt-0">By <a href="https://taniebrand.com" target="_blank">Taniebrand®</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </footer>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="RIFVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="../../assets/videos/pt/RIF_CorpoVideo.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="../../assets/js/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>

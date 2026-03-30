@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <!-- Google Tag Manager -->
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KBG28B4');</script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="description"
+      content="Los desarrolladores enfrentan muchos desafíos cuando diseñan e implementan aplicaciones descentralizadas de Blockchain. Por ejemplo, muchos contratos de dApps requieren acceso confiable a datos externos, como fuentes de precios. ">
+   <meta name="keywords" content="">
+   <meta name="author" content="RIF">
+   <title>Arquitectura RIF - Protocolos de servicio</title>
+   <!-- og info -->
+   <meta property="og:title" content="Arquitectura RIF - Protocolos de servicio">
+   <meta property="og:description"
+      content="Los desarrolladores enfrentan muchos desafíos cuando diseñan e implementan aplicaciones descentralizadas de Blockchain. Por ejemplo, muchos contratos de dApps requieren acceso confiable a datos externos, como fuentes de precios. ">
+   <meta property="og:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <meta property="og:url" content="https://www.rifos.org/es/blog/rif-architecture-service-protocols.html">
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@rif_os">
+   <meta name="twitter:creator" content="@rif_os">
+   <meta name="twitter:domain" content="https://www.rifos.org/">
+   <meta name="twitter:title" content="Arquitectura RIF - Protocolos de servicio">
+   <meta name="twitter:description"
+      content="Los desarrolladores enfrentan muchos desafíos cuando diseñan e implementan aplicaciones descentralizadas de Blockchain. Por ejemplo, muchos contratos de dApps requieren acceso confiable a datos externos, como fuentes de precios. ">
+   <meta name="twitter:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+   <link rel="manifest" href="../../assets/favicons/site.webmanifest">
+   <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link rel="shortcut icon" href="../../assets/favicons/favicon.ico">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="../../assets/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Main Stylesheet File -->
+   <!-- build:css -->
+   <link rel="stylesheet" href="../../assets/css/theming.css">
+   <!-- endbuild -->
+   <!-- OwlCarrousel CSS Files -->
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.theme.default.min.css">
+   <!-- Libraries CSS Files -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBG28B4" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+   <script>(function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+   <!-- Ends Facebook SDK for JavaScript -->
+   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="../"><img src="../../assets/img/logo.svg" class="logo" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#vision">Visión</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="https://developers.rsk.co/rif/" target="_blank"
+                     rel="noreferrer noopener">Desarrolladores</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#rif-token">RIF Token</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#roadmap">Roadmap</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#get-start">Empezar</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../marketplace.html" class="nav-link">Marketplace</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../directory.html" class="nav-link">Directory</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../payments.html" class="nav-link">Payments</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../storage.html" class="nav-link">Storage</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../gateways.html" class="nav-link">Gateways</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../communications.html" class="nav-link">Communications</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle lang_nav active" href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Español
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item" href="../../blog/rif-architecture-service-protocols.html">English</a>
+                     <a class="dropdown-item" href="../../ko/blog/rif-architecture-service-protocols.html">한국어</a>
+                     <a class="dropdown-item" href="../../zh-hans/blog/rif-architecture-service-protocols.html">简体中文</a>
+                     <a class="dropdown-item" href="../../ja/blog/rif-architecture-service-protocols.html">日本語</a>
+                     <a class="dropdown-item"
+                        href="../../pt-pt/blog/rif-architecture-service-protocols.html">Português</a>
+                     <a class="dropdown-item" href="../../ru/blog/rif-architecture-service-protocols.html">Pусский</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">Vea el Video</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <nav id="vertical-nav" class="nav flex-column">
+      <a href="../marketplace.html" class="nav-link">Marketplace</a>
+      <a href="../directory.html" class="nav-link">Directory</a>
+      <a href="../payments.html" class="nav-link">Payments</a>
+      <a href="../storage.html" class="nav-link">Storage</a>
+      <a href="../gateways.html" class="nav-link">Gateways</a>
+      <a href="../communications.html" class="nav-link">Communications</a>
+   </nav>
+   <section id="blog">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row mb-5">
+               <div class="col-lg-9">
+                  <h1><span class="bold">Arquitectura RIF</span> - Protocolos de Servicio</h1>
+                  <h6>13 de diciembre de 2018</h6>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-9">
+                  <p>Los desarrolladores enfrentan muchos desafíos cuando diseñan e implementan aplicaciones
+                     descentralizadas de Blockchain. Por ejemplo, muchos contratos de dApps requieren acceso confiable a
+                     datos externos, como fuentes de precios. También requieren almacenamiento descentralizado para
+                     almacenar archivos off-chain (fuera de la cadena) para reducir el costo de almacenamiento on-chain
+                     (dentro de la cadena). Una dApp autónoma podría almacenar páginas web y código javascript
+                     off-chain, pero podría verificar la autenticidad de los archivos on-chain. Otras dApp necesitan
+                     comunicaciones seguras punto a punto para interacciones entre varias partes, autenticadas por
+                     claves públicas en la cadena. Con estas piezas del rompecabezas disponibles, es fácil imaginar un
+                     intercambio descentralizado completamente autónomo, un servicio descentralizado de marca de tiempo
+                     completamente autónomo, una plataforma de juegos descentralizada completamente autónoma. Las
+                     posibilidades son infinitas, y es aquí donde RIFOS entra en juego. RIFOS proporciona un conjunto de
+                     protocolos, reglas e interfaces para acceder a varios servicios descentralizados vitales.
+                  </p>
+                  <p>Para impulsar la adopción de tecnologías Blockchain, cada protocolo se diseña de modo que permita
+                     que cualquiera pueda proporcionar una implementación y se convierta en un proveedor de servicios.
+                     Los proveedores pueden integrarse con el ecosistema RIFOS y competir de manera justa por la
+                     adopción de usuarios. Por ejemplo, un desarrollador puede diseñar e implementar una nueva red de
+                     almacenamiento descentralizado compatible con los Protocolos de almacenamiento de datos RIF y
+                     registrarla de modo que quede disponible automáticamente para cualquier dispositivo compatible con
+                     RIFOS.</p>
+                  <p>RIFOS se lanzó con un conjunto de protocolos iniciales que describiremos brevemente aquí (si desea
+                     más información, puede examinar el código fuente):</p>
+                  <h3 class="mb-3 mt-5">DIRECTORIO DE RIF</h3>
+                  <p>Una de las principales barreras para la adopción de blockchain es la complejidad inherente de la
+                     tecnología. Es difícil esperar una amplia adopción si los usuarios deben copiar y pegar largas
+                     direcciones hexadecimales para transferir o recibir activos digitales. Además, teclear direcciones
+                     manualmente es un proceso propenso a errores, y un simple error tipográfico puede causar la pérdida
+                     de fondos. Al agregar un servicio de resolución de nombre, la probabilidad de errores se reduce de
+                     manera significativa, así como también la complejidad aparente del sistema. Cuanto más fácil
+                     resulta usar la tecnología, más rápida es su adopción. El objetivo del Protocolo de Directorio RIF
+                     (RDP, por sus siglas en inglés) es identificar diferentes tipos de recursos al usar nombres de
+                     dominio de recursos simples, permitiéndoles a los usuarios comprar, vender y subastar estos nombres
+                     de dominio fácilmente.</p>
+                  <h3 class="mb-3 mt-5">COMUNICACIONES SEGURAS DE RIF</h3>
+                  <p>En las redes de par a par, las partes necesitan descubrir a otras partes y establecer una
+                     comunicación segura con ellas. Estos enlaces de comunicación deben, al menos, garantizar la
+                     confidencialidad (ningún tercero puede leer los mensajes enviados), la integridad (impedir que un
+                     tercero modifique los mensajes enviados) y la autenticidad (impedir la representación de uno de los
+                     extremos). Las comunicaciones seguras de RIF apuntan a satisfacer estas necesidades al permitirles
+                     a los participantes publicar seudónimos en el Directorio de RIF y relacionar dichos seudónimos con
+                     su clave de comunicación pública y los detalles de conexión preferidos. Todos los participantes
+                     tienen una Tabla de Hash Distribuida (DHT, por sus siglas en inglés), garantizando así que la
+                     información esté disponible y actualizada.</p>
+                  <h3 class="mb-3 mt-5">PAGOS DE RIF</h3>
+                  <p>Las altas tarifas de blockchain durante los horarios de congestión pico han provocado que los pagos
+                     on-chain sean inutilizables para los pagos de denominación baja, como café o contenido de
+                     televisión a la carta. Asimismo, el retraso de minutos para garantizar el carácter definitivo del
+                     pago es, para muchas aplicaciones, inaceptable. Estas son las razones principales detrás de las
+                     redes de pago off-chain secundarias, como Lightning Network, Raiden o Perun entre otras. Sin
+                     embargo, hay un debate continuo en la comunidad de blockchain respecto del mejor diseño para las
+                     redes de pago. Pagos de RIF es un protocolo diseñado para utilizar diferentes redes de pago
+                     off-chain desplegadas sobre RSK de manera transparente que son compatibles tanto con Smart Bitcoins
+                     como con tokens estándar. Las APIs suministradas permiten una interacción uniforme entre el
+                     usuario, una wallet compatible con RIF y diferentes redes de pago. Las APIs de Pagos de RIF pueden
+                     ayudar en la creación de puentes entre diferentes redes. El objetivo final de la red de Pagos RIF
+                     es producir un entorno competitivo donde las redes de pagos puedan florecer para ofrecer bajas
+                     tarifas y baja latencia, con escalabilidad para equiparar el volumen y exceder el rendimiento de
+                     las redes de tarjetas de crédito legadas.</p>
+                  <h3 class="mb-3 mt-5">ALMACENAMIENTO DE DATOS DE RIF</h3>
+                  <p>Las aplicaciones descentralizadas a menudo necesitan almacenar o consumir datos externos en forma
+                     de archivos. El uso de blockchain como almacenamiento para este tipo de información no es una
+                     opción debido a la capacidad de almacenamiento limitada y el alto costo. Asimismo, la blockchain
+                     almacena permanentemente los datos que recibe. Por lo tanto, un aumento en el número de
+                     aplicaciones de blockchain conduce a un aumento del tamaño de la blockchain. El uso de servicios
+                     centralizados de almacenamiento en la nube tiene debilidades conocidas en el contexto de dApss
+                     autónomas: estos servicios no pueden garantizar la tolerancia a las faltas bizantinas y la
+                     resistencia a la censura. El protocolo RIF Data Storage admite redes de almacenamiento
+                     descentralizadas. Las soluciones de almacenamiento descentralizado existentes tienen diferentes
+                     costos, topologías, estructuras de incentivos y características de rendimiento. Los diseños se
+                     personalizan ya sea para almacenar contenido personal o para distribuir contenido, aunque es
+                     posible que algunos diseños tengan ambas opciones. Para adaptar la topología a patrones de uso
+                     diferentes, RSK Data Storage ofrece protocolos diseñados para admitir tanto el almacenamiento de
+                     contenido personal como la distribución de contenido a fin de favorecer la diversidad al integrarse
+                     con soluciones existentes. De esta forma, puede adaptarse para trabajar con redes de almacenamiento
+                     futuras.</p>
+                  <h3 class="mb-3 mt-5">SERVICIOS DE DATOS DE RIF</h3>
+                  <p>Las aplicaciones del mundo real distribuidas creadas mediante el uso de smart contracts on-chain
+                     necesitan acceder a las fuentes de distribución de datos del mundo real. Esta necesidad debe
+                     satisfacerse mediante una solución segura, hermética y confiable que garantice una salida
+                     determinista (todos los nodos mineros deben recibir el mismo valor para una solicitud de consulta
+                     específica) sobre los valores tomados de fuentes externas. Como ejemplo, una aplicación de seguro
+                     de cosecha autónoma y distribuida debe recuperar información del clima para decidir si se debe
+                     liberar o no un pago, en caso de eventos de granizo, inundación o sequía. Los protocolos blockchain
+                     se comunican con sistemas externos a través de oráculos. Los Servicios de datos de RIF permiten el
+                     consumo de fuentes de datos externas que confían en soluciones existentes o nuevas de Oracle y
+                     proponen una capa de interfaz que une el acceso a dichos servicios. Estos proveedores asumen la
+                     responsabilidad de traer la información solicitada a la blockchain. El Servicio de datos de RIF
+                     ofrece un protocolo independiente de la implementación para el consumo de datos externos a través
+                     de Proveedores de Servicios de Datos.</p>
+                  <h3 class="mb-3 mt-5">RIF EXPLORER</h3>
+                  <p>La Plataforma RIFOS ofrece un conjunto de abstracciones y protocolos que son compatibles con las
+                     implementaciones de terceros de cada servicio RIFOS. Cada una de estas implementaciones se conoce
+                     como Proveedor de servicios. El desacoplamiento de protocolos e implementaciones estandarizadas les
+                     permite a los usuarios seleccionar implementaciones más nuevas y potencialmente mejoradas a medida
+                     que la tecnología evoluciona y surgen nuevas soluciones. Este desacoplamiento también les permite a
+                     los proveedores externos transferir sus soluciones e integrarlas con el ecosistema de RIFOS. En
+                     este contexto, es necesario ofrecer mecanismos para registrar y descubrir estas implementaciones
+                     que les permiten a desarrolladores y clientes elegir qué forma quieren usar para sus casos de uso
+                     particulares. RIF Explorer es un servicio de la Plataforma RIFOS que ofrece la funcionalidad
+                     requerida para registrar y descubrir implementaciones de terceros de los servicios RIFOS en la
+                     plataforma RIFOS. RIF Explorer extiende las capacidades del Protocolo de Directorio RIF para
+                     permitir la recuperación de direcciones de los proveedores de servicios no solo por el nombre de
+                     dominio sino también por diferentes criterios, como tipo de servicio o meta-datos opcionales. Por
+                     ejemplo, un desarrollador puede diseñar e implementar una nueva red de almacenamiento
+                     descentralizado y regristrarla en RIF Explorer de modo que quede disponible automáticamente para
+                     cualquier dispositivo compatible con RIFOS que ofrezca una interfaz de usuario de almacenamiento.
+                  </p>
+                  <h3 class="mb-3 mt-5">CIERRE</h3>
+                  <p>Diseñamos el conjunto de protocolos RIFOS para que las aplicaciones descentralizadas puedan confiar
+                     en una infraestructura coherente. Todos los protocolos y los proveedores de servicios actúan sin
+                     inconvenientes con RIF Token. En RIF Labs, ya hemos creado el primer servicio para implementar uno
+                     de estos protocolos, el Directorio de RIF, sobre RSK blockchain, a fin de aprovechar sus
+                     capacidades de smart contract que son ideales para el suministro de servicio RIF. Continuamos
+                     trabajando en el diseño de los Proveedores de servicio compatibles con RIF para el resto de los
+                     protocolos mencionados anteriormente. Estas implementaciones usarían RIF tokens, permitiendo que
+                     cualquier poseedor de tokens consuma los servicios que son compatibles con la arquitectura de RIF
+                     OS.
+                  </p>
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div style="top: -6px;" class="fb-share-button" data-layout="button" data-size="large">
+                        </div>
+                        <a class="twitter-share-button btn btn btn-primary mr-3" href="https://twitter.com/intent/tweet"
+                           data-size="large">
+                           Tweet</a>
+                        <script async src="https://telegram.org/js/telegram-widget.js?8"
+                           data-telegram-share-url="https://www.rifos.org/es/blog/rif-architecture-service-protocols.html"
+                           data-size="large"></script>
+                     </div>
+                     <div class="col-lg-12 mt-5">
+                        <a class="btn btn btn-primary mr-3" href="./">Volver</a>
+                     </div>
+                     <div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="twitter-news">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row text-center">
+               <div class="col-lg-12">
+                  <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                        class="fab fa-twitter"></i></a>
+                  <h3 class="bold">Follow our news!</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer -->
+   <footer id="footer" class="section-bg">
+      <div class="footer-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <img src="../../assets/img/powered_by_iov.svg" class="img-fluid powered_by">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-sm-7">
+                        <div class="footer-info">
+                           <p>Los protocolos RIF OS permiten una amplia interoperabilidad y un tiempo de implementación
+                              más rápido, y apuntan a cerrar la brecha entre las tecnologías blockchain y su adopción en
+                              el mercado masivo.</p>
+                        </div>
+                     </div>
+                     <div class="col-sm-5"></div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../../assets/whitepapers/rif-whitepaper-es.pdf" target="_blank"
+                                    rel="noopener noreferrer">Informe técnico</a></li>
+                              <li><a href="./">Blog</a></li>
+                              <li><a href="../index.html#roadmap">Roadmap</a></li>
+                              <li><a href="https://github.com/riflabs" rel="noopener noreferrer"
+                                    target="_blank">Github</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../faqs.html">Preguntas frecuentes</a></li>
+                              <li><a href="../../assets/guidelines/RIF_FullBrandGuidelines_Es.pdf"
+                                    rel="nofollow noopener noreferrer" target="_blank">Manual de marca</a></li>
+                              <li><a class="medium" href="https://www.rsk.co/es/index.html" rel="noopener noreferrer"
+                                    target="_blank">RSK</a></li>
+                              <li><a class="medium" href="https://www.iovlabs.org/es/index.html"
+                                    rel="noopener noreferrer" target="_blank">Acerca de IOVlabs</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a class="medium" href="https://www.iovlabs.org/es/contact.html"
+                                    rel="noopener noreferrer" target="_blank">Contactar IOVlabs</a></li>
+                              <li><a href="../terms-conditions.html">Términos y condiciones</a></li>
+                              <li><a href="../privacy-policy.html">Política de privacidad</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                           class="fab fa-twitter"></i></a>
+                     <a href="https://t.me/rif_os_community" rel="noopener noreferrer" target="_blank"
+                        class="telegram"><i class="fab fa-telegram"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-6 col-xs-12 pl-0-mobile">
+                     <p class="copyright">Copyright © 2015 - 2026 Rif. Todos los derechos reservados.</p>
+                     <p class="copyright mt-0">By <a href="https://taniebrand.com" target="_blank">Taniebrand®</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </footer>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="RIFVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="../../assets/videos/es/RIF_CorpoVideo.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="../../assets/js/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>

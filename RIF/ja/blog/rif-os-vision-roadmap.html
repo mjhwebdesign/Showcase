@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+   <!-- Google Tag Manager -->
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KBG28B4');</script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="description" content="Bitcoinとブロックチェーン技術が価値あるインターネット革命に火をつけました。">
+   <meta name="keywords" content="">
+   <meta name="author" content="RIF">
+   <title>RIF OSのビジョンとロードマップ</title>
+   <!-- og info -->
+   <meta property="og:title" content="RIF OSのビジョンとロードマップ">
+   <meta property="og:description" content="Bitcoinとブロックチェーン技術が価値あるインターネット革命に火をつけました。">
+   <meta property="og:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <meta property="og:url" content="https://www.rifos.org/ja/blog/rif-os-vision-roadmap.html">
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@rif_os">
+   <meta name="twitter:creator" content="@rif_os">
+   <meta name="twitter:domain" content="https://www.rifos.org/">
+   <meta name="twitter:title" content="RIF OSのビジョンとロードマップ">
+   <meta name="twitter:description" content="Bitcoinとブロックチェーン技術が価値あるインターネット革命に火をつけました。">
+   <meta name="twitter:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+   <link rel="manifest" href="../../assets/favicons/site.webmanifest">
+   <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link rel="shortcut icon" href="../../assets/favicons/favicon.ico">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="../../assets/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Main Stylesheet File -->
+   <!-- build:css -->
+   <link rel="stylesheet" href="../../assets/css/theming.css">
+   <!-- endbuild -->
+   <!-- OwlCarrousel CSS Files -->
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.theme.default.min.css">
+   <!-- Libraries CSS Files -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBG28B4" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+   <script>(function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+   <!-- Ends Facebook SDK for JavaScript -->
+   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="../"><img src="../../assets/img/logo.svg" class="logo" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#vision">ビジョン</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#build-on-rif">開発者</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#rif-token">RIF トークン </a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#roadmap">Roadmap</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#get-start">開始</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../marketplace.html" class="nav-link">Marketplace</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../directory.html" class="nav-link">Directory</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../payments.html" class="nav-link">Payments</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../storage.html" class="nav-link">Storage</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../gateways.html" class="nav-link">Gateways</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../communications.html" class="nav-link">Communications</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle lang_nav active" href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     日本語
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item" href="../../blog/rif-os-vision-roadmap.html">English</a>
+                     <a class="dropdown-item" href="../../ko/blog/rif-os-vision-roadmap.html">한국어</a>
+                     <a class="dropdown-item" href="../../zh-hans/blog/rif-os-vision-roadmap.html">简体中文</a>
+                     <a class="dropdown-item" href="../../es/blog/rif-os-vision-roadmap.html">Español</a>
+                     <a class="dropdown-item" href="../../pt-pt/blog/rif-os-vision-roadmap.html">Português</a>
+                     <a class="dropdown-item" href="../../ru/blog/rif-os-vision-roadmap.html">Pусский</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">ご連絡いただけます</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <nav id="vertical-nav" class="nav flex-column">
+      <a href="../marketplace.html" class="nav-link">Marketplace</a>
+      <a href="../directory.html" class="nav-link">Directory</a>
+      <a href="../payments.html" class="nav-link">Payments</a>
+      <a href="../storage.html" class="nav-link">Storage</a>
+      <a href="../gateways.html" class="nav-link">Gateways</a>
+      <a href="../communications.html" class="nav-link">Communications</a>
+   </nav>
+   <section id="blog">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row mb-5">
+               <div class="col-lg-9">
+                  <h1><span class="bold">RIF OS</span>のビジョンとロードマップ</h1>
+                  <span class="blue_rif  d-block mb-3"><i>Bitcoinとブロックチェーン技術が価値あるインターネット革命に火をつけました。</i></span>
+                  <h6>
+                     2019年7月4日</h6>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-9">
+                  <p>ピアツーピアネットワーク、暗号化、ソブリンID、そしてオープンソースソフトウェアは、世界を統治するために使われるパラダイムを変えています。ただ、集中型ソリューションに比べて、開発者やデジタルユーザーにシームレスなユーザーエクスペリエンスを提供できていると言うには程遠いです。ブロックチェーン技術によって、分散型で許可のないインターネットの利点を世界に伝えたいなら、使いやすく高速でスケーラブルに変える必要があります。
+                  </p>
+                  <h3 class="mb-3">RIF OSビジョン</h3>
+                  <p>RIF OS（RSKインフラストラクチャフレームワークオープンスタンダード）は、開発者とユーザーのブロックチェーン技術とのやり取りを容易にし、大規模な導入を促すと考えられています。 RIF OS
+                     は、一連のオープンで分散型のインフラストラクチャプロトコルで、統合環境において分散アプリケーション (dApps) の開発をより迅速かつ容易、スケーラブルに開発できるようにします。</p>
+                  <p>RSKネットワークを通じて開発されたRIFサービスは、安全性が高くユーザーにとって使い易い分散型アプリ（dApp）の開発を進めるために、エコシステムの最も重要な限界に取り組みます。</p>
+                  <ul class="custom-dot">
+                     <li><span class="bold">RIF名称サービス（RNS）そしてRIFディレクトリ</span>:
+                        RIF名称サービス（RNS）は、人間が読める名前またはエイリアスによるブロックチェーンアドレスの識別を可能にするアーキテクチャを提供することによって、ユーザーエクスペリエンスをよりわかりやすくするために設計されました。ネームソリューションサービス、または「エイリアス」を追加することによる「使いやすさ」と共に、エラーが起こる確率は著しく低下します。
+                        RNS は動的アドレス決定（ハンドシェイク）、決済チャンネル ID、分散ストレージ ID、ソーシャルネットワークハンドル、分散 ID、そして分散暗号化評価も含む RIF
+                        ディレクトリフレームワークの一部です。(<a href="../../nameservice/ja/index.html" class="blue_rif" target="_blank"
+                           rel="noopener noreferrer">https://www.rifos.org/nameservice</a>.</li>
+                     <li><span class="bold">RIF Lumino Network とRIF 決済</span>:
+                        LuminoはRSKネットワーク上のどんなトークンでも利用できるオフチェーンの決済チャンネルネットワークであり、非常に低コストで数千ものtpsが可能です。RIF Lumino は RIF
+                        決済フレームワークの一部であり、これによって、ブロックチェーンの間、トークンの間のトランザクションを含む、Lightning Network
+                        やその他のオフチェーン決済ネットワークとの相互運用もできるようになります。RIF Lumino
+                        Networkは、瞬時に近い処理能力と少額のネットワークトランザクションコストでの、未来の金融システム構築に向けた基礎を作るのに必要なインフラストラクチャーを提供します。RIF Lumino
+                        Networkの立ち上げは、拡張可能なネットワークのインフラストラクチャーに向けた第一歩です。</li>
+                     <li><span class="bold">RIF ストレージ</span>: 統一インターフェースやライブラリセットで、暗号および分散型のストレージ並びに情報のストリーミングを促進します。RIF
+                        Storage とは、すなわち、ユーザーがあらゆる極秘データを安全に保管および共有するのを可能にします。RIF Storage は分散型のswarm
+                        ストレージから暗号化されたクラウドおよびフィジカル・ストレージに至る、多様なニーズに応える多彩な選択肢を用意します。</li>
+                     <li><span class="bold">RIF コミュニケーションズ</span>:
+                        集中化されたソーシャルネットワーク、電話会社、そしてテック系大企業は、決済と価値の交換に変革と挑戦を始めています。ただ、彼らは何十年にもわたり続けてきたのと同じ集中化、検閲そしてデータ収集の基準でそれをやっています。RIF
+                        コミュニケーションズは、ブロックや決済、トークンの中継ぎに使われるピアツーピアの分散型ネットワークで、暗号化されたメッセージやチャット、情報の転送も可能にしようとしています。RIFコミュニケーションは、機密性、完全性、信頼性を保証する安全な方法で、当事者が通信手段を登録し、他の当事者を発見し、連絡を取れるようにするAPIのセットとして設計されています。
+                     </li>
+                     <li><span class="bold">RIF データ・フィード</span>:
+                        多くの複雑なスマートコントラクトソリューションでは、実際の世界のデータ・フィード（オラクル）にアクセスする必要があります。RIFデータフィードは、分散化されたアプリケーションが安全で勝手にいじることのできない、信頼性を最小限に抑えた方法で情報にアクセスできるように設計されており、外部のソースやプロバイダーからフェッチされた値の確定的な出力(特定の問い合わせ要求に対してすべてのマイナーノードは同じ値を取得する必要があります)を保証します。
+                        RIFデータフィードには、「プルモデル」オプションも含まれます。このオプションでは、利用者はデータをクエリー単位で支払い、取得します。また「サブスクリプションモデル」オプションでは、利用者はデータへのアクセスに対して固定料金を支払います。この料金は、サービスプロバイダーによってキャッシュされ定期的に更新されます。
+                     </li>
+                  </ul>
+                  <h3 class="mb-3 mt-5">RIF OS ロードマップ</h3>
+                  <p>RIF OS フレームワークの立ち上げから最初の8か月間で、複数の RIF サービスの立ち上げとリリースがありました。</p>
+                  <ul class="custom-dot">
+                     <li><span class="bold">2018 年 11 月</span>: RNS
+                        1.0の立ち上げで、RNS(DNS)により、ブロックチェーンのドメイン名システムが簡略化されました。これはランダムな文字や数字で構成される従来のブロックチェーンドメインを、名前や覚えやすい単語といった人間が読める形に変換することで、ブロックチェーンドメインへのアクセス性を向上させながら、複雑さとエラーを大幅に軽減したものです。
+                     </li>
+                     <li><span class="bold">2019 年 5 月</span>: RIF Lumino NetworkはBitcoinのブロックチェーンに対するサードレイヤーソリューションであり、
+                        RSK上のすべてのトークンへのステートチャネルを有効化し、コストを抑えつつ、トランザクションスループットを数倍増やすものです。 </li>
+                     <li><span class="bold">2019 年 6 月</span>: RNS
+                        2.0マルチ・ブロックチェーン・リゾルバを立ち上げ、相互運用性を強化するプラットフォーム上に構築されたトークンのドメインとエイリアスを管理できる RIF
+                        名称サービスが世界で唯一のサービスになり、異なるネットワーク間でアセットの移動がスムーズになります。これらのリリースでは、RNS を複数のウォレットに統合し、それを使用して
+                        RSK、BTC、その他のブロックチェーンアドレスを決定できます。</li>
+                  </ul>
+                  <p>ただ、これはほんの始まりにすぎません。今後12か月以内に IOVLabs チームは、RIF OS フレームワークにおいて、次の技術をお届けすることに集中します:</p>
+                  <ul class="custom-dot">
+                     <li><span class="bold">2019 年度第 3 四半期</span>
+                        <ul>
+                           <li>RNS 1.1アップグレード（オークションの削除そしてドメインの直接購入による交換）
+                              <ul>
+                                 <li>RIF Lumino:ライトクライアント + インボイス + SDK</li>
+                                 <li>ライトクライアント：フルノードを実行する必要はなく、ライトクライアントが、RIF Lumino ネットワークに接続できるようになります。（モバイル統合に必要です）
+                                 </li>
+                                 <li>インボイス（請求書）の発行：Luminoの決済に対するインボイス（請求書）発行機能の追加（支払いを要求するための事前定義された QR コード）</li>
+                                 <li>SDK:RIF Lumino ノードに接続するためのJavaScript SDK（より簡単なモバイル統合に必要）</li>
+                              </ul>
+                           </li>
+                           <li>RIF ストレージ:RSK テストネットでのベータ版リリース（これによりファイルを暗号化した上、分散化して保存できます）そしてRNS統合（RIF Storageも RSK と他の
+                              RIFサービス全体から、複数の相乗効果により利益を得ます）</li>
+                        </ul>
+                     </li>
+                  </ul>
+                  <ul class="custom-dot">
+                     <li><span class="bold">2019 年度第 4 四半期</span>
+                        <ul>
+                           <li>RNS リバース・レゾリューション（特定のドメインの検索ができます）そしてエスクローサービス（RNS ドメインの信頼できない売買を可能にする simil GoDaddy）
+                           </li>
+                           <li>RIF 決済：ハブ手数料（ハブが自分の運転資金としてトランズアクションの中継に請求できるようにします。ネットワークのスケーラビリティを促すためにとても大事です）</li>
+                           <li>RIF ストレージ:RSK mainnet の立ち上げとRIF Lumino の統合（Lumino は分散型ストレージに対する経済的インセンティブの支払いを可能に）</li>
+                           <li>RIF データ・フィード：ベータリリース（MVP）</li>
+                        </ul>
+                     </li>
+                  </ul>
+                  <ul class="custom-dot">
+                     <li><span class="bold">2020 年度第 1 四半期</span>
+                        <ul>
+                           <li>RNS：DNS との統合（インターネットドメインの所有者が RNS に同じドメインを登録できるようにするため）</li>
+                           <li>RIF 決済：Lightning 統合（RIF 決済ライブラリーを経由して）およびクロストークン決済（RIF Lumino
+                              ネットワークのトークン間の決済そしてアトミックスワップ）</li>
+                           <li>RIF
+                              ストレージ:暗号化されたクラウドストレージ（ユーザーが同じインターフェースを使ってクラウド内の情報を簡単に暗号化できるようになります。一杯のストレージに対応できない大容量ファイルに最適です)
+                        </ul>
+                     </li>
+                     </li>
+                  </ul>
+                  <ul class="custom-dot">
+                     <li><span class="bold">2020 年度第 2 四半期</span>
+                        <ul>
+                           <li>RNS および RIF コミュニケーションズ:RNS 動的レゾリューション（「ハンドシェイク」同じドメイン ID を持つ複数のアドレスを動的に解決できます）</li>
+                           <li>RIF
+                              決済：見張り塔（オフラインで取引相手が資金を受け取りたい場合、ユーザーの安全性を確保します。モバイルのdAppでは非常に重要です）そしてブロックチェーン同士の決済（Lightningでの支払いの開始とLuminoトークン上で完了させる決済、そしてその逆もあります）
+                           </li>
+                           <li>RIF ストレージ:永続ストレージ
+                              (ユーザーは、人気のないコンテンツを格納するためにネットワークに料金を支払うことができます。取得ごとに支払うモデルは作動しません)　ユーザー・インタフェースと統合を容易にする完全な
+                              UI とライブラリ
+                           </li>
+                        </ul>
+                     </li>
+                  </ul>
+                  <h3 class="mb-3 mt-5">RIF OS のシナジー（相乗効果）</h3>
+                  <p>個々のRIFサービスの革新性を超えて、IOVlabs が開発した RSK/RIF
+                     フルスタック全体の相乗効果から得られる価値は非常に大きいです。このような相乗効果は、インフラストラクチャの共有、位置合わせし調整されたロードマップ、数百万人のユーザーにサービスを提供できるユースケースに対応するためのビジョンの共有によってもたらされます。こうした相乗効果については以下のとおりです：
+                  </p>
+                  <ul class="custom-dot">
+                     <li>RNS を介した RSK そして RIF の全般的なピア検出</li>
+                     <li>RIF Lumino による RSK ネットワークのスケーラビリティ</li>
+                     <li>RIF Lumino による RIF Storage インセンティブ</li>
+                     <li>RSK および RIF に対応した汎用ピアツーピアルーティングレイヤーとしての RIF コミュニケーション</li>
+                     <li>サービスとしてのRSKパブリックノードのためのRIFコミュニケーションとLumino</li>
+                     <li>RNS/DNS 統合のためのRIFデータ・フィードおよび RSK 分散型安定コイン</li>
+                  </ul>
+                  <p>こうした一元化に加え、RSK フェデレーションメンバーが RIF Lumino Hubs そして見張り塔として機能し、統合された RSK / RIF
+                     フルノードを介してインフラストラクチャの相乗効果がさらに増えることを見込んでいます。</p>
+                  <h3 class="mb-3 mt-5">開始</h3>
+                  <p>私たちIOVLabsは、Bitcoin、RSK、そしてRIF技術が、グローバルな社会にすべての人々に平等な機会を与えて、より分散化されプライベートな、公正な社会の基礎を築く力を与えてくれると確信しています。当社と一緒に、価値あるインターネットを構築しましょう。
+                  </p>
+                  <p><span class="bold">RIF OS Roadmap</span></p>
+                  <a href="../index.html#roadmap" class="blue_rif" target="_blank"
+                     rel="noopener noreferrer">https://www.rifos.org</a>
+                  <p class="mt-5"><span class="bold">RSK ネットワーク</span></p>
+                  <a href="https://www.rsk.co/" class="blue_rif" target="_blank"
+                     rel="noopener noreferrer">https://www.rsk.co/</a>
+                  <p class="mt-5"><span class="bold">RIF OS ビデオ</span></p>
+                  <a href="https://cdn.rifos.org/home_video.mp4" class="blue_rif" target="_blank"
+                     rel="noopener noreferrer">https://cdn.rifos.org/home_video.mp4</a>
+                  <p class="mt-5"><span class="bold">RIF Lumino ネットワーク</span></p>
+                  <a href="https://www.rifos.org/rif-lumino-network/" class="blue_rif" target="_blank"
+                     rel="noopener noreferrer">https://www.rifos.org/rif-lumino-network/</a>
+                  <p class="mt-5"><span class="bold">RIF 名称サービス </span></p>
+                  <a href="../../nameservice/ja/index.html" class="blue_rif" target="_blank"
+                     rel="noopener noreferrer">https://www.rifos.org/nameservice/</a>
+                  <p class="mt-5"><span class="bold">RIF Storage ブログ</span> <a
+                        href="rif-storage-a-decentralized-storage-solution.html" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">https://www.rifos.org/blog/rif-storage-a-decentralized-storage-solution/</a>
+                  </p>
+                  <p class="mt-5"><span class="bold">Visit us at</span> <a href="https://www.rifos.org/ja/"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">www.rifos.org</a> y participe de la
+                     revolución!</p>
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div style="top: -6px;" class="fb-share-button" data-layout="button" data-size="large">
+                        </div>
+                        <a class="twitter-share-button btn btn btn-primary mr-3" href="https://twitter.com/intent/tweet"
+                           data-size="large">
+                           Tweet</a>
+                        <script async src="https://telegram.org/js/telegram-widget.js?8"
+                           data-telegram-share-url="https://www.rifos.org/ja/blog/rif-os-vision-roadmap.html"
+                           data-size="large"></script>
+                     </div>
+                     <div class="col-lg-12 mt-5">
+                        <a class="btn btn btn-primary mr-3" href="./">戻る</a>
+                     </div>
+                     <div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="twitter-news">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row text-center">
+               <div class="col-lg-12">
+                  <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                        class="fab fa-twitter"></i></a>
+                  <h3 class="bold">Follow our news!</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer -->
+   <footer id="footer" class="section-bg">
+      <div class="footer-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <img src="../../assets/img/powered_by_iov.svg" class="img-fluid powered_by">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-sm-7">
+                        <div class="footer-info">
+                           <p>RIF OSにより幅広い相互運用性と展開までの時間の短縮を可能となるため、ブロックチェーンテクノロジーと大衆市場での採用との間の溝を埋めるのです。</p>
+                        </div>
+                     </div>
+                     <div class="col-sm-5"></div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../../assets/whitepapers/rif-whitepaper-ja.pdf" target="_blank"
+                                    rel="noopener noreferrer">ホワイトペーパー</a></li>
+                              <li><a href="index.html">ブログ
+                                 </a>
+                              </li>
+                              <li><a href="../index.html#roadmap">Roadmap
+                                 </a>
+                              </li>
+                              <li><a href="https://github.com/riflabs" rel="noopener noreferrer"
+                                    target="_blank">Github</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../faqs.html">よくある質問
+                                 </a>
+                              </li>
+                              <li><a href="../../assets/guidelines/RIF_FullBrandGuidelines_Ja.pdf"
+                                    rel="nofollow noopener noreferrer" target="_blank">ブランドマニュアルa</a></li>
+                              <li><a class="medium" href="https://www.rsk.co/ja/index.html" rel="noopener noreferrer"
+                                    target="_blank">RSK</a></li>
+                              <li><a class="medium" href="https://www.iovlabs.org/ja/index.html"
+                                    rel="noopener noreferrer" target="_blank">IOV ラボへのリンク</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a class="medium" href="https://www.iovlabs.org/ja/contact.html"
+                                    rel="noopener noreferrer" target="_blank">お問合せリンク</a></li>
+                              <li><a href="../terms-conditions.html">利用規約</a></li>
+                              <li><a href="../privacy-policy.html">プライバシー</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                           class="fab fa-twitter"></i></a>
+                     <a href="https://t.me/rif_os_community" rel="noopener noreferrer" target="_blank"
+                        class="telegram"><i class="fab fa-telegram"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-6 col-xs-12 pl-0-mobile">
+                     <p class="copyright">Copyright © 2015 - 2026 Rif. 禁無断転載</p>
+                     <p class="copyright mt-0">By <a href="https://taniebrand.com" target="_blank">Taniebrand®</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </footer>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="RIFVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="../../assets/videos/ja/RIF_CorpoVideo.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="../../assets/js/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>

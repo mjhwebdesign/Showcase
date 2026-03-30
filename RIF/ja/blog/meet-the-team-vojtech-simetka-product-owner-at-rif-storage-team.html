@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+   <!-- Google Tag Manager -->
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KBG28B4');</script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="description" content="今回のインタビューは、RIFストレージチームの製品オーナーであるVojtech Simetka氏の特集です。">
+   <meta name="keywords" content="">
+   <meta name="author" content="RIF">
+   <title>チーム紹介：Vojtech Simetka氏 RIFストレージチームの製品オーナー</title>
+   <!-- og info -->
+   <meta property="og:title" content=">チーム紹介：Vojtech Simetka氏 RIFストレージチームの製品オーナー">
+   <meta property="og:description" content="今回のインタビューは、RIFストレージチームの製品オーナーであるVojtech Simetka氏の特集です。">
+   <meta property="og:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <meta property="og:url"
+      content="https://www.rifos.org/ja/blog/meet-the-team-vojtech-simetka-product-owner-at-rif-storage-team.html">
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@rif_os">
+   <meta name="twitter:creator" content="@rif_os">
+   <meta name="twitter:domain" content="https://www.rifos.org/">
+   <meta name="twitter:title" content=">チーム紹介：Vojtech Simetka氏 RIFストレージチームの製品オーナー">
+   <meta name="twitter:description" content="今回のインタビューは、RIFストレージチームの製品オーナーであるVojtech Simetka氏の特集です。">
+   <meta name="twitter:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+   <link rel="manifest" href="../../assets/favicons/site.webmanifest">
+   <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link rel="shortcut icon" href="../../assets/favicons/favicon.ico">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="../../assets/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Main Stylesheet File -->
+   <!-- build:css -->
+   <link rel="stylesheet" href="../../assets/css/theming.css">
+   <!-- endbuild -->
+   <!-- OwlCarrousel CSS Files -->
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.theme.default.min.css">
+   <!-- Libraries CSS Files -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBG28B4" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+   <script>(function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+   <!-- Ends Facebook SDK for JavaScript -->
+   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="../"><img src="../../assets/img/logo.svg" class="logo" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#vision">ビジョン</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#build-on-rif">開発者</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#rif-token">RIF トークン </a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#roadmap">Roadmap</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#get-start">開始</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../marketplace.html" class="nav-link">Marketplace</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../directory.html" class="nav-link">Directory</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../payments.html" class="nav-link">Payments</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../storage.html" class="nav-link">Storage</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../gateways.html" class="nav-link">Gateways</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../communications.html" class="nav-link">Communications</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle lang_nav active" href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     日本語
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item"
+                        href="../../blog/meet-the-team-vojtech-simetka-product-owner-at-rif-storage-team.html">English</a>
+                     <a class="dropdown-item"
+                        href="../../ko/blog/meet-the-team-vojtech-simetka-product-owner-at-rif-storage-team.html">한국어</a>
+                     <a class="dropdown-item"
+                        href="../../zh-hans/blog/meet-the-team-vojtech-simetka-product-owner-at-rif-storage-team.html">简体中文</a>
+                     <a class="dropdown-item"
+                        href="../../es/blog/meet-the-team-vojtech-simetka-product-owner-at-rif-storage-team.html">Español</a>
+                     <a class="dropdown-item"
+                        href="../../pt-pt/blog/meet-the-team-vojtech-simetka-product-owner-at-rif-storage-team.html">Português</a>
+                     <a class="dropdown-item"
+                        href="../../ru/blog/meet-the-team-vojtech-simetka-product-owner-at-rif-storage-team.html">Pусский</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">ご連絡いただけます</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <nav id="vertical-nav" class="nav flex-column">
+      <a href="../marketplace.html" class="nav-link">Marketplace</a>
+      <a href="../directory.html" class="nav-link">Directory</a>
+      <a href="../payments.html" class="nav-link">Payments</a>
+      <a href="../storage.html" class="nav-link">Storage</a>
+      <a href="../gateways.html" class="nav-link">Gateways</a>
+      <a href="../communications.html" class="nav-link">Communications</a>
+   </nav>
+   <section id="blog">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row mb-5">
+               <div class="col-lg-9">
+                  <h1><span class="bold">チーム紹介</span>：Vojtech Simetka氏 RIFストレージチームの製品オーナー</h1>
+                  <span class="blue_rif  d-block mb-3"><i>
+                        今回のインタビューは、RIFストレージチームの製品オーナーであるVojtech Simetka氏の特集です。</i></span>
+                  <h6>2019年5月1日</h6>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-9">
+                  <h3 class="mb-3">チームに参加なさった理由は何だったのでしょうか？</h3>
+                  <p> 昨年、私はRSKと協力して、ブロックチェーン 4 Humanity DApp（以前のGivethでの私の研究によるもの）をRSKネットワークに取り入れました。IOV
+                     Labsチームと仕事をすることは私にとって楽しい経験でした。それにお互いの目標はとても近いところにありました。私たちの協力体制を進化させるチャンスが現れたとき、そしてRIFデータストレージチームにおいてもっとうまくやれたとき、私はすぐにイエスと言いました。
+                  </p>
+                  <h3 class="mb-3 mt-5">あなたが目下、取り組んでいるのは何ですか？ご自身の仕事で最も充実感を覚えることは?</h3>
+                  <p>私はRIF
+                     データストレージチームの製品オーナーです。分散型ストレージは、遅かれ早かれほぼすべてのDAppが必要とするサービスの1つですが、現在、他のサービスと統合された使いやすいソリューションはありません。しかし、それは取り組みがいのあるとても興味深い分野です。一見簡単そうですが…すべきことは、ファイルの保存と回復だけですよね？多くのサービスの交わる部分にそれは位置しています。本物の分散型ソリューションを構築するためには、マイクロトランザクション、ネームリゾルバ、P2P通信レイヤー、オラクルシステムなどをサポートする高速決済システムが必要です。これは明らかに多くの専門分野にわたるプロジェクトであり、大学、CERN、およびGivethで得られた私の過去の知識をリフレッシュするので、個人的にはものすごく張り切っています。
+                  </p>
+                  <h3 class="mb-3 mt-5">RSKとRIF が開発者と仮想通貨の投資家の双方にとって興味深い選択肢となっている技術的特性は、他と比較して、何だと思われますか?</h3>
+                  <p>技術的な特徴ではなく（通常なら他のシステムで利用できるようになるまでの時間の問題です）RSKおよびRIFシステムの利点は、一貫した統合ソリューションだと私は思います。技術スタックが統合されていないことが主な理由ですが、本物のDAppを開発することは非常に困難です。それはスポーツカー、粘着テープ、そしてハンマーといった、全部が異なる種類の部品で1台の車を組み立てるようなものです。可能ではありますが、創造力と多くの仕事を必要とします。一社によって構築された、基本となるすべてのツールと組み立て部品を一貫したシステムに連携させることで、開発がはるかに容易になります。
+                     ユーザーが長い文字列や数字を覚えなくてもいいように、分散型ルーティングサービスを通じて、DAppにアクセスできるようにする必要がありますか？完璧です。RNSをプラグインするだけです。高速でお金のかからない取引も必要ですか？すでにあります。まさにLuminoがそれです。
+                  </p>
+                  <h3 class="mb-3 mt-5">ブロックチェーン業界のディベロッパーとして最も大きなチャレンジは何だったのでしょうか？</h3>
+                  <p>ツーリングとは別に、私はいつも「これは単なる実験であり、生産を行うためではない」といった、全体としての考え方をしている自分を発見しました。乗り越えることはとても難しいです。維持できる生産対応ソリューションを提供するためのツール、才能を見いだし、チームを結成することは難しいことでした。私が思う別のよくあるパターンは、協力体制の欠如と車輪を新たに発明することになる既存の解決策を用いることへの消極性でした。
+                  </p>
+                  <h3 class="mb-3 mt-5">ブロックチェーンディベロッパーにとって業界内で今、もっとも大きな課題は何だと思いますか？</h3>
+                  <p> 疑いの余地なく、生産対応のツール、ソリューション、およびそれらの相互運用性の欠落でしょう。チェーンの上の制限は障害リストではもちろん上位です。</p>
+                  <h3 class="mb-3 mt-5">次の5年間で、業界内で何が起こると予想していますか？そこでの、RSK/RIFの役割は何だと思いますか？</h3>
+                  <p>私たちは今、世の中の人々にとってはじめての面白そうで分かりやすいアプリケーションを目の当たりにしているところです。私たち、ブロックチェーンコミュニティは認識し始めています…最も恩恵を受けることができるコミュニティを引き寄せ組み合わせた使いやすさが適応を達成する唯一の方法です。この傾向は続くと確信しています。ブロックチェーン技術を取り入れたアプリ（またDAppでさえも）も増えます。
+                     ツーリングに関しては、1つの問題だけでなく、開発スタックにおける他のレイヤーとシームレスに統合しているように見える、より包括的なシステムを私は想像しています。RIFがやっていることを見ていて私は確信しています。そのうち小規模および大規模のAppやDAppのニーズを解決するのに適した、一連のコンポーネントで構成されるフレームワークを作成することが求められるでしょう。
+                  </p>
+                  <h3 class="mb-3 mt-5">皆さんが何か疑問を感じたとき、どうやって連絡すればいいですか？</h3>
+                  <p>En <a href="https://twitter.com/vojtechsimetka" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">Twitter</a>で。 </p>
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div style="top: -6px;" class="fb-share-button" data-layout="button" data-size="large">
+                        </div>
+                        <a class="twitter-share-button btn btn btn-primary mr-3" href="https://twitter.com/intent/tweet"
+                           data-size="large">
+                           Tweet</a>
+                        <script async src="https://telegram.org/js/telegram-widget.js?8"
+                           data-telegram-share-url="https://www.rifos.org/ja/blog/meet-the-team-vojtech-simetka-product-owner-at-rif-storage-team.html"
+                           data-size="large"></script>
+                     </div>
+                     <div class="col-lg-12 mt-5">
+                        <a class="btn btn btn-primary mr-3" href="./">戻る</a>
+                     </div>
+                     <div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="twitter-news">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row text-center">
+               <div class="col-lg-12">
+                  <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                        class="fab fa-twitter"></i></a>
+                  <h3 class="bold">Follow our news!</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer -->
+   <footer id="footer" class="section-bg">
+      <div class="footer-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <img src="../../assets/img/powered_by_iov.svg" class="img-fluid powered_by">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-sm-7">
+                        <div class="footer-info">
+                           <p>RIF OSにより幅広い相互運用性と展開までの時間の短縮を可能となるため、ブロックチェーンテクノロジーと大衆市場での採用との間の溝を埋めるのです。</p>
+                        </div>
+                     </div>
+                     <div class="col-sm-5"></div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../../assets/whitepapers/rif-whitepaper-ja.pdf" target="_blank"
+                                    rel="noopener noreferrer">ホワイトペーパー</a></li>
+                              <li><a href="index.html">ブログ
+                                 </a>
+                              </li>
+                              <li><a href="../index.html#roadmap">Roadmap
+                                 </a>
+                              </li>
+                              <li><a href="https://github.com/riflabs" rel="noopener noreferrer"
+                                    target="_blank">Github</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../faqs.html">よくある質問
+                                 </a>
+                              </li>
+                              <li><a href="../../assets/guidelines/RIF_FullBrandGuidelines_Ja.pdf"
+                                    rel="nofollow noopener noreferrer" target="_blank">ブランドマニュアルa</a></li>
+                              <li><a class="medium" href="https://www.rsk.co/ja/index.html" rel="noopener noreferrer"
+                                    target="_blank">RSK</a></li>
+                              <li><a class="medium" href="https://www.iovlabs.org/ja/index.html"
+                                    rel="noopener noreferrer" target="_blank">IOV ラボへのリンク</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a class="medium" href="https://www.iovlabs.org/ja/contact.html"
+                                    rel="noopener noreferrer" target="_blank">お問合せリンク</a></li>
+                              <li><a href="../terms-conditions.html">利用規約</a></li>
+                              <li><a href="../privacy-policy.html">プライバシー</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                           class="fab fa-twitter"></i></a>
+                     <a href="https://t.me/rif_os_community" rel="noopener noreferrer" target="_blank"
+                        class="telegram"><i class="fab fa-telegram"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-6 col-xs-12 pl-0-mobile">
+                     <p class="copyright">Copyright © 2015 - 2026 Rif. 禁無断転載</p>
+                     <p class="copyright mt-0">By <a href="https://taniebrand.com" target="_blank">Taniebrand®</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </footer>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="RIFVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="../../assets/videos/ja/RIF_CorpoVideo.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="../../assets/js/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>

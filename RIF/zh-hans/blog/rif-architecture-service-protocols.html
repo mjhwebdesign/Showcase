@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+   <!-- Google Tag Manager -->
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KBG28B4');</script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="description"
+      content="开发人员在设计和实施去中心化区块链应用程序时面临诸多挑战。举例而言，许多 DAPP 合同要求可靠地访问外部数据，如价格反馈。这些合同也需要去中心化存储，用于存储链下文件，以降低链上存储成本。一个自主的 dApp 可能会存储链下网页和 javaScript 代码，但是，其可能验证那些链上文件的真实性。其他 dApp 需要安全的对等通信进行多方互动，并通过链上公钥进行认证。解决这些难题后，很容易想象出基于完全自主的去中心化交换、去中心化时间戳服务和去中心化游戏平台。个中可能性无穷无尽，前提是 RIFOS 发挥作用，RIFOS 提供一套协议、规则和接口，用于访问许多重要的去中心化服务。">
+   <meta name="keywords" content="">
+   <meta name="author" content="RIF">
+   <title>RIF 基础架构—服务协议</title>
+   <!-- og info -->
+   <meta property="og:title" content="RIF 基础架构—服务协议">
+   <meta property="og:description"
+      content="开发人员在设计和实施去中心化区块链应用程序时面临诸多挑战。举例而言，许多 DAPP 合同要求可靠地访问外部数据，如价格反馈。这些合同也需要去中心化存储，用于存储链下文件，以降低链上存储成本。一个自主的 dApp 可能会存储链下网页和 javaScript 代码，但是，其可能验证那些链上文件的真实性。其他 dApp 需要安全的对等通信进行多方互动，并通过链上公钥进行认证。解决这些难题后，很容易想象出基于完全自主的去中心化交换、去中心化时间戳服务和去中心化游戏平台。个中可能性无穷无尽，前提是 RIFOS 发挥作用，RIFOS 提供一套协议、规则和接口，用于访问许多重要的去中心化服务。">
+   <meta property="og:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <meta property="og:url" content="https://www.rifos.org/zh-hans/blog/rif-architecture-service-protocols.html">
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@rif_os">
+   <meta name="twitter:creator" content="@rif_os">
+   <meta name="twitter:domain" content="https://www.rifos.org/">
+   <meta name="twitter:title" content="RIF 基础架构—服务协议">
+   <meta name="twitter:description"
+      content="开发人员在设计和实施去中心化区块链应用程序时面临诸多挑战。举例而言，许多 DAPP 合同要求可靠地访问外部数据，如价格反馈。这些合同也需要去中心化存储，用于存储链下文件，以降低链上存储成本。一个自主的 dApp 可能会存储链下网页和 javaScript 代码，但是，其可能验证那些链上文件的真实性。其他 dApp 需要安全的对等通信进行多方互动，并通过链上公钥进行认证。解决这些难题后，很容易想象出基于完全自主的去中心化交换、去中心化时间戳服务和去中心化游戏平台。个中可能性无穷无尽，前提是 RIFOS 发挥作用，RIFOS 提供一套协议、规则和接口，用于访问许多重要的去中心化服务。">
+   <meta name="twitter:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+   <link rel="manifest" href="../../assets/favicons/site.webmanifest">
+   <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link rel="shortcut icon" href="../../assets/favicons/favicon.ico">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="../../assets/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Main Stylesheet File -->
+   <!-- build:css -->
+   <link rel="stylesheet" href="../../assets/css/theming.css">
+   <!-- endbuild -->
+   <!-- OwlCarrousel CSS Files -->
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.theme.default.min.css">
+   <!-- Libraries CSS Files -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBG28B4" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+   <script>(function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+   <!-- Ends Facebook SDK for JavaScript -->
+   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="../"><img src="../../assets/img/logo.svg" class="logo" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#vision">愿景</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#build-on-rif">开发人员</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#rif-token">RIF 代币</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#roadmap">Roadmap</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#get-start">入门指南</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../marketplace.html" class="nav-link">Marketplace</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../directory.html" class="nav-link">Directory</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../payments.html" class="nav-link">Payments</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../storage.html" class="nav-link">Storage</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../gateways.html" class="nav-link">Gateways</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../communications.html" class="nav-link">Communications</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle lang_nav active" href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     简体中文
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item" href="../../blog/rif-architecture-service-protocols.html">English</a>
+                     <a class="dropdown-item" href="../../ko/blog/rif-architecture-service-protocols.html">한국어</a>
+                     <a class="dropdown-item" href="../../ja/blog/rif-architecture-service-protocols.html">日本語</a>
+                     <a class="dropdown-item" href="../../es/blog/rif-architecture-service-protocols.html">Español</a>
+                     <a class="dropdown-item"
+                        href="../../pt-pt/blog/rif-architecture-service-protocols.html">Português</a>
+                     <a class="dropdown-item" href="../../ru/blog/rif-architecture-service-protocols.html">Pусский</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">观看视频</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <nav id="vertical-nav" class="nav flex-column">
+      <a href="../marketplace.html" class="nav-link">Marketplace</a>
+      <a href="../directory.html" class="nav-link active">Directory</a>
+      <a href="../payments.html" class="nav-link">Payments</a>
+      <a href="../storage.html" class="nav-link">Storage</a>
+      <a href="../gateways.html" class="nav-link">Gateways</a>
+      <a href="../Communications.html" class="nav-link">Communications</a>
+   </nav>
+   <section id="blog">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row mb-5">
+               <div class="col-lg-9">
+                  <h1><span class="bold">RIF 基础架构</span>—服务协议</h1>
+                  <h6>十二月13，2018</h6>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-9">
+                  <p>开发人员在设计和实施去中心化区块链应用程序时面临诸多挑战。举例而言，许多 DAPP
+                     合同要求可靠地访问外部数据，如价格反馈。这些合同也需要去中心化存储，用于存储链下文件，以降低链上存储成本。一个自主的 dApp 可能会存储链下网页和 javaScript
+                     代码，但是，其可能验证那些链上文件的真实性。其他 dApp
+                     需要安全的对等通信进行多方互动，并通过链上公钥进行认证。解决这些难题后，很容易想象出基于完全自主的去中心化交换、去中心化时间戳服务和去中心化游戏平台。个中可能性无穷无尽，前提是 RIFOS
+                     发挥作用，RIFOS 提供一套协议、规则和接口，用于访问许多重要的去中心化服务。
+                  </p>
+                  <p> 为促进区块链技术采用，每个协议均经过精心设计，允许任何人提供一种实现，并成为服务提供商。提供商可与 RIFOS 生态系统集成，并通过公平竞争供用户采用。 例如，开发人员可设计和实现一个与 RIF
+                     数据存储协议兼容的全新去中心化存储网络，并对其进行注册，使其自动可供提供存储 UI、启用 RIFOS 的设备。</p>
+                  <p>RIFOS 由一组初始协议启动，我们将在此简要描述这些协议（有关详细信息，您可浏览源代码）：</p>
+                  <h3 class="mb-3 mt-5">RIF 目录</h3>
+                  <p>区块链采用的主要障碍之一是其固有的复杂性。如果用户必须复制并粘贴十六进制的长地址以传输或接收数字资产，那么，很难期望广泛采用。此外，手动输入地址是一个容易出错的过程，其中，简单的拼写错误可能会导致资金损失。通过添加名称解析服务，可大幅降低出错概率，也降低系统的明显复杂性。这项技术越容易使用，其采用速度就越快。RIF
+                     目录协议 (RDP) 的目标是使用简单的资源域名识别不同类型的资源，使用户能够轻松地购买、出售和拍卖这些域名。</p>
+                  <h3 class="mb-3 mt-5">RIF 安全通信</h3>
+                  <p>在对等网络中，各方需要发现其他方，并与他们建立安全通信。这些通信链路至少应该确保机密性（第三方不可以读取发送的消息）、完整性（防止第三方修改发送的消息）和真实性（防止假冒其中一个端点）。RIF
+                     安全通信旨在满足这些需求，让参与者能够在 RIF 目录上发布假名，并将这些假名与其公共通信密钥和首选连接详细信息联系起来。所有参与者都维护分布式哈希表 (DHT)，确保信息高度可用，且是最新的。
+                  </p>
+                  <h3 class="mb-3 mt-5">RIF 支付</h3>
+                  <p>高峰拥挤时段的高区块链费用使得连锁支付无法用于低面额支付，例如，咖啡或按次付费内容。此外，对于许多应用而言，延迟数分钟以确保付款的最终性是不可接受的。这些是次级离线支付网络背后的主要原因，例如，闪电网络、Raiden
+                     或 Perun 等。然而，区块链社区正在针对支付网络的最佳设计争论不休。RIF 支付是一种协议，旨在透明地使用部署在 RSK之上的不同的离线支付网络，支持智能比特币和标准代币。所提供的 API
+                     确保在用户、RIF 兼容钱包和不同的支付网络之间能够进行统一的交互。RIF 支付 API
+                     方便在不同网络之家建桥。RIF支付网络的最终目标就是产生一种竞争性环境，其中，支付网络可以蓬勃发展，以提供低手续费和低延迟，且可扩展，以匹配容量，并超过传统信用卡网络的性能。</p>
+                  <h3 class="mb-3 mt-5">RIF 数据存储</h3>
+                  <p>去中心化应用程序通常需要以文件的形式存储或使用外部数据。由于存储容量有限和成本高企，无法选择将区块链用作此类信息的存储。此外，区块链永久存储其收到的数据；因此，区块链应用程序数量增加将导致区块链规模扩大。在自主
+                     dApp 环境中使用集中式云存储服务已知的弱点：这些服务无法保证错综复杂的容错和审查阻力。RIF Data Storage
+                     协议支持去中心化存储网络。现有去中心化存储解决方案具有不同成本、拓扑、激励结构和性能特征。设计是为存储个人内容或内容分发量身定制，尽管有些设计可以兼顾这两种选择。为使拓扑适应不同的使用模式，RSK
+                     Data Storage 提供协议，旨在支持个人内容的存储和内容分发，以在与现有解决方案集成时支持多样性。通过这种方式，使其适应未来存储网络。 </p>
+                  <h3 class="mb-3 mt-5">RIF 数据服务</h3>
+                  <p>使用链上智能合同构建的分布式现实应用程序需要访问现实的数据馈送。这一需求必须通过安全、防篡改和信任最小化的解决方案来满足，该解决方案保证从外部来源获取的值具有确定性输出（对于特定查询请求，所有挖掘节点必须获得相同的值）。例如，分布式自治作物保险应用程序需要检索天气信息，以决定在冰雹、洪水或干旱事件的情况下是否需要发放付款。区块链协议通过
+                     Oracles 与外部系统通信。RIF 数据服务支持使用依赖于现有或新 Oracle
+                     解决方案的外部数据源，建议使用一个接口层统一对此类服务的访问。这些供应商负责将所要求的信息带到区块链。RIF数据服务提供与实现无关的协议，用于透过数据服务提供商的外部数据消费。</p>
+                  <h3 class="mb-3 mt-5">RIF 浏览器</h3>
+                  <p>RIFOS 平台提供一组抽象和协议支持每个 RIFOS
+                     服务的第三方实现。这些实现中的每一个均称为服务提供商。随着技术的发展和新解决方案的出现，标准化协议和实现的分离使用户能够选择更新的、潜在更加增强的实现。这种分离还使外部第三方提供商能够容纳他们的解决方案，并将其与
+                     RIFOS 生态系统集成。在这种背景下，有必要给注册域提供机制，并探索这些实现，允许开发者和客户选择他们想要将哪一个用于其特定使用情况。RIF 浏览器是为 RIFOS
+                     平台设计的一种协议，提供注册所需的功能性，并在 RIFOS 平台中识别 RIFOS 服务的第三方实现。RIF 浏览器扩展 RIF
+                     目录协议的能力，不仅按照域名而且按照指定的标准，例如，服务类型或可选元数据，恢复服务提供商的地址。例如，开发人员可以设计和实现一个去中心化存储网络，在 RIF 浏览器中注册，使其自动可供提供存储
+                     UI、启用 RIFOS 的设备使用。</p>
+                  <h3 class="mb-3 mt-5">结束语</h3>
+                  <p>我们设计了 RIFOS 协议集，这样，去中心化应用程序可以依赖一致的基础架构。所有协议和服务提供商均与 RIF 令牌无缝交互。在 RIF 实验室，我们已经构建了第一个实现这些协议的服务，即，RIF
+                     目录，其位于 RSK 区块链之上，可以利用其智能合同能力，是 RIF 服务提供的理想选择。我们继续为上述其余协议作为设计 RIF 兼容服务的提供商。这些实现将使用 RIF
+                     代币，允许任何代币持有者使用与 RIF OS 基础就架构兼容的服务。</p>
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div style="top: -6px;" class="fb-share-button" data-layout="button" data-size="large">
+                        </div>
+                        <a class="twitter-share-button btn btn btn-primary mr-3" href="https://twitter.com/intent/tweet"
+                           data-size="large">
+                           Tweet</a>
+                        <script async src="https://telegram.org/js/telegram-widget.js?8"
+                           data-telegram-share-url="https://www.rifos.org/zh-hans/blog/rif-architecture-service-protocols.html"
+                           data-size="large"></script>
+                     </div>
+                     <div class="col-lg-12 mt-5">
+                        <a class="btn btn btn-primary mr-3" href="./">背部</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="twitter-news">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row text-center">
+               <div class="col-lg-12">
+                  <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                        class="fab fa-twitter"></i></a>
+                  <h3 class="bold">Follow our news!</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer -->
+   <footer id="footer" class="section-bg">
+      <div class="footer-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <img src="../../assets/img/powered_by_iov.svg" class="img-fluid powered_by">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-sm-7">
+                        <div class="footer-info">
+                           <p>RIF OS互用性广，部署更快，轻松解决区块链技术与其大规模市场采用之间的差距。</p>
+                        </div>
+                     </div>
+                     <div class="col-sm-5"></div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../../assets/whitepapers/rif-whitepaper-zh.pdf" target="_blank"
+                                    rel="noopener noreferrer">白皮书</a></li>
+                              <li><a href="../blog/index.html">博客</a></li>
+                              <li><a href="../index.html#roadmap">Roadmap</a></li>
+                              <li><a href="https://github.com/riflabs" rel="noopener noreferrer"
+                                    target="_blank">Github</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../faqs.html">常见问题解答</a></li>
+                              <li><a href="../../assets/guidelines/RIF_FullBrandGuidelines_Zh.pdf"
+                                    rel="nofollow noopener noreferrer" target="_blank">品牌手册</a></li>
+                              <li><a class="medium" href="https://www.rsk.co/zh-Hans/index.html"
+                                    rel="noopener noreferrer" target="_blank">RSK 链接</a></li>
+                              <li><a class="medium" href="https://www.iovlabs.org/zh-Hans/index.html"
+                                    rel="noopener noreferrer" target="_blank">关于 IOV Labs， 请访问</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a class="medium" href="https://www.iovlabs.org/zh-Hans/contact.html"
+                                    rel="noopener noreferrer" target="_blank">联络信息链接</a></li>
+                              <li><a href="../terms-conditions.html">条款与条件</a></li>
+                              <li><a href="../privacy-policy.html">隐私</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                           class="fab fa-twitter"></i></a>
+                     <a href="https://t.me/rif_os_community" rel="noopener noreferrer" target="_blank"
+                        class="telegram"><i class="fab fa-telegram"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-6 col-xs-12 pl-0-mobile">
+                     <p class="copyright mb-0">版权所有 © 2015 - 2026 Rif. 保留一切权利。</p>
+                     <p class="copyright mt-0">By <a href="https://taniebrand.com" target="_blank">Taniebrand®</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </footer>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="RIFVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="../../assets/videos/zh/RIF_CorpoVideo.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="../../assets/js/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>

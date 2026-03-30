@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <!-- Google Tag Manager -->
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KBG28B4');</script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="description"
+      content="이 글은 RIF Token 발행 과정의 일부 측면이 화이트페이퍼에 설명되어 있음에도 불구하고, 커뮤니티 내에 여전히 이에 대한 약간의 혼란이 있는 것 같아 이해에 도움을 드리고자 작성한 내용입니다.">
+   <meta name="keywords" content="">
+   <meta name="author" content="RIF">
+   <title>RIF Token 판매</title>
+   <!-- og info -->
+   <meta property="og:title" content="RIF Token 판매">
+   <meta property="og:description"
+      content="이 글은 RIF Token 발행 과정의 일부 측면이 화이트페이퍼에 설명되어 있음에도 불구하고, 커뮤니티 내에 여전히 이에 대한 약간의 혼란이 있는 것 같아 이해에 도움을 드리고자 작성한 내용입니다.">
+   <meta property="og:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <meta property="og:url" content="https://www.rifos.org/ko/blog/rif-token-sale.html">
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@rif_os">
+   <meta name="twitter:creator" content="@rif_os">
+   <meta name="twitter:domain" content="https://www.rifos.org/">
+   <meta name="twitter:title" content="RIF Token 판매">
+   <meta name="twitter:description"
+      content="이 글은 RIF Token 발행 과정의 일부 측면이 화이트페이퍼에 설명되어 있음에도 불구하고, 커뮤니티 내에 여전히 이에 대한 약간의 혼란이 있는 것 같아 이해에 도움을 드리고자 작성한 내용입니다.">
+   <meta name="twitter:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+   <link rel="manifest" href="../../assets/favicons/site.webmanifest">
+   <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link rel="shortcut icon" href="../../assets/favicons/favicon.ico">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="../../assets/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Main Stylesheet File -->
+   <!-- build:css -->
+   <link rel="stylesheet" href="../../assets/css/theming.css">
+   <!-- endbuild -->
+   <!-- OwlCarrousel CSS Files -->
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.theme.default.min.css">
+   <!-- Libraries CSS Files -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBG28B4" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+   <script>(function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+   <!-- Ends Facebook SDK for JavaScript -->
+   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="../"><img src="../../assets/img/logo.svg" class="logo" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#vision">비전</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="https://developers.rsk.co/rif/" target="_blank"
+                     rel="noreferrer noopener">개발자</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#rif-token">RIF Token</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#roadmap">Roadmap</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#get-start">시작하기</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../marketplace.html" class="nav-link">Marketplace</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../directory.html" class="nav-link">Directory</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../payments.html" class="nav-link">Payments</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../storage.html" class="nav-link">Storage</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../gateways.html" class="nav-link">Gateways</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../communications.html" class="nav-link">Communications</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle lang_nav active" href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     한국어
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item" href="../../blog/rif-token-sale.html">English</a>
+                     <a class="dropdown-item" href="../../zh-hans/blog/rif-token-sale.html">简体中文</a>
+                     <a class="dropdown-item" href="../../ja/blog/rif-token-sale.html">日本語</a>
+                     <a class="dropdown-item" href="../../es/blog/rif-token-sale.html">Español</a>
+                     <a class="dropdown-item" href="../../pt-pt/blog/rif-token-sale.html">Português</a>
+                     <a class="dropdown-item" href="../../ru/blog/rif-token-sale.html">Pусский</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">비디오 보기</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <nav id="vertical-nav" class="nav flex-column">
+      <a href="../marketplace.html" class="nav-link">Marketplace</a>
+      <a href="../directory.html" class="nav-link">Directory</a>
+      <a href="../payments.html" class="nav-link">Payments</a>
+      <a href="../storage.html" class="nav-link">Storage</a>
+      <a href="../gateways.html" class="nav-link">Gateways</a>
+      <a href="../communications.html" class="nav-link">Communications</a>
+   </nav>
+   <section id="blog">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row mb-5">
+               <div class="col-lg-9">
+                  <h1><span class="bold">RIF Token</span> 판매</h1>
+                  <span class="blue_rif  d-block mb-3"><i>
+                        이 글은 RIF Token 발행 과정의 일부 측면이 화이트페이퍼에 설명되어 있음에도 불구하고, 커뮤니티 내에 여전히 이에 대한 약간의 혼란이 있는 것 같아 이해에 도움을
+                        드리고자 작성한 내용입니다.</i></span>
+                  <h6>2019 년 1 월 6 일</h6>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-9">
+                  <h3 class="mb-3">Token 생성 컨트랙트 배치 및 배포</h3>
+                  <p> RIF Token 생성 스마트 컨트랙트는 2018년 11월 9일부로 (TGE 날짜) RSK 네트워크에 배치되었습니다. RIF Labs 화이트페이퍼의 토큰 판매 부문 <br><a
+                        class="btn btn btn-primary mt-3" href="../../assets/whitepapers/rif-whitepaper-ko.pdf"
+                        target="_blank" rel="noopener noreferrer">RIF Labs Whitepaper</a>
+                     <br>에서 설명한 대로 10억 개의 RIF Token이 생성되고 할당되었습니다.
+                  </p>
+                  <h3 class="mb-3 mt-5">컨트랙트 주소</h3>
+                  <p>RKS 네트워크 내 RIF Token 생성 스마트 컨트랙트의 주소는 다음과 같습니다:<br>
+                     0x2acc95758f8b5f583470ba265eb685a8f45fc9d5</p>
+                  이 컨트랙트의 활동 및 세부 사항은 RSK 블록체인 탐색기에서 찾아볼 수 있습니다: <a
+                     href="http://explorer.rsk.co/address/0x2acc95758f8b5f583470ba265eb685a8f45fc9d5" class="blue_rif"
+                     target="_blank"
+                     rel="noopener noreferrer">http://explorer.rsk.co/address/0x2acc95758f8b5f583470ba265eb685a8f45fc9d5</a>
+                  </p>
+                  <p>
+                     이 컨트랙트는 화이트페이퍼 내 정의된 규칙이 준수됨을 보장하기 위해 일련의 스마트 컨트랙트와 함께 배치되었습니다.
+                  </p>
+                  <h3 class="mb-3 mt-5">Token 판매 과정</h3>
+                  <p>RIF Labs는 비공개 세일 과정에서 구매 가능한 RIF Token을 비공개 기여자들에게 직접 독점적으로 판매하였습니다. RIF Labs는 비공개 세일에 참여한 기여자들을
+                     승인하고, RIF Labs가 고용한, KYC/AML 절차 수행을 전문으로 하는 제3자에게 정보를 제출하는 것을 포함하는 통합적인 KYC 과정을 필수로 거치게 하였습니다. WP와
+                     ECA에는 Token 획득에 있어 기여자들의 목적과 목표, 그리고 그에 따른 사용 가능성에 대한 여러 개의 참조 사항이 포함되어 있습니다.</p>
+                  <h3 class="mb-3 mt-5">Token 상환</h3>
+                  <p> 비공개 세일 중에 판매된 RIF Token 모두는 TGE 날짜에 RIF Labs가 제공한 토큰입니다. 이 RIF Token들은 비공개 세일 기여자들이 TGE 날짜에서 1년이라는
+                     기간 동안 (상환 기간) RIF Labs가 배치한 스마트 컨트랙트에서 상환할 수 있게 제공될 예정입니다. 비공개 세일 기여자들은 RIF Token을 받기 위해 RIF Labs가
+                     보낸 상환 지침에 따라 알맞은 스마트 컨트랙트와 상호 작용을 해야 합니다. 이는 비공개 세일 기여자들이 상환 기간 동안 본인의 토큰을 받을 수 있는 유일한 방법입니다. 상환
+                     기간이 만료되면 스마트 컨트랙트는 기여자가 상환하지 않은 RIF Token 모두를 자동으로 RIF Labs에게 돌려 보내게 됩니다.</p>
+                  <h3 class="mb-3 mt-5">보너스 Token 혜택</h3>
+                  <p>비공개 세일 중 판매된 RIF Token에는 락업(고정) 규정이 따르지 않습니다. 다만 RIF Labs는 비공개 세일 기여자가 본인의 초기 RIF Token 할당량을 본인의 기존
+                     월렛(지갑)에 각 3개월, 6개월, 그리고 9개월 동안 지속적으로 보관하고 보유하고 있는 경우를 위한 보너스 Token 혜택을 제시하였습니다.</p>
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div style="top: -6px;" class="fb-share-button" data-layout="button" data-size="large">
+                        </div>
+                        <a class="twitter-share-button btn btn btn-primary mr-3" href="https://twitter.com/intent/tweet"
+                           data-size="large">
+                           Tweet</a>
+                        <script async src="https://telegram.org/js/telegram-widget.js?8"
+                           data-telegram-share-url="https://www.rifos.org/ko/blog/rif-token-sale.html"
+                           data-size="large"></script>
+                     </div>
+                     <div class="col-lg-12 mt-5">
+                        <a class="btn btn btn-primary mr-3" href="./">뒤로</a>
+                     </div>
+                     <div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="twitter-news">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row text-center">
+               <div class="col-lg-12">
+                  <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                        class="fab fa-twitter"></i></a>
+                  <h3 class="bold">Follow our news!</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer -->
+   <footer id="footer" class="section-bg">
+      <div class="footer-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <img src="../../assets/img/powered_by_iov.svg" class="img-fluid powered_by">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-sm-7">
+                        <div class="footer-info">
+                           <p>RIF OS는 광범위한 상호 운용성과 더 빠른 배포 시간을 제공해 블록체인 기술과 해당 기술의 대중 시장 채택 간의 격차를 해소한다. </p>
+                        </div>
+                     </div>
+                     <div class="col-sm-5"></div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../../assets/whitepapers/rif-whitepaper-ko.pdf" target="_blank"
+                                    rel="noopener noreferrer">백서</a></li>
+                              <li><a href="../blog/">블로그</a></li>
+                              <li><a href="../index.html#roadmap">Roadmap</a></li>
+                              <li><a href="https://github.com/riflabs" rel="noopener noreferrer"
+                                    target="_blank">Github</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../faqs.html">자주 묻는 질문</a></li>
+                              <li><a href="../../assets/guidelines/RIF_FullBrandGuidelines_Ko.pdf"
+                                    rel="nofollow noopener noreferrer" target="_blank">브랜드 매뉴얼</a></li>
+                              <li><a class="medium" href="https://www.rsk.co/ko/" rel="noopener noreferrer"
+                                    target="_blank">RSK</a></li>
+                              <li><a class="medium" href="https://www.iovlabs.org/ko/index.html"
+                                    rel="noopener noreferrer" target="_blank">IOVlabs 소개</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a class="medium" href="https://www.iovlabs.org/ko/contact.html"
+                                    rel="noopener noreferrer" target="_blank">IOVlabs에 문의</a></li>
+                              <li><a href="../terms-conditions.html">이용 약관</a></li>
+                              <li><a href="../privacy-policy.html">개인 정보 보호 정책</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                           class="fab fa-twitter"></i></a>
+                     <a href="https://t.me/rif_os_community" rel="noopener noreferrer" target="_blank"
+                        class="telegram"><i class="fab fa-telegram"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-6 col-xs-12 pl-0-mobile">
+                     <p class="copyright mb-0">Copyright © 2015 - 2026 Rif. All rights reserved.</p>
+                     <p class="copyright mt-0">By <a href="https://taniebrand.com" target="_blank">Taniebrand®</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </footer>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="RIFVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="../../assets/videos/ko/RIF_CorpoVideo.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="../../assets/js/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>

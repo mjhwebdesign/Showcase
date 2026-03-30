@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+   <!-- Google Tag Manager -->
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KBG28B4');
+   </script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="description"
+      content="RIF 存储是一种不受审查、无权限且去中心化的存储协议。它提供了一个统一的接口，可以轻松地在多个去中心化存储网络（例如IPFS或Swarm）之间进行连接和切换。我们正在向这些系统添加激励措施，以确保抵抗微不足道的攻击、提高可用性、并使参与者因参与网络而获得奖励。">
+   <meta name="keywords" content="">
+   <meta name="author" content="RIF">
+   <title>RIF Storage</title>
+   <!-- og info -->
+   <meta property="og:title" content="RIF Storage">
+   <meta property="og:description"
+      content="RIF 存储是一种不受审查、无权限且去中心化的存储协议。它提供了一个统一的接口，可以轻松地在多个去中心化存储网络（例如IPFS或Swarm）之间进行连接和切换。我们正在向这些系统添加激励措施，以确保抵抗微不足道的攻击、提高可用性、并使参与者因参与网络而获得奖励。">
+   <meta property="og:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <meta property="og:url" content="https://www.rifos.org/zh-Hans/storage.html">
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary">
+   <meta name="twitter:title" content="RIF Storage">
+   <meta name="twitter:description"
+      content="RIF 存储是一种不受审查、无权限且去中心化的存储协议。它提供了一个统一的接口，可以轻松地在多个去中心化存储网络（例如IPFS或Swarm）之间进行连接和切换。我们正在向这些系统添加激励措施，以确保抵抗微不足道的攻击、提高可用性、并使参与者因参与网络而获得奖励。">
+   <meta name="twitter:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicons/favicon-16x16.png">
+   <link rel="manifest" href="../assets/favicons/site.webmanifest">
+   <link rel="mask-icon" href="../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link rel="shortcut icon" href="../assets/favicons/favicon.ico">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="../assets/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Main Stylesheet File -->
+   <!-- build:css -->
+   <link rel="stylesheet" href="../assets/css/theming.css">
+   <!-- endbuild -->
+   <!-- OwlCarrousel CSS Files -->
+   <link rel="stylesheet" href="../assets/css/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="../assets/css/owlcarousel/owl.theme.default.min.css">
+   <!-- Libraries CSS Files -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBG28B4" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="./"><img src="../assets/img/logo.svg" class="logo" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="index.html#vision">愿景</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="index.html#build-on-rif">开发人员</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="index.html#rif-token">RIF 代币</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="index.html#roadmap">Roadmap</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="index.html#get-start">入门指南</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="marketplace.html" class="nav-link">Marketplace</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="directory.html" class="nav-link">Directory</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="payments.html" class="nav-link">Payments</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="storage.html" class="nav-link">Storage</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="gateways.html" class="nav-link">Gateways</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="communications.html" class="nav-link">Communications</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle lang_nav active" href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     简体中文
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item" href="../storage.html">English</a>
+                     <a class="dropdown-item" href="../ko/storage.html">한국어</a>
+                     <a class="dropdown-item" href="../ja/storage.html">日本語</a>
+                     <a class="dropdown-item" href="../es/storage.html">Español</a>
+                     <a class="dropdown-item" href="../pt-pt/storage.html">Português</a>
+                     <a class="dropdown-item" href="../ru/storage.html">Pусский</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">观看视频</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <nav id="vertical-nav" class="nav flex-column">
+      <a href="marketplace.html" class="nav-link">Marketplace</a>
+      <a href="directory.html" class="nav-link">Directory</a>
+      <a href="payments.html" class="nav-link">Payments</a>
+      <a href="storage.html" class="nav-link active">Storage</a>
+      <a href="gateways.html" class="nav-link">Gateways</a>
+      <a href="communications.html" class="nav-link">Communications</a>
+   </nav>
+   <section id="rif-storage">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row mb-5">
+               <div class="col-lg-12">
+                  <h1><span class="bold">RIF</span> Storage</h1>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-11 twocoltext">
+                  <p>RIF
+                     存储是一种不受审查、无权限且去中心化的存储协议。它提供了一个统一的接口，可以轻松地在多个去中心化存储网络（例如IPFS或Swarm）之间进行连接和切换。我们正在向这些系统添加激励措施，以确保抵抗微不足道的攻击、提高可用性、并使参与者因参与网络而获得奖励。
+                  </p>
+                  <p>作为最终用户，RIF存储使您可以收回数据的所有权。即使您正在使用的服务停止存在，您也可以检索所有内容。</p>
+                  <p>作为开发人员/服务创建者，RIF存储使您不必担心应用程序的存储，它还提供了现成的内容交付服务，因此您可以扩展应用程序而无需投资基础架构。</p>
+                  <p>借助内置的激励措施，任何人都可以成为存储提供商，并将未使用的存储提供给其他人并从中获得收益。</p>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-12">
+                  <a class="btn btn btn-primary mt-3" href="https://developers.rsk.co/rif/storage/" target="_blank"
+                     rel="noopener noreferrer">开发人员</a>
+               </div>
+            </div>
+            <img class="extra-large-circle" src="../assets/img/extra-large-circle.png">
+         </div>
+      </div>
+   </section>
+   <section id="roadmap">
+      <div class="container-fluid">
+         <div id="storage-roadmap" class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <h2 class="mb-5">Roadmap</h2>
+               </div>
+            </div>
+            <div class="row justify-content-center mb-5">
+               <div class="col-lg-10 text-center">
+                  <div class="row roadmap-years mb-2">
+                     <div class="col-lg-4 pl-0 text-left">2019 年第</div>
+                     <div class="col-lg-4 text-center">2020 年第</div>
+                     <div class="col-lg-4 pr-0 text-right">2021 年第</div>
+                  </div>
+                  <div class="row roadmap-header">
+                     <div class="col-lg-2 p-0"></div>
+                     <div class="col-lg-4 p-0">H1</div>
+                     <div class="col-lg-4 p-0">H2</div>
+                     <div class="col-lg-2 p-0"></div>
+                  </div>
+                  <div class="row roadmap-storage roadmap-content align-items-start mt-3">
+                     <div class="col-lg-2 p-0 text-left">
+                        <div class="content first-q-3"></div>
+                     </div>
+                     <div class="col-lg-2 p-0 text-left">
+                        <div class="first-q-4 content">
+                        </div>
+                     </div>
+                     <div class="col-lg-2 p-0 has-content text-left">
+                        <div class="mobile-quarter">
+                           <span class="quarter">H1</span>
+                           <span class="years">2020 年第</span>
+                        </div>
+                        <div class="content first-q-1">
+                           <div class="content-item popoverOption"
+                              data-content="Incentivised bandwidth using RIF token to pay for Swarm. This is a solution that brings incentives to fair use of the network, discourages leeching and adds spam protection"
+                              rel="popover" data-placement="right"
+                              data-original-title="RIF Storage - Swarm testnet launch">
+                              <span>RIF Storage</span>
+                              <span>Swarm testnet <br>launch</span>
+                           </div>
+                           <div class="content-item popoverOption"
+                              data-content="Mirroring the developers portal to RIF Storage. This should be CI automated"
+                              rel="popover" data-placement="right"
+                              data-original-title="RIF Storage - Hosting websites on RIF Storage">
+                              <span>RIF Storage</span>
+                              <span>Hosting websites on RIF Storage</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-2 p-0 text-left">
+                     </div>
+                     <div class="col-lg-2 p-0 has-content text-left">
+                        <div class="mobile-quarter">
+                           <span class="quarter">H2</span>
+                           <span class="years">2020 年第</span>
+                        </div>
+                        <div class="content second-q-3">
+                           <div class="content-item popoverOption"
+                              data-content="RIF Storage marketplace - users can engage in a storage contract with a storage provided who can be anyone willing to provide their storage."
+                              rel="popover" data-placement="right"
+                              data-original-title="RIF Storage - IPFS file persistance: Phase 2 - centralised pinning with collateral">
+                              <span>RIF Storage</span>
+                              <span>IPFS file persistance: Phase 2 - centralised pinning with collateral</span>
+                           </div>
+                           <div class="content-item popoverOption"
+                              data-content="Having blockchain and crypto community on Taringa that is stored on RIF Storage"
+                              rel="popover" data-placement="right"
+                              data-original-title="RIF Storage - Taringa community">
+                              <span>RIF Storage</span>
+                              <span>Taringa community</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-2 p-0 text-left">
+                        <div class="content second-q-4"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-12">
+                  <h3>
+                     + Roadmaps
+                  </h3>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-4 threecoltext">
+                  <ul class="links-roadmaps">
+                     <li><a href="marketplace.html#roadmap">Marketplace</a></li>
+                     <li><a href="directory.html#roadmap">Directory</a></li>
+                     <li><a href="payments.html#roadmap">Payments</a></li>
+                     <li><a href="storage.html#roadmap" class="active">Storage</a></li>
+                     <li><a href="gateways.html#roadmap">Gateways</a></li>
+                     <!-- <li><a href="communications.html#roadmap">Communications</a></li> -->
+                  </ul>
+               </div>
+            </div>
+            <img class="large-circle" src="../assets/img/large-circle.png">
+         </div>
+         <img class="medium-semi-circle-left" src="../assets/img/medium-semi-circle-left.png">
+   </section>
+   <section id="twitter-news">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row text-center">
+               <div class="col-lg-12">
+                  <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                        class="fab fa-twitter"></i></a>
+                  <h3 class="bold">Follow our news!</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer -->
+   <footer id="footer" class="section-bg">
+      <div class="footer-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <img src="../assets/img/powered_by_iov.svg" class="img-fluid powered_by">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-sm-7">
+                        <div class="footer-info">
+                           <p>RIF OS互用性广，部署更快，轻松解决区块链技术与其大规模市场采用之间的差距。</p>
+                        </div>
+                     </div>
+                     <div class="col-sm-5"></div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../assets/whitepapers/rif-whitepaper-zh.pdf" target="_blank"
+                                    rel="noopener noreferrer">白皮书</a></li>
+                              <li><a href="blog/index.html">博客</a></li>
+                              <li><a href="index.html#roadmap">Roadmap</a></li>
+                              <li><a href="https://github.com/riflabs" rel="noopener noreferrer"
+                                    target="_blank">Github</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="faqs.html">常见问题解答</a></li>
+                              <li><a href="../assets/guidelines/RIF_FullBrandGuidelines_Zh.pdf"
+                                    rel="nofollow noopener noreferrer" target="_blank">品牌手册</a></li>
+                              <li><a class="medium" href="https://www.rsk.co/zh-Hans/index.html"
+                                    rel="noopener noreferrer" target="_blank">RSK 链接</a></li>
+                              <li><a class="medium" href="https://www.iovlabs.org/zh-Hans/index.html"
+                                    rel="noopener noreferrer" target="_blank">关于 IOV Labs， 请访问</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a class="medium" href="https://www.iovlabs.org/zh-Hans/contact.html"
+                                    rel="noopener noreferrer" target="_blank">联络信息链接</a></li>
+                              <li><a href="terms-conditions.html">条款与条件</a></li>
+                              <li><a href="privacy-policy.html">隐私</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                           class="fab fa-twitter"></i></a>
+                     <a href="https://t.me/rif_os_community" rel="noopener noreferrer" target="_blank"
+                        class="telegram"><i class="fab fa-telegram"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-6 col-xs-12 pl-0-mobile">
+                     <p class="copyright mb-0">版权所有 © 2015 - 2026 Rif. 保留一切权利。</p>
+                     <p class="copyright mt-0">By <a href="https://taniebrand.com" target="_blank">Taniebrand®</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </footer>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="RIFVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="../assets/videos/zh/RIF_CorpoVideo.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="../assets/js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="../assets/js/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>

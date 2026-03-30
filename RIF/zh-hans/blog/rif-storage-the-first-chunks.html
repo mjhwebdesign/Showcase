@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+   <!-- Google Tag Manager -->
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KBG28B4');</script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="description" content="在此次博客发布中，我们将强调这种合作伙伴关系如何产生，随后我们将提供有关 RIF 存储功能如何运行的高阶概述。">
+   <meta name="keywords" content="">
+   <meta name="author" content="RIF">
+   <title>RIF 存储：第一组块</title>
+   <!-- og info -->
+   <meta property="og:title" content="RIF 存储：第一组块">
+   <meta property="og:description" content="在此次博客发布中，我们将强调这种合作伙伴关系如何产生，随后我们将提供有关 RIF 存储功能如何运行的高阶概述。">
+   <meta property="og:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <meta property="og:url" content="https://www.rifos.org/zh-hans/blog/rif-storage-the-first-chunks.html">
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@rif_os">
+   <meta name="twitter:creator" content="@rif_os">
+   <meta name="twitter:domain" content="https://www.rifos.org/">
+   <meta name="twitter:title" content="RIF 存储：第一组块">
+   <meta name="twitter:description" content="在此次博客发布中，我们将强调这种合作伙伴关系如何产生，随后我们将提供有关 RIF 存储功能如何运行的高阶概述。">
+   <meta name="twitter:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+   <link rel="manifest" href="../../assets/favicons/site.webmanifest">
+   <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link rel="shortcut icon" href="../../assets/favicons/favicon.ico">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="../../assets/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Main Stylesheet File -->
+   <!-- build:css -->
+   <link rel="stylesheet" href="../../assets/css/theming.css">
+   <!-- endbuild -->
+   <!-- OwlCarrousel CSS Files -->
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.theme.default.min.css">
+   <!-- Libraries CSS Files -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBG28B4" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+   <script>(function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+   <!-- Ends Facebook SDK for JavaScript -->
+   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="../"><img src="../../assets/img/logo.svg" class="logo" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#vision">愿景</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#build-on-rif">开发人员</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#rif-token">RIF 代币</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#roadmap">Roadmap</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#get-start">入门指南</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../marketplace.html" class="nav-link">Marketplace</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../directory.html" class="nav-link">Directory</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../payments.html" class="nav-link">Payments</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../storage.html" class="nav-link">Storage</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../gateways.html" class="nav-link">Gateways</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../communications.html" class="nav-link">Communications</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle lang_nav active" href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     简体中文
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item" href="../../blog/rif-storage-the-first-chunks.html">English</a>
+                     <a class="dropdown-item" href="../../ko/blog/rif-storage-the-first-chunks.html">한국어</a>
+                     <a class="dropdown-item" href="../../ja/blog/rif-storage-the-first-chunks.html">日本語</a>
+                     <a class="dropdown-item" href="../../es/blog/rif-storage-the-first-chunks.html">Español</a>
+                     <a class="dropdown-item" href="../../pt-pt/blog/rif-storage-the-first-chunks.html">Português</a>
+                     <a class="dropdown-item" href="../../ru/blog/rif-storage-the-first-chunks.html">Pусский</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">观看视频</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <nav id="vertical-nav" class="nav flex-column">
+      <a href="../marketplace.html" class="nav-link">Marketplace</a>
+      <a href="../directory.html" class="nav-link active">Directory</a>
+      <a href="../payments.html" class="nav-link">Payments</a>
+      <a href="../storage.html" class="nav-link">Storage</a>
+      <a href="../gateways.html" class="nav-link">Gateways</a>
+      <a href="../Communications.html" class="nav-link">Communications</a>
+   </nav>
+   <section id="blog">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row mb-5">
+               <div class="col-lg-9">
+                  <h1><span class="bold">RIF 存储</span>：第一组块</h1>
+                  <span class="blue_rif  d-block mb-3"><i>Vojtěch Šimetka & Rinke Hendriksen</i></span>
+                  <h6>2019年7月1日</h6>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-9">
+                  <p>数周前，我们发布了<a href="rif-storage-a-decentralized-storage-solution.html" class="blue_rif"
+                        target="_blank"
+                        rel="noopener noreferrer">有关去中心化存储的首篇文章</a>，在这篇文章中我们强调了构建该功能的动机以及我们的愿景。自那时起，发生了很多事情。例如，我们确定了 MVP
+                     的范围，回答了一些关键问题，并与 <a href="https://swarm.ethereum.org/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">Ethereum Swarm</a> 团队建立了合作伙伴关系，以助力实现该愿景。这种合作伙伴关系具有重大意义：它在同时运行 Swarm 与
+                     RIF Storage 时，助力我们从其中最受重视的一个去中心化存储项目中汲取经验。
+                  </p>
+                  <p>在此次博客发布中，我们将强调这种合作伙伴关系如何产生，随后我们将提供有关 RIF 存储功能如何运行的高阶概述。</p>
+                  <h3 class="mt-5 mb-3">合作的开始</h3>
+                  <p>从我们之前发布的博客中，您已了解到：去中心化存储对实现更为公允的社会而言十分重要。由于这点极为重要，因此并不奇怪许多项目都在努力实现这点，例如：<a href="https://ipfs.io/"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">IPFS</a>, <a href="https://storj.io/"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">Storj</a>, <a
+                        href="https://sia.tech/" class="blue_rif" target="_blank" rel="noopener noreferrer">Sia</a>, <a
+                        href="https://maidsafe.net/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">MaidSafe</a> 或 <a href="https://swarm.ethereum.org/" class="blue_rif"
+                        target="_blank"
+                        rel="noopener noreferrer">Swarm</a>。虽然所有这些项目存在一些重要差异，但有一个共同点，就是它们都在尝试改变全球资讯的存储和访问方式。很明显 RIF
+                     拥有作为第 2 推动者的优势：我们所处的情况使我们能够了解到所有这些有趣的项目，以及它们的优势和弊端。而我们也的确这样做了。
+                  </p>
+                  <p>通过该分析可知，对我们而言 Swarm 是最具前景的项目。它具有巧妙的设计和清晰的愿景；所有项目在部署激励型去中心化存储（下文将对这点进行更多说明）上都提供了非常清晰的路径。
+                  </p>
+                  <p>几乎在同一时间，Swarm 组织了<a href="https://summit.ethswarm.org/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">2019 马德里 Swarm 峰会</a>。我们安排了 <a
+                        href="https://twitter.com/vojtechsimetka" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">Vojtech Simetka</a> 与 <a href="https://twitter.com/alebanzas"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">Ale Banzas</a>
+                     参加了此次峰会。我们的结论已得到确认，且我们对 Swarm 项目的状况有了更清晰的了解；虽然 Swarm
+                     项目设计严密，并在理论对其进行了定义，但是除了核心存储功能，其他一些功能仍处于研究或试验阶段，例如激励机制。激励型去中心化存储在很大程度上取决于第 2
+                     层级支付解决方案，这是由于小额支付对激励各节点以有益于网络的方式运行起着关键作用。由于我们的团队在第 2 层级支付解决方案（RIF 支付与 Lumino）上拥有丰富的经验，我们发现了与 Swarm
+                     团队合作并实现 激励型存储愿景的机会。</p>
+                  <p>因此，这种合作伙伴关系与<a href="https://github.com/orgs/ethersphere/projects/9" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">激励追踪模式</a>随之建立。这种追踪模式由来自 Swarm 的 Fabio Barone
+                     负责操作，并由来自 RIF Storage 的 Vojtech Simetka 进行协调，其目的在于通过大量依靠 Swarm 团队完成的研究最大程度减少部署激励型数据存储（请参见：<a
+                        href="https://docs.google.com/document/d/e/2PACX-1vSNhcfNUJRmhDwwJSmLFED6djt_z8br9S2V8-npLFX2p9DfFGfsUDrUjvtP3Vc_71ge06Kyi3yLNxOE/pub"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">MVP 范围</a>）。此外，其目的还在于在接下来 3 个月为本地 EVM
+                     货币（如 RBTC 或 ETH）与 ERC20 代币（例如 RIF）提供支持。</p>
+                  <h3 class="mb-3 mt-5">RIF Storage 与 Swarm 相关基础知识</h3>
+                  <p>在这部分，我们将对去中心化存储（在这种情况中，例如 Swarm）如何运行、以及激励如何发挥作用提供高阶说明。如需了解完整说明，请参见官方 <a
+                        href="https://swarm-guide.readthedocs.io/en/latest/" target="_blank"
+                        rel="noopener noreferrer">Swarm 文</a>件。
+                  </p>
+                  <p>用户预期去中心化存储提供的两个主要功能为上传和下载文件。我们先来说明一下如何进行上传。以下为我们确定的三个步骤：</p>
+                  <ul class="custom-counter">
+                     <li>将文件上传到一个节点</li>
+                     <li>准备好文件（分块并加密</li>
+                     <li>将各个块分配到网络中</li>
+                  </ul>
+                  <p>第一个步骤简单明了：用户连接至一个运行的 Swarm 节点，并使用指令 swarm up <filename> 等方式，或在不久的将来通过 RIF Storage UI 等用户界面上传文件。在第 2
+                        步中，文件就绪，可上传至网络：文件分成非常小的部分，这些部分称作块，可对这些块进行加密，以提高安全性和隐私性。在以下 gif 图像中可以看到这一点。</p>
+                  <img src="../../assets/img/blog/zh/2.-file-prep.gif" class="img-fluid mb-5 mt-5">
+                  <p>这些块被映射到 Merkle 树中，以构建完整性。以下图像显示了这种树可能具有的外观：</p>
+                  <img src="../../assets/img/blog/3.-merkle-tree.png" class="img-fluid mb-5 mt-5">
+                  <p>在这颗树中，叶子被每个块的散列所填充，而树根代表整个文件的散列。这些散列的使用方式有两种：作为校验和以确保块的完整性，以及显示它们 在网络中的位置。根据节点地址之间的 XOR
+                     距离以及节点内容的散列对块进行分配。如利用示意图表示，它的情况大致如下：</p>
+                  <img src="../../assets/img/blog/4.-distribution-network.gif" class="img-fluid mb-5 mt-5">
+                  <p>大部分时候下载文件的流程遵循相同算法，不过以相反的顺序进行。用户通过网络中 Merkle 树的根散列来索取一个文件，之后索取各个节点的块（Merkle
+                     树的叶子节点），对文件进行编译。最后，对各个块进行解密，然后对文件进行组合。</p>
+                  <h3 class="mt-5 mb-3">关于激励</h3>
+                  <p>如之前我们所讨论的，激励对网络而言非常重要，上文已对此进行了说明。为什么？思考一下您是否希望您的笔记本电脑每天保持联机并全天候启用，以切分各个块，将其存储在硬盘中，并从硬盘中提供这些块。不希望这样？额，或许并不是仅您会这样回答。请您自问另外一个问题：什么会使您愿意提供块，助力打造一个健康的网络？
+                  </p>
+                  <p>Swarm 对 Swarm 计费协议 (SWAP)
+                     进行定义，该协议为“针锋相对式”系统，节点对其索取和提供的数据量进行计算。其中的基本意思为假设您向我索取了一百万个块，我会相应归还给您一百万个块。不过，在文件存储网络中这存在一个问题。我们希望网络使用具有可变性（例如，我可能进行
+                     2 小时视频串流，然后在接下来 4 小时期间让我的电脑闲置），以及节点功能存在差异（一部手机无法提供大量块，但一台服务器可以做到这一点）。SWAP
+                     允许节点对其余额进行计算，如某个节点向您索取大量块，您将通过某个第二层支付解决方案向该节点出具一份付款申请单。
+                  </p>
+                  <img src="../../assets/img/blog/zh/5.-swap.gif" class="img-fluid mb-5">
+                  <p class="text-center mt-5"><i>此处显示了 SWAP 机制，在该机制中节点相互发送和接收块，一旦块量表 (chunk-o-meter) 向一边倾斜得过多时，将对余额进行结算
+                     </i></p>
+                  <p>虽然设计简单，但这种概念对去中心化网络而言非常有用。比特币和加密货币的兴起已说明，设计精良的结构可帮助节点以有利于网络健康的某些方式运行。在这种情况下，预期利润推动下的节点加入网络，并从高通量服务器提供最需要的块，这将提升网络的稳定性和速度，使其更难被破坏。这正是我们想要的！此外，这种系统也允许任何人免费进入
+                     RSK/Ethereum 生态系统。
+                  </p>
+                  <h3 class="mt-5 mb-3">后续安排</h3>
+                  <p>正如您看到的，我们在积极地给您提供一些非常酷的前沿技术。您可以在<a href="https://github.com/orgs/ethersphere/projects/9"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">激励板</a>上追踪我们的进展情况。如果您是一名开发人员，您可通过选择一个
+                     <a href="https://github.com/ethersphere/swarm/issues?q=is%3Aissue+is%3Aopen+label%3Aincentives"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">GitHub 问题</a>并对<a
+                        href="https://swarmresear.ch/t/postage-ex-proof-of-burn/30" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">邮费</a>等方面进行一些研究来帮助我们，或最好您能联系我们，了解一下我们怎样进行合作。下次我们将向您展示 RIF
+                     存储用户界面，让您先睹为快。
+                  </p>
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div style="top: -6px;" class="fb-share-button" data-layout="button" data-size="large">
+                        </div>
+                        <a class="twitter-share-button btn btn btn-primary mr-3" href="https://twitter.com/intent/tweet"
+                           data-size="large">
+                           Tweet</a>
+                        <script async src="https://telegram.org/js/telegram-widget.js?8"
+                           data-telegram-share-url="https://www.rifos.org/zh-hans/blog/rif-storage-the-first-chunks.html"
+                           data-size="large"></script>
+                     </div>
+                     <div class="col-lg-12 mt-5">
+                        <a class="btn btn btn-primary mr-3" href="./">背部</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="twitter-news">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row text-center">
+               <div class="col-lg-12">
+                  <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                        class="fab fa-twitter"></i></a>
+                  <h3 class="bold">Follow our news!</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer -->
+   <footer id="footer" class="section-bg">
+      <div class="footer-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <img src="../../assets/img/powered_by_iov.svg" class="img-fluid powered_by">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-sm-7">
+                        <div class="footer-info">
+                           <p>RIF OS互用性广，部署更快，轻松解决区块链技术与其大规模市场采用之间的差距。</p>
+                        </div>
+                     </div>
+                     <div class="col-sm-5"></div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../../assets/whitepapers/rif-whitepaper-zh.pdf" target="_blank"
+                                    rel="noopener noreferrer">白皮书</a></li>
+                              <li><a href="../blog/index.html">博客</a></li>
+                              <li><a href="../index.html#roadmap">Roadmap</a></li>
+                              <li><a href="https://github.com/riflabs" rel="noopener noreferrer"
+                                    target="_blank">Github</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../faqs.html">常见问题解答</a></li>
+                              <li><a href="../../assets/guidelines/RIF_FullBrandGuidelines_Zh.pdf"
+                                    rel="nofollow noopener noreferrer" target="_blank">品牌手册</a></li>
+                              <li><a class="medium" href="https://www.rsk.co/zh-Hans/index.html"
+                                    rel="noopener noreferrer" target="_blank">RSK 链接</a></li>
+                              <li><a class="medium" href="https://www.iovlabs.org/zh-Hans/index.html"
+                                    rel="noopener noreferrer" target="_blank">关于 IOV Labs， 请访问</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a class="medium" href="https://www.iovlabs.org/zh-Hans/contact.html"
+                                    rel="noopener noreferrer" target="_blank">联络信息链接</a></li>
+                              <li><a href="../terms-conditions.html">条款与条件</a></li>
+                              <li><a href="../privacy-policy.html">隐私</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                           class="fab fa-twitter"></i></a>
+                     <a href="https://t.me/rif_os_community" rel="noopener noreferrer" target="_blank"
+                        class="telegram"><i class="fab fa-telegram"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-6 col-xs-12 pl-0-mobile">
+                     <p class="copyright mb-0">版权所有 © 2015 - 2026 Rif. 保留一切权利。</p>
+                     <p class="copyright mt-0">By <a href="https://taniebrand.com" target="_blank">Taniebrand®</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </footer>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="RIFVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="../../assets/videos/zh/RIF_CorpoVideo.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="../../assets/js/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>

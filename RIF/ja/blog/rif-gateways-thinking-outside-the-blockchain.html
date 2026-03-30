@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+   <!-- Google Tag Manager -->
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KBG28B4');</script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="description"
+      content="現時点で、ブロックチェーン技術は従来の集中型ソリューションよりも優れており、幅広い業界を劇的に崩壊させ、そして恐らくは今日の世界の形の変える可能性があることは明らかです。ブロックチェーンとスマート・">
+   <meta name="keywords" content="">
+   <meta name="author" content="RIF">
+   <title>RIFゲートウェイ：ブロックチェーンの外部を考える</title>
+   <!-- og info -->
+   <meta property="og:title" content="RIFゲートウェイ：ブロックチェーンの外部を考える">
+   <meta property="og:description"
+      content="現時点で、ブロックチェーン技術は従来の集中型ソリューションよりも優れており、幅広い業界を劇的に崩壊させ、そして恐らくは今日の世界の形の変える可能性があることは明らかです。ブロックチェーンとスマート・">
+   <meta property="og:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <meta property="og:url" content="https://www.rifos.org/ja/blog/rif-gateways-thinking-outside-the-blockchain.html">
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@rif_os">
+   <meta name="twitter:creator" content="@rif_os">
+   <meta name="twitter:domain" content="https://www.rifos.org/">
+   <meta name="twitter:title" content="RIFゲートウェイ：ブロックチェーンの外部を考える">
+   <meta name="twitter:description"
+      content="現時点で、ブロックチェーン技術は従来の集中型ソリューションよりも優れており、幅広い業界を劇的に崩壊させ、そして恐らくは今日の世界の形の変える可能性があることは明らかです。ブロックチェーンとスマート・">
+   <meta name="twitter:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+   <link rel="manifest" href="../../assets/favicons/site.webmanifest">
+   <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link rel="shortcut icon" href="../../assets/favicons/favicon.ico">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="../../assets/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Main Stylesheet File -->
+   <!-- build:css -->
+   <link rel="stylesheet" href="../../assets/css/theming.css">
+   <!-- endbuild -->
+   <!-- OwlCarrousel CSS Files -->
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.theme.default.min.css">
+   <!-- Libraries CSS Files -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBG28B4" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+   <script>(function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+   <!-- Ends Facebook SDK for JavaScript -->
+   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="../"><img src="../../assets/img/logo.svg" class="logo" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#vision">ビジョン</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#build-on-rif">開発者</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#rif-token">RIF トークン </a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#roadmap">Roadmap</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#get-start">開始</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../marketplace.html" class="nav-link">Marketplace</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../directory.html" class="nav-link">Directory</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../payments.html" class="nav-link">Payments</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../storage.html" class="nav-link">Storage</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../gateways.html" class="nav-link">Gateways</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../communications.html" class="nav-link">Communications</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle lang_nav active" href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     日本語
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item"
+                        href="../../blog/rif-gateways-thinking-outside-the-blockchain.html">English</a>
+                     <a class="dropdown-item"
+                        href="../../ko/blog/rif-gateways-thinking-outside-the-blockchain.html">한국어</a>
+                     <a class="dropdown-item"
+                        href="../../zh-hans/blog/rif-gateways-thinking-outside-the-blockchain.html">简体中文</a>
+                     <a class="dropdown-item"
+                        href="../../es/blog/rif-gateways-thinking-outside-the-blockchain.html">Español</a>
+                     <a class="dropdown-item"
+                        href="../../pt-pt/blog/rif-gateways-thinking-outside-the-blockchain.html">Português</a>
+                     <a class="dropdown-item"
+                        href="../../ru/blog/rif-gateways-thinking-outside-the-blockchain.html">Pусский</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">ご連絡いただけます</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <nav id="vertical-nav" class="nav flex-column">
+      <a href="../marketplace.html" class="nav-link">Marketplace</a>
+      <a href="../directory.html" class="nav-link">Directory</a>
+      <a href="../payments.html" class="nav-link">Payments</a>
+      <a href="../storage.html" class="nav-link">Storage</a>
+      <a href="../gateways.html" class="nav-link">Gateways</a>
+      <a href="../communications.html" class="nav-link">Communications</a>
+   </nav>
+   <section id="blog">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row mb-5">
+               <div class="col-lg-9">
+                  <h1>RIFゲートウェイ：<span class="bold">ブロックチェーンの外部を考える</span></h1>
+                  <span class="blue_rif  d-block mb-3"><i>Julian Rodriguez著 - Gateways PO</i></span>
+                  <h6>2020年4月17日</h6>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-9">
+                  <p>現時点で、ブロックチェーン技術は従来の集中型ソリューションよりも優れており、幅広い業界を劇的に崩壊させ、そして恐らくは今日の世界の形の変える可能性があることは明らかです。ブロックチェーンとスマート・コントラクトにより<span
+                        class="bold">新たなレベルの信頼</span>がもたらさるため、仲介者（代理店）が必要なくなり、全体としてはるかに<span
+                        class="bold">安全かつ透明性の高い</span>システムが構築されます。ブロックチェーンとその分散型の性質により、スマート・コントラクトは<span
+                        class="bold">改ざん不可能</span>にされ、この方法（入力、コードおよび結果を変更する関係者なし）でビジネス・ロジックを実行する機能は、法的契約や自動決済システムなどの様々な状況で<span
+                        class="bold">大きく役立ちます</span>。</p>
+                  <p>しかし、ブロックチェーン技術におけるセキュリティと信頼性にも<u>代償が伴います</u>。いくつかのロジックを実行するために<span
+                        class="bold">外部アプリケーションからデータ値を取得する、メッセージを外部システムに送信する、定期的/反復的なトランザクションをスケジュールする</span>などの比較的単純なタスクの実行については、ブロックチェーン・アプリケーションのコンテキストで実装するのは非常に困難です。スマート・コントラクトの実行は決定論的でなければならず、オンチェーン・スマート・コントラクトは、<span
+                        class="bold">ブロックチェーンに存在しないデータに簡単にアクセスできない</span>ため、従来のアプリケーションと比較して不利な点があります。</p>
+                  <p>RIFゲートウェイにおいて、当社はこの課題に取り組み、ブロックチェーンの<span class="bold"><i>外部</i></span>を考えます。
+                     このサービスの主な目的は、開発者や企業が外部の世界とシームレスに相互作用できる<span
+                        class="bold">ブロックチェーンベースのアプリケーション</span>を設計できるようにするための<span
+                        class="bold">使いやすいツールや技術</span>を開発し、広範囲の新たな使用例を可能にすることです。詳細については、RIFウェブサイトに掲載されている、<a
+                        href="https://www.rifos.org/assets/gateways-specs/RIF-Gateways-Service-Protocol-Specification.pdf"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">RIFゲートウェイ・ホワイトペーパー</a>をご覧ください。</p>
+                  <p>RIFゲートウェイは、研究における最新の進歩を活用して最も広く認識されている業界ソリューションを統合します。同時に、これらのテクノロジー実装の複雑さを大幅に低減できるような、<span
+                        class="bold">統一された共通のインターフェース層</span>を提供します。幅広いデータ消費、サブスクリプションおよび決済モデルをサポートするための、安全かつ信頼性の高い<span
+                        class="bold">データ転送</span>を消費者とプロバイダーが容易にセットアップするのを可能にします。</p>
+                  <img src="../../assets/img/blog/gateways-outside-blockchain-1.png"
+                     class="img-fluid img-blog-style-1 text-center mb-5 mt-5">
+                  <p>RIFゲートウェイは、分散型ブロックチェーンベースのアプリケーションが外部の世界と相互作用する必要があるすべてのシナリオに対応可能な<span
+                        class="bold">3つの主要サービス</span>で構成されています。これらのサービスは、<span class="bold">データ・サービス、トリガ</span>、および<span
+                        class="bold">スケジューラ</span>です。各サービスには、それぞれ独自の難しさと課題があり、望ましい結果を達成するためには、特定のツールおよび技術が必要です。次のセクションでは、個々のサービスについて詳しく説明します。
+                  </p>
+                  <img src="../../assets/img/blog/gateways-outside-blockchain-2.png"
+                     class="img-fluid img-blog-style-1 text-center mb-5 mt-5">
+                  <h3 class="mt-5 mb-3">データ・サービス</h3>
+                  <p><span class="bold">RIFデータ・サービス</span>は、外部の世界からブロックチェーンに送信される情報（インバウンド・トランザクション）を管理します。
+                     これらは一般に「<span
+                        class="bold">Oracle</span>」としても知られており、スマート・コントラクトが外部情報に基づいてビジネス・ロジックを実行できるようにします。一般的に外部データを必要とするアプリケーションの例としては、とりわけ、<span
+                        class="bold">保険契約</span>（外部イベントに関する情報が必要で、特定のイベントが発生するごとに決済を行う場合あり）や、<span
+                        class="bold">ファイナンス・アプリケーション</span>（通常、価格フィードやUSD/EURなどの為替レートの利用が必要な契約が関係する）などです。 </p>
+                  <p>消費者は、<span class="bold">RIFデータ・サービス</span>を使用することで、様々なタイプの<span
+                        class="bold">Oracle</span>サービスから選択して対応するプロバイダと相互作用し、必要な情報を取得できます。プロバイダーは、データ・サービス・プロトコルに準拠するために、スマート・コントラクトに<span
+                        class="bold">特定のインターフェイス</span>を実装し、明確かつ特定のデータ消費、サブスクリプションおよび決済モデルを定義する必要があります。</p>
+                  <h3 class="mt-5 mb-3">トリガ</h3>
+                  <p><span
+                        class="bold">RIFトリガ</span>は、ブロックチェーンから外部アプリケーションおよびシステムに送信される情報（アウトバウンド・トランザクション）を扱います。従来のアプリケーションも、ロジックと操作を実行するためにはブロックチェーン内で生成されたデータにアクセスする必要があります。例としては、参加者に対して特定の更新を表示するためにスマート・コントラクトのイベントを処理する必要がある<span
+                        class="bold">ゲーミング・アプリケーション</span>や、個別のアカウントから資金を受け取ったたり引き出したりするごとにアラートおよび通知を必要とする<span
+                        class="bold">決済アプリケーション</span>があります。</p>
+                  <p><span class="bold">RIFトリガ</span>は、各使用例において新たなソリューションを実装するリスクやコストなしにブロックチェーンのイベントとデータを消費するための<span
+                        class="bold">標準化された方法</span>を定義します。このことにより、すべてのユーザーが<span
+                        class="bold">イベント処理サービスを設定</span>できるため、聞きたいことやイベントが発生した時に実行するアクションを指定したり、事前定義済みテンプレートにサブスクリプションすることさえもできます。
+                  </p>
+                  <h3 class="mt-5 mb-3">スケジューラ</h3>
+                  <p><span
+                        class="bold">RIFスケジューラ</span>は、定期的かつ繰り返し発生するトランザクションを処理するため、ユーザーがブロックチェーンにおいて時間ベースのロジックとスマート・コントラクトを実行できるようになります。ほとんどのアプリケーションが特定の時間条件に基づいてトランザクションを実行できなければならず、この機能はどのブロックチェーンにおいてもネイティブにサポートされていません。
+                     この例としては、<span
+                        class="bold">投資アプリケーション</span>があります。このアプリケーションでは、投資期間終了時に投資家に対して収益や利得を配当するためのスマート・コントラクトが必要とされます。
+                  </p>
+                  <p><span
+                        class="bold">RIFスケジューラ</span>は、トランザクション・スケジューリング向けの実装に依存しないプロトコルを提供するため、新興のスケジューリング・サービス・プロバイダーの参加を可能にし、オンチェーン・トランザクションの<span
+                        class="bold">将来の実行をプログラミング</span>するための効率的で信頼性の高い方法を顧客に提供します。</p>
+                  <p>総括すると、RIFゲートウェイは、ユーザーがデータ・サービス（Oracle）、トリガ・サービス、およびトランザクション・スケジューラと相互作用するための<span
+                        class="bold">シンプルかつ共通</span>のインターフェイスを定義します。RIFゲートウェイは、多様なテクノロジーやプロバイダーに対処する複雑さを大幅に軽減し、<span
+                        class="bold">外部アプリケーションやシステムとの安全かつ改ざんに耐性のある相互作用を</span>実現させるため、複数の決済、消費、サブスクリプション・モデルをサポートすることができます。RIFゲートウェイは、ブロックチェーン・アプリケーションと従来のソリューション間の<span
+                        class="bold">シームレスな統合</span>を可能にする非常に貴重なツールであり、分散型かつ透明性のあるシステムにおいて中心的な役割を担います。</p>
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div style="top: -6px;" class="fb-share-button" data-layout="button" data-size="large">
+                        </div>
+                        <a class="twitter-share-button btn btn btn-primary mr-3" href="https://twitter.com/intent/tweet"
+                           data-size="large">
+                           Tweet</a>
+                        <script async src="https://telegram.org/js/telegram-widget.js?8"
+                           data-telegram-share-url="https://www.rifos.org/ja/blog/rif-gateways-thinking-outside-the-blockchain.html"
+                           data-size="large"></script>
+                     </div>
+                     <div class="col-lg-12 mt-5">
+                        <a class="btn btn btn-primary mr-3" href="./">戻る</a>
+                     </div>
+                     <div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="twitter-news">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row text-center">
+               <div class="col-lg-12">
+                  <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                        class="fab fa-twitter"></i></a>
+                  <h3 class="bold">Follow our news!</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer -->
+   <footer id="footer" class="section-bg">
+      <div class="footer-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <img src="../../assets/img/powered_by_iov.svg" class="img-fluid powered_by">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-sm-7">
+                        <div class="footer-info">
+                           <p>RIF OSにより幅広い相互運用性と展開までの時間の短縮を可能となるため、ブロックチェーンテクノロジーと大衆市場での採用との間の溝を埋めるのです。</p>
+                        </div>
+                     </div>
+                     <div class="col-sm-5"></div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../../assets/whitepapers/rif-whitepaper-ja.pdf" target="_blank"
+                                    rel="noopener noreferrer">ホワイトペーパー</a></li>
+                              <li><a href="index.html">ブログ
+                                 </a>
+                              </li>
+                              <li><a href="../index.html#roadmap">Roadmap
+                                 </a>
+                              </li>
+                              <li><a href="https://github.com/riflabs" rel="noopener noreferrer"
+                                    target="_blank">Github</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../faqs.html">よくある質問
+                                 </a>
+                              </li>
+                              <li><a href="../../assets/guidelines/RIF_FullBrandGuidelines_Ja.pdf"
+                                    rel="nofollow noopener noreferrer" target="_blank">ブランドマニュアルa</a></li>
+                              <li><a class="medium" href="https://www.rsk.co/ja/index.html" rel="noopener noreferrer"
+                                    target="_blank">RSK</a></li>
+                              <li><a class="medium" href="https://www.iovlabs.org/ja/index.html"
+                                    rel="noopener noreferrer" target="_blank">IOV ラボへのリンク</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a class="medium" href="https://www.iovlabs.org/ja/contact.html"
+                                    rel="noopener noreferrer" target="_blank">お問合せリンク</a></li>
+                              <li><a href="../terms-conditions.html">利用規約</a></li>
+                              <li><a href="../privacy-policy.html">プライバシー</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                           class="fab fa-twitter"></i></a>
+                     <a href="https://t.me/rif_os_community" rel="noopener noreferrer" target="_blank"
+                        class="telegram"><i class="fab fa-telegram"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-6 col-xs-12 pl-0-mobile">
+                     <p class="copyright">Copyright © 2015 - 2026 Rif. 禁無断転載</p>
+                     <p class="copyright mt-0">By <a href="https://taniebrand.com" target="_blank">Taniebrand®</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </footer>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="RIFVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="../../assets/videos/ja/RIF_CorpoVideo.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="../../assets/js/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>

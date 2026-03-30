@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+   <!-- Google Tag Manager -->
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KBG28B4');</script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="description" content="RIF 域名服务 (RNS) 是允许用户拥有任意区块链中可读域的去中心化服务。换句话说，RNS 是区块链中的电话簿。">
+   <meta name="keywords" content="">
+   <meta name="author" content="RIF">
+   <title>RNS用户界面更新</title>
+   <!-- og info -->
+   <meta property="og:title" content="RNS用户界面更新">
+   <meta property="og:description" content="RIF 域名服务 (RNS) 是允许用户拥有任意区块链中可读域的去中心化服务。换句话说，RNS 是区块链中的电话簿。">
+   <meta property="og:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <meta property="og:url" content="https://www.rifos.org/zh-hans/blog/rns-user-interface-update.html">
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@rif_os">
+   <meta name="twitter:creator" content="@rif_os">
+   <meta name="twitter:domain" content="https://www.rifos.org/">
+   <meta name="twitter:title" content="RNS用户界面更新">
+   <meta name="twitter:description" content="RIF 域名服务 (RNS) 是允许用户拥有任意区块链中可读域的去中心化服务。换句话说，RNS 是区块链中的电话簿。">
+   <meta name="twitter:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+   <link rel="manifest" href="../../assets/favicons/site.webmanifest">
+   <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link rel="shortcut icon" href="../../assets/favicons/favicon.ico">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="../../assets/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Main Stylesheet File -->
+   <!-- build:css -->
+   <link rel="stylesheet" href="../../assets/css/theming.css">
+   <!-- endbuild -->
+   <!-- OwlCarrousel CSS Files -->
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.theme.default.min.css">
+   <!-- Libraries CSS Files -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBG28B4" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+   <script>(function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+   <!-- Ends Facebook SDK for JavaScript -->
+   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="../"><img src="../../assets/img/logo.svg" class="logo" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#vision">愿景</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#build-on-rif">开发人员</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#rif-token">RIF 代币</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#roadmap">Roadmap</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#get-start">入门指南</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../marketplace.html" class="nav-link">Marketplace</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../directory.html" class="nav-link">Directory</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../payments.html" class="nav-link">Payments</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../storage.html" class="nav-link">Storage</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../gateways.html" class="nav-link">Gateways</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../communications.html" class="nav-link">Communications</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle lang_nav active" href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     简体中文
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item" href="../../blog/rns-user-interface-update.html">English</a>
+                     <a class="dropdown-item" href="../../ko/blog/rns-user-interface-update.html">한국어</a>
+                     <a class="dropdown-item" href="../../ja/blog/rns-user-interface-update.html">日本語</a>
+                     <a class="dropdown-item" href="../../es/blog/rns-user-interface-update.html">Español</a>
+                     <a class="dropdown-item" href="../../pt-pt/blog/rns-user-interface-update.html">Português</a>
+                     <a class="dropdown-item" href="../../ru/blog/rns-user-interface-update.html">Pусский</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">观看视频</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <nav id="vertical-nav" class="nav flex-column">
+      <a href="../marketplace.html" class="nav-link">Marketplace</a>
+      <a href="../directory.html" class="nav-link active">Directory</a>
+      <a href="../payments.html" class="nav-link">Payments</a>
+      <a href="../storage.html" class="nav-link">Storage</a>
+      <a href="../gateways.html" class="nav-link">Gateways</a>
+      <a href="../Communications.html" class="nav-link">Communications</a>
+   </nav>
+   <section id="blog">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row mb-5">
+               <div class="col-lg-9">
+                  <h1><span class="bold">RNS</span>用户界面更新</h1>
+                  <span class="blue_rif  d-block mb-3"><i>Ilan Olkies - RNS Product Owner</i></span>
+                  <h6>2020 年 4 月 8 日</h6>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-9">
+                  <p>RIF 域名服务 (RNS) 是允许用户拥有任意区块链中可读域的去中心化服务。换句话说，RNS 是区块链中的电话簿。人们能够通过网域名称取得线上资讯，像是 alice.rsk
+                     或bob.rsk。钱包使用地址通过区块链协议相互影响。RNS 将域名转换成地址，以便用户可以使用这些域名来进行汇款并与去中心化应用程序進行交互。<br>
+                     让我们假设您要向 Alice 发送一些 RIF 代币。您可能首先要打开您的钱包，然后询问 Alice 她的地址。
+
+                     <br>
+                     <code>0xfDB628524AD95c95a2C1f8dA9b8Bd92b6478CF6F</code>
+                  </p>
+
+
+                  <p>当您按下发送按键时，钱包将使用您输入的地址并标记一笔汇款到该地址的交易。<br>
+                     但是，这不是汇款的唯一选择！Alice 已经注册了她的域，因此她只需在您的钱包输入她的域，即可立即汇款。
+
+                     <br>
+                     <code>alice.rsk</code>
+                  </p>
+
+
+                  <p>钱包使用 RNS 来取得域的地址，然后在 RNS 公共电话簿中进行搜寻。取得地址后，您将会使用汇款收款人签署交易。
+                  </p>
+
+
+                  <h3 class="mt-5 mb-3">如何注册域名？</h3>
+
+
+                  <p>您可以利用 RNS 管理员来注册域名。您将需要：</p>
+
+                  <ul class="custom-dot">
+                     <li>一个线上钱包。我们建议您使用 <a
+                           href="https://chrome.google.com/webstore/detail/nifty-wallet/jbdaocneiiinmjbjlgalhcelgbejmnid"
+                           class="blue_rif custom-dot-blog-link" target="_blank" rel="noopener noreferrer">Nifty 钱包</a>。
+                     </li>
+
+                     <li><a href="https://developers.rsk.co/rsk/rbtc/" class="blue_rif custom-dot-blog-link"
+                           target="_blank" rel="noopener noreferrer">R-BTC</a> 以支付 RSK 网络交易费用，以及</li>
+
+
+                     <li><a href="https://developers.rsk.co/rif/token/" class="blue_rif custom-dot-blog-link"
+                           target="_blank" rel="noopener noreferrer">RIF Tokens</a> 以支付 RNS 域名服务。</li>
+                  </ul>
+
+
+                  <p>有了这些就一切就绪。来注册域名吧！</p>
+
+
+                  <ul class="custom-counter">
+                     <li>浏览 <a href="https://manager.rns.rifos.org/" class="blue_rif" target="_blank"
+                           rel="noopener noreferrer">RNS 管理员</a>并搜寻您想要的域名：</li>
+
+                     <img src="../../assets/img/blog/rns-user-interface-update-1.png"
+                        class="img-fluid img-blog-style-1 mb-5 mt-5">
+
+
+
+                     <li>如果域名可用，点击注册！如果不可用，试试另一个。</li>
+                     <img src="../../assets/img/blog/rns-user-interface-update-2.png"
+                        class="img-fluid img-blog-style-1 mb-5 mt-5">
+
+
+                     <li>选择您希望注册域名的年份，并申请域名。签署您钱包内的交易。</li>
+
+                     <img src="../../assets/img/blog/rns-user-interface-update-3.png"
+                        class="img-fluid img-blog-style-1 mb-5 mt-5">
+
+
+                     <li>等待域通过请求。这可能需要一至二分钟。</li>
+
+
+                     <img src="../../assets/img/blog/rns-user-interface-update-4.png"
+                        class="img-fluid img-blog-style-1 mb-5 mt-5">
+
+
+                     <li>完成域名注册，点击注册并签署最后的必要交易。</li>
+                     <img src="../../assets/img/blog/rns-user-interface-update-5.png"
+                        class="img-fluid img-blog-style-1 mb-5 mt-5">
+
+
+                     <li>完成！现在您持有一个 RNS 域名！</li>
+                     <img src="../../assets/img/blog/rns-user-interface-update-6.png"
+                        class="img-fluid img-blog-style-1 mb-5 mt-5">
+                  </ul>
+
+
+                  <h3 class="mt-5 mb-3">免费在测试网 (TestNet) 中试用</h3>
+
+                  <p>我们可以使用 RSK 测试网网络来试用 RNS 服务。若要这么做，请连结您的浏览器钱包到 RSK 测试网（切换 Nifty 中的网络，或 <a
+                        href="https://developers.rsk.co/develop/apps/wallets/metamask/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">参阅如何在 Metamask 中进行</a>）。然后在水龙头中获取款项：</p>
+
+
+                  <ul class="custom-dot">
+                     <li>通过<a href="https://faucet.rsk.co/" class="blue_rif custom-dot-blog-link" target="_blank"
+                           rel="noopener noreferrer">RSK 水龙头</a>获得测试网 R-bTC</li>
+                     <li>通过<a href="https://faucet.rsk.co/" class="blue_rif custom-dot-blog-link" target="_blank"
+                           rel="noopener noreferrer">RIF 水龙头</a>获得测试网 RIF Tokens</li>
+                  </ul>
+
+
+                  <h3 class="mt-5 mb-3">使用 RNS 的好处</h3>
+
+                  <ul class="custom-dot">
+                     <li><span class="bold">弹性</span>您可以多次更新您的域名。更改您的钱包地址时，请继续使用相同的域名——<a
+                           href="https://developers.rsk.co/rif/rns/operations/set-addr/"
+                           class="blue_rif custom-dot-blog-link" target="_blank"
+                           rel="noopener noreferrer">我该如何更改域名的地址</a>？</li>
+                     <li><span class="bold">去中心化</span>: 您不需要征求任何人的允许来管理您的域名。一旦拥有它，您就只能与区块链进行交流并随时更新——参阅更多<a
+                           href="https://developers.rsk.co/rif/rns/" class="blue_rif custom-dot-blog-link"
+                           target="_blank" rel="noopener noreferrer">相关服务</a></li>
+
+
+                     <li><span class="bold">使用方法简单</span>: 允许任何人向您汇款，避免使用冗长且容易出错的地址</li>
+
+
+                     <li><span class="bold">便宜</span>: 现在注册域名的费用低于一美元。当您拥有域名以后，您可以根据您的需要来创建多个子域——<a
+                           href="https://developers.rsk.co/rif/rns/operations/register-subdomain/"
+                           class="blue_rif custom-dot-blog-link" target="_blank" rel="noopener noreferrer">我该如何创建子域</a>？
+                     </li>
+
+                     <li><span class="bold">可携式</span>: 在您的去中心化应用程序和钱包使用 RNS。运用我们的代码库与服务整合——参阅
+                        <a href="https://developers.rsk.co/rif/rns/integrate/" class="blue_rif custom-dot-blog-link"
+                           target="_blank" rel="noopener noreferrer">整合指南</a>
+                  </ul>
+                  </li>
+
+
+                  <h3 class="mt-5 mb-3">RNS 计划</h3>
+                  <p>我们目前正在重新全面设计我们的平台。如果想要尝试所有最近的更新，请点击管理页面底部的“try the new admin!”（尝试新的管理！）。</p>
+                  <img src="../../assets/img/blog/rns-user-interface-update-7.png"
+                     class="img-fluid img-blog-style-1 mb-5 mt-5">
+
+                  <p>我们正在尽力完成许多其他惊人的项目。我们正在积极开发 JavaScript 资料库，让去中心化应用程序和钱包的交互更快更有效。
+                     <a href="https://developers.rsk.co/rif/rns/libs/javascript/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">尝试开源 RNS javascript 资料库</a>!
+                  </p>
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div style="top: -6px;" class="fb-share-button" data-layout="button" data-size="large">
+                        </div>
+                        <a class="twitter-share-button btn btn btn-primary mr-3" href="https://twitter.com/intent/tweet"
+                           data-size="large">
+                           Tweet</a>
+                        <script async src="https://telegram.org/js/telegram-widget.js?8"
+                           data-telegram-share-url="https://www.rifos.org/zh-hans/blog/rns-user-interface-update.html"
+                           data-size="large"></script>
+                     </div>
+                     <div class="col-lg-12 mt-5">
+                        <a class="btn btn btn-primary mr-3" href="./">背部</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="twitter-news">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row text-center">
+               <div class="col-lg-12">
+                  <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                        class="fab fa-twitter"></i></a>
+                  <h3 class="bold">Follow our news!</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer -->
+   <footer id="footer" class="section-bg">
+      <div class="footer-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <img src="../../assets/img/powered_by_iov.svg" class="img-fluid powered_by">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-sm-7">
+                        <div class="footer-info">
+                           <p>RIF OS互用性广，部署更快，轻松解决区块链技术与其大规模市场采用之间的差距。</p>
+                        </div>
+                     </div>
+                     <div class="col-sm-5"></div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../../assets/whitepapers/rif-whitepaper-zh.pdf" target="_blank"
+                                    rel="noopener noreferrer">白皮书</a></li>
+                              <li><a href="../blog/index.html">博客</a></li>
+                              <li><a href="../index.html#roadmap">Roadmap</a></li>
+                              <li><a href="https://github.com/riflabs" rel="noopener noreferrer"
+                                    target="_blank">Github</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../faqs.html">常见问题解答</a></li>
+                              <li><a href="../../assets/guidelines/RIF_FullBrandGuidelines_Zh.pdf"
+                                    rel="nofollow noopener noreferrer" target="_blank">品牌手册</a></li>
+                              <li><a class="medium" href="https://www.rsk.co/zh-Hans/index.html"
+                                    rel="noopener noreferrer" target="_blank">RSK 链接</a></li>
+                              <li><a class="medium" href="https://www.iovlabs.org/zh-Hans/index.html"
+                                    rel="noopener noreferrer" target="_blank">关于 IOV Labs， 请访问</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a class="medium" href="https://www.iovlabs.org/zh-Hans/contact.html"
+                                    rel="noopener noreferrer" target="_blank">联络信息链接</a></li>
+                              <li><a href="../terms-conditions.html">条款与条件</a></li>
+                              <li><a href="../privacy-policy.html">隐私</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                           class="fab fa-twitter"></i></a>
+                     <a href="https://t.me/rif_os_community" rel="noopener noreferrer" target="_blank"
+                        class="telegram"><i class="fab fa-telegram"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-6 col-xs-12 pl-0-mobile">
+                     <p class="copyright mb-0">版权所有 © 2015 - 2026 Rif. 保留一切权利。</p>
+                     <p class="copyright mt-0">By <a href="https://taniebrand.com" target="_blank">Taniebrand®</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </footer>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="RIFVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="../../assets/videos/zh/RIF_CorpoVideo.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="../../assets/js/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>

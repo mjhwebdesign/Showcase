@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <!-- Google Tag Manager -->
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KBG28B4');
+   </script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="description"
+      content="С момента создания команды RIF Storage мы делаем все возможное для реализации идеи децентрализованного интернета. На прошлой неделе во время конференции laBITconf компания IOV-labs официально объявила о запуске тестовой сети RIF Storage. Это важная веха на пути к реализации децентрализованного интернета!">
+   <meta name="keywords" content="">
+   <meta name="author" content="RIF">
+   <title>Запуск тестовой сети RIF Storage</title>
+   <!-- og info -->
+   <meta property="og:title" content="Запуск тестовой сети RIF Storage">
+   <meta property="og:description"
+      content="С момента создания команды RIF Storage мы делаем все возможное для реализации идеи децентрализованного интернета. На прошлой неделе во время конференции laBITconf компания IOV-labs официально объявила о запуске тестовой сети RIF Storage. Это важная веха на пути к реализации децентрализованного интернета!">
+   <meta property="og:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <meta property="og:url" content="https://www.rifos.org/ru/blog/rif-storage-testnet-launch.html">
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@rif_os">
+   <meta name="twitter:creator" content="@rif_os">
+   <meta name="twitter:domain" content="https://www.rifos.org/">
+   <meta name="twitter:title" content="Запуск тестовой сети RIF Storage">
+   <meta name="twitter:description"
+      content="С момента создания команды RIF Storage мы делаем все возможное для реализации идеи децентрализованного интернета. На прошлой неделе во время конференции laBITconf компания IOV-labs официально объявила о запуске тестовой сети RIF Storage. Это важная веха на пути к реализации децентрализованного интернета!">
+   <meta name="twitter:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+   <link rel="manifest" href="../../assets/favicons/site.webmanifest">
+   <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link rel="shortcut icon" href="../../assets/favicons/favicon.ico">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="../../assets/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Main Stylesheet File -->
+   <!-- build:css -->
+   <link rel="stylesheet" href="../../assets/css/theming.css">
+   <!-- endbuild -->
+   <!-- OwlCarrousel CSS Files -->
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.theme.default.min.css">
+   <!-- Libraries CSS Files -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBG28B4" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+   <script>(function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+   <!-- Ends Facebook SDK for JavaScript -->
+   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="../"><img src="../../assets/img/logo.svg" class="logo" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#vision">Концепция
+                  </a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#build-on-rif">Разработчики</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#rif-token">RIF Token
+                  </a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#roadmap">Roadmap
+                  </a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#get-start">Начало работы
+                  </a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../marketplace.html" class="nav-link">Marketplace</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../directory.html" class="nav-link">Directory</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../payments.html" class="nav-link">Payments</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../storage.html" class="nav-link">Storage</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../gateways.html" class="nav-link">Gateways</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../communications.html" class="nav-link">Communications</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle lang_nav active" href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Pусский
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item" href="../../blog/rif-storage-testnet-launch.html">English</a>
+                     <a class="dropdown-item" href="../../ko/blog/rif-storage-testnet-launch.html">한국어</a>
+                     <a class="dropdown-item" href="../../zh-hans/blog/rif-storage-testnet-launch.html">简体中文</a>
+                     <a class="dropdown-item" href="../../ja/blog/rif-storage-testnet-launch.html">日本語</a>
+                     <a class="dropdown-item" href="../../es/blog/rif-storage-testnet-launch.html">Español</a>
+                     <a class="dropdown-item" href="../../pt-pt/blog/rif-storage-testnet-launch.html">Português</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">Смотреть
+                     Видео</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <nav id="vertical-nav" class="nav flex-column">
+      <a href="../marketplace.html" class="nav-link">Marketplace</a>
+      <a href="../directory.html" class="nav-link">Directory</a>
+      <a href="../payments.html" class="nav-link">Payments</a>
+      <a href="../storage.html" class="nav-link">Storage</a>
+      <a href="../gateways.html" class="nav-link">Gateways</a>
+      <a href="../communications.html" class="nav-link">Communications</a>
+   </nav>
+   <section id="blog">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row mb-5">
+               <div class="col-lg-9">
+                  <h1><span class="bold">Запуск тестовой сети </span>RIF Storage</h1>
+                  <h6>7 января 2020 г.</h6>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-9">
+                  <p>С момента создания <a
+                        href="https://www.iovlabs.org/ru/press/partnership-between-swarm-and-rsk-infrastructure-framework-rif-to-develop-a-breakthrough-storage-solution.html"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">команды</a> RIF Storage мы делаем все
+                     возможное для реализации идеи децентрализованного интернета. На прошлой неделе во время конференции
+                     <a href="https://www.labitconf.com/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">laBITconf</a> компания IOV-labs официально объявила о запуске тестовой
+                     сети RIF Storage. Это важная веха на пути к реализации децентрализованного интернета!<br>В этом
+                     сообщении мы хотим рассказать о том, как мы этого добились, а также объяснить, как подключиться к
+                     RIF Storage и загрузить потрясающе красивое изображение!</p>
+                  <h4 class="mb-3">Что такое тестовая сеть RIF Storage</h4>
+                  <p>Тестовая сеть RIF Storage позволяет разработчикам и конечным пользователям разобраться в том, как
+                     можно пользоваться протоколом децентрализованного хранения данных. На данный момент RIF Storage
+                     интегрирована с системой <a href="https://swarm.ethereum.org/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">Swarm</a>. Кроме того, идут работы по ее интеграции с <a
+                        href="https://ipfs.io/" class="blue_rif" target="_blank" rel="noopener noreferrer">IPFS</a>
+                     (объявление будет позже!) и разработке спецификации для<a href="https://www.rifos.org/gateways"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">шлюзов </a>, <a
+                        href="https://www.rifos.org/marketplace" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">рынков ПО</a> и <a
+                        href="https://docs.ipfs.io/guides/concepts/pinning/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">услуг закрепления.</a><br>
+                     Главное отличие между нашей недавно запущенной тестовой сетью и официальной тестовой сетью Swarm
+                     заключается в том, что в тестовой сети RIF Storage используется RIF Token для стимулирования учета
+                     пропускной способности. В конечном счете, основная идея как Swarm, так и RIF заключается в
+                     поддержке нескольких валют в одной сети, но до ее полной реализации мы хотим дать разработчикам,
+                     работающим в экосистеме RIF, возможность протестировать систему RIF Storage с использованием
+                     (тестового) токена RIF.
+                  </p>
+                  <h4 class="mb-3 mt-5">История проекта и наш вклад в его реализацию</h4>
+                  <p>Компания IOV Labs недавно <a href="https://www.rifos.org/ru/blog/rif-storage-the-first-chunks"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">объявила</a> о партнерстве с системой
+                     Swarm. С этого момента команда RIF Storage создала систему поощрений в Swarm, и мы усердно работали
+                     над реализацией протокола учета Swarm (подробнее см. <a
+                        href="https://www.rifos.org/ru/blog/rif-storage-the-first-chunks" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">здесь</a>). . Хотя запуск тестовой сети является
+                     важной вехой, это не означает, что проект реализован полностью. Сейчас мы работаем над постоянным
+                     хранилищем (с помощью пиннинга и почтовой лотереи) и рыночным механизмом для сети, который позволит
+                     определять цену с учетом пропускной способности.</p>
+                  <h4 class="mb-3 mt-5">Голосуйте «за»!</h4>
+                  <p>Станьте одним из тех, кто первым воспользуется тестовой сетью Swarm, и скачайте специальный
+                     сюрприз!</p>
+                  <h3 class="mb-3 mt-5">Шлюз</h3>
+                  <p>TLDR; RIF Storage использует специальный шлюз, поэтому вы можете взаимодействовать с Swarm, не
+                     запуская программное обеспечение самостоятельно. Перейдите по <a
+                        href="https://swarm.rifgateways.org/" target="_blank" rel="noopener noreferrer">ссылке</a> и
+                     убедитесь, что вы можете скачать <br>
+                     <code>anthem.rsk/Bitcoin_Anthem_Oflow_Show.mp3</code>
+                  </p>
+                  <h3 class="mb-3 mt-5">Скачайте Swarm</h3>
+                  <ul class="custom-dot">
+                     <li>Получите последнюю версию Swarm по <a href="https://swarm.ethereum.org/downloads"
+                           target="_blank" rel="noopener noreferrer" class="blue_rif">ссылке</a> (любую версию старше
+                        0.5.5, контрольная сумма: 0f3debd195b01505e59d246515dd57b5). Примечание: двоичные файлы доступны
+                        только для Linux.</li>
+                     <li>Распакуйте двоичные файлы (например, <code>tar -xvf swarm-.(...)tar.gz</code>)</li>
+                     <li>Сделайте двоичный исполняемый файл: <code>cd</code> в папку <code>swarm</code> и запустите
+                        команды <code>chmod +x swarm</code></li>
+                  </ul>
+                  <h3 class="mb-3 mt-5">Пополните свой счет в RSK:</h3>
+                  <p>Поскольку в сети RIF Storage есть система стимулирования, вам потребуется как tRIF, так и tRBTC для
+                     взаимодействия с ней. tRIF потребуется для оплаты пропускной способности в сети (процедура перейдет
+                     к узлам, размещающим и пересылающим файлы по вашему запросу), а tRBTC - для оплаты транзакционных
+                     расходов в RSK.</p>
+                  <ul class="custom-dot">
+                     <li>tRBTC: <a href="https://faucet.rsk.co/" target="_blank" rel="noopener noreferrer"
+                           class="blue_rif">https://faucet.rsk.co/</a></li>
+                     <li>tRIF: <a href="https://faucet.rifos.org/" target="_blank" rel="noopener noreferrer"
+                           class="blue_rif">https://faucet.rifos.org/</a></li>
+                  </ul>
+                  <p>Запишите адрес, на котором есть монеты. Он понадобится для следующего шага.</p>
+                  <h3 class="mb-3 mt-5">Запуск управляющей программы RSKj</h3>
+                  <p>Для взаимодействия со Swarm необходимо подключение к серверному блокчейн-приложению. Откройте
+                     раздел <a href="https://github.com/rsksmart/rskj/wiki" target="_blank" rel="noopener noreferrer"
+                        class="blue_rif">RSKj WIKI</a> и выполните инструкции по установке, компиляции и локальному
+                     запуску узла RSK. Обязательно переключитесь на RSK TestNet (инструкции по переключению см. по <a
+                        href="https://github.com/rsksmart/rskj/wiki/Switching-networks" target="_blank"
+                        rel="noopener noreferrer" class="blue_rif"> ссылке</a>).</p>
+                  <p>Синхронизация вашего узла с сетью может занять некоторое время (± 8 часов). Вы можете проверить
+                     наличие синхронизации, запросив текущий код блока вашего узла:<br>
+                     <code>curl -H"Content-type: application/json" -X POST --data '{"jsonrpc":"2.0","method":"eth_blockNumber","params":[],"id":1}' 127.0.0.1:4444</code>
+                     и сравнив ответ с кодом блока, указанным в <a href="https://explorer.testnet.rsk.co/"
+                        target="_blank" rel="noopener noreferrer" class="blue_rif">официальной программе просмотра</a>.
+                  </p>
+                  <h3 class="mb-3 mt-5">Запуск Swarm</h3>
+                  <p class="bold">Переходить к этому этапу можно только после полной синхронизации узла RSKj!</p>
+                  <p>
+                     Запустите команду:<br>
+                     <code>
+                           ./swarm --swap --swap-chequebook-factory 0x7EFa429447180c491aD1BB0b481D90534B74A3f6 --bzznetworkid 5 --bzzaccount 
+                           <your account here>
+                              --swap-backend-url http://localhost:4444 --ws --wsaddr=0.0.0.0 --bootnodes enode://846c424961adc146d54861bdf1eb6015e6908b689fd12d01c61307fffc848c22e514f5c898dc9243fbb17aa80750b556772599d84fe86a4b715f40ebc4c049bf@3.136.239.137:30399 --wsapi=accounting,bzz,swap,admin --wsport 8546 --wsorigins='*' --tracing --rns-api=99a12be4C89CbF6CFD11d1F2c029904a7B644368@https://public-node.rsk.co
+                           </code>
+                  </p>
+                  <h3 class="mb-3 mt-5">Загрузка</h3>
+                  <p>
+                     Чтобы загрузить файл, запустите:
+                     <code>
+                              ./swarm up 
+                              <name_of_file>
+                           </code>
+                     с помощью командной строки. После завершения вы получите ссылку <code>swarm hash</code> на файл.
+                     Либо откройте ссылку<code>http://localhost:8500</code> в браузере и с помощью графического
+                     интерфейса пользователя загрузите файл.
+                  </p>
+                  <h3 class="mb-3 mt-5">Скачивание</h3>
+                  Чтобы скачать файл, запустите:
+                  <code>
+                           curl http://localhost:8500/bzz:/
+                           <swarm_hash_or_RNS>
+                           /
+                           <file_name>
+                        </code>
+                  с помощью командной строки. Либо откройте ссылку <code>http://localhost:8500</code> в браузере и
+                  используйте графический интерфейс пользователя, или вставьте
+                  <code>
+                           http://localhost:8500/bzz:/
+                           <swarm_hash_or_RNS>
+                           /
+                           <file_name>
+                        </code>
+                  прямо в адресную строку браузера.
+                  <h3 class="mb-3 mt-5">Сюрприз!</h3>
+                  <p>В начале этого урока мы обещали сюрприз... Поскольку вы уже так далеко продвинулись, скачайте файл
+                     с хэшем <code>9c8335dbcdadb5c853fa82177afbca3f3b26ade6763eb3c99dbfec7ad3e95823</code> (или RNS:
+                     <code>anthem.rsk</code>) и именем <code>Bitcoin_Anthem_Oflow_Show.mp3</code>. Приятного
+                     прослушивания!</p>
+                  <h3 class="mb-3 mt-5">Узнать больше</h3>
+                  <p>Ознакомьтесь с <a href="https://developers.rsk.co/rif/storage/" target="_blank"
+                        rel="noopener noreferrer" class="blue_rif">официальным руководством для разработчиков</a> на
+                     портале разработчиков RSK!</p>
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div style="top: -6px;" class="fb-share-button" data-layout="button" data-size="large">
+                        </div>
+                        <a class="twitter-share-button btn btn btn-primary mr-3" href="https://twitter.com/intent/tweet"
+                           data-size="large">
+                           Tweet</a>
+                        <script async src="https://telegram.org/js/telegram-widget.js?8"
+                           data-telegram-share-url="https://www.rifos.org/ru/blog/rif-storage-testnet-launch.html"
+                           data-size="large"></script>
+                     </div>
+                     <div class="col-lg-12 mt-5">
+                        <a class="btn btn btn-primary mr-3" href="./">возвращайся</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="twitter-news">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row text-center">
+               <div class="col-lg-12">
+                  <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                        class="fab fa-twitter"></i></a>
+                  <h3 class="bold">Follow our news!</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer -->
+   <footer id="footer" class="section-bg">
+      <div class="footer-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <img src="../../assets/img/powered_by_iov.svg" class="img-fluid powered_by">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-sm-7">
+                        <div class="footer-info">
+                           <p>RIF OS обеспечивает взаимную согласованность и ускоренное развертывание, а также позволяет
+                              преодолеть разрыв между современными технологиями блокчейн и их массовым использованием.
+                           </p>
+                        </div>
+                     </div>
+                     <div class="col-sm-5"></div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../../assets/whitepapers/rif-whitepaper-ru.pdf" target="_blank"
+                                    rel="noopener noreferrer">Проектный документ</a></li>
+                              <li><a href="../blog/index.html">Блог
+                                 </a>
+                              </li>
+                              <li><a href="../index.html#roadmap">Roadmap
+                                 </a>
+                              </li>
+                              <li><a href="https://github.com/riflabs" rel="noopener noreferrer"
+                                    target="_blank">Github</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../faqs.html">Часто задаваемые вопросы
+                                 </a>
+                              </li>
+                              <li><a href="../../assets/guidelines/RIF_FullBrandGuidelines_Ru.pdf"
+                                    rel="nofollow noopener noreferrer" target="_blank">Руководство по стилю
+                                 </a>
+                              </li>
+                              <li><a class="medium" href="https://www.rsk.co/ru/index.html" rel="noopener noreferrer"
+                                    target="_blank">RSK</a></li>
+                              <li><a class="medium" href="https://www.iovlabs.org/ru/index.html"
+                                    rel="noopener noreferrer" target="_blank">О компании IOV Labs</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a class="medium" href="https://www.iovlabs.org/ru/contact.html"
+                                    rel="noopener noreferrer" target="_blank">Контакты IOVlabs</a></li>
+                              <li><a href="../terms-conditions.html">Правила и условия</a></li>
+                              <li><a href="../privacy-policy.html">Конфиденциальность</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                           class="fab fa-twitter"></i></a>
+                     <a href="https://t.me/rif_os_community" rel="noopener noreferrer" target="_blank"
+                        class="telegram"><i class="fab fa-telegram"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-6 col-xs-12 pl-0-mobile">
+                     <p class="copyright mb-0">Copyright © 2015 - 2026 Rif. Все права защищены.</p>
+                     <p class="copyright mt-0">By <a href="https://taniebrand.com" target="_blank">Taniebrand®</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </footer>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="RIFVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="../../assets/videos/ru/RIF_CorpoVideo.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="../../assets/js/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <!-- Google Tag Manager -->
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KBG28B4');</script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="description"
+      content="Hace unas semanas, publicamos nuestro primer artículo sobre almacenamiento descentralizado en el que resaltamos nuestra visión y nuestra motivación para construirlo. Desde entonces han sucedido muchas cosas. Entre otras, hemos decidido el alcance del producto viable mínimo (MVP), hemos atendido cuestiones cruciales y formado una sociedad con el equipo de Ethereum Swarm para contribuir a materializar la visión.">
+   <meta name="keywords" content="">
+   <meta name="author" content="RIF">
+   <title>Almacenamiento RIF: Los primeros fragmentos</title>
+   <!-- og info -->
+   <meta property="og:title" content="RIF Storage: The First Chunks">
+   <meta property="og:description"
+      content="Hace unas semanas, publicamos nuestro primer artículo sobre almacenamiento descentralizado en el que resaltamos nuestra visión y nuestra motivación para construirlo. Desde entonces han sucedido muchas cosas. Entre otras, hemos decidido el alcance del producto viable mínimo (MVP), hemos atendido cuestiones cruciales y formado una sociedad con el equipo de Ethereum Swarm para contribuir a materializar la visión.">
+   <meta property="og:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <meta property="og:url" content="https://www.rifos.org/es/blog/rif-storage-the-first-chunks.html">
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@rif_os">
+   <meta name="twitter:creator" content="@rif_os">
+   <meta name="twitter:domain" content="https://www.rifos.org/">
+   <meta name="twitter:title" content="Almacenamiento RIF: Los primeros fragmentos">
+   <meta name="twitter:description"
+      content="Hace unas semanas, publicamos nuestro primer artículo sobre almacenamiento descentralizado en el que resaltamos nuestra visión y nuestra motivación para construirlo. Desde entonces han sucedido muchas cosas. Entre otras, hemos decidido el alcance del producto viable mínimo (MVP), hemos atendido cuestiones cruciales y formado una sociedad con el equipo de Ethereum Swarm para contribuir a materializar la visión.">
+   <meta name="twitter:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+   <link rel="manifest" href="../../assets/favicons/site.webmanifest">
+   <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link rel="shortcut icon" href="../../assets/favicons/favicon.ico">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="../../assets/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Main Stylesheet File -->
+   <!-- build:css -->
+   <link rel="stylesheet" href="../../assets/css/theming.css">
+   <!-- endbuild -->
+   <!-- OwlCarrousel CSS Files -->
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.theme.default.min.css">
+   <!-- Libraries CSS Files -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBG28B4" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+   <script>(function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+   <!-- Ends Facebook SDK for JavaScript -->
+   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="../"><img src="../../assets/img/logo.svg" class="logo" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#vision">Visión</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="https://developers.rsk.co/rif/" target="_blank"
+                     rel="noreferrer noopener">Desarrolladores</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#rif-token">RIF Token</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#roadmap">Roadmap</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#get-start">Empezar</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../marketplace.html" class="nav-link">Marketplace</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../directory.html" class="nav-link">Directory</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../payments.html" class="nav-link">Payments</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../storage.html" class="nav-link">Storage</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../gateways.html" class="nav-link">Gateways</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../communications.html" class="nav-link">Communications</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle lang_nav active" href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Español
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item" href="../../blog/rif-storage-the-first-chunks.html">English</a>
+                     <a class="dropdown-item" href="../../ko/blog/rif-storage-the-first-chunks.html">한국어</a>
+                     <a class="dropdown-item" href="../../zh-hans/blog/rif-storage-the-first-chunks.html">简体中文</a>
+                     <a class="dropdown-item" href="../../ja/blog/rif-storage-the-first-chunks.html">日本語</a>
+                     <a class="dropdown-item" href="../../pt-pt/blog/rif-storage-the-first-chunks.html">Português</a>
+                     <a class="dropdown-item" href="../../ru/blog/rif-storage-the-first-chunks.html">Pусский</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">Vea el Video</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <nav id="vertical-nav" class="nav flex-column">
+      <a href="../marketplace.html" class="nav-link">Marketplace</a>
+      <a href="../directory.html" class="nav-link">Directory</a>
+      <a href="../payments.html" class="nav-link">Payments</a>
+      <a href="../storage.html" class="nav-link">Storage</a>
+      <a href="../gateways.html" class="nav-link">Gateways</a>
+      <a href="../communications.html" class="nav-link">Communications</a>
+   </nav>
+   <section id="blog">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row mb-5">
+               <div class="col-lg-9">
+                  <h1><span class="bold">Almacenamiento RIF</span>: Los primeros fragmentos</h1>
+                  <span class="blue_rif  d-block mb-3"><i>Por Vojtěch Šimetka & Rinke Hendriksen</i></span>
+                  <h6>1 de julio de 2019</h6>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-9">
+                  <p>Hace unas semanas, publicamos nuestro <a href="rif-storage-a-decentralized-storage-solution.html"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">primer artículo sobre almacenamiento
+                        descentralizado</a> en el que resaltamos nuestra visión y nuestra motivación para construirlo.
+                     Desde entonces han sucedido muchas cosas. Entre otras, hemos decidido el alcance del producto
+                     viable mínimo (MVP), hemos atendido cuestiones cruciales y formado una sociedad con el equipo de
+                     Ethereum Swarm para contribuir a materializar la visión. Esta sociedad es muy importante: nos
+                     permitirá aprender de las experiencias de uno de los proyectos mejor reputados sobre almacenamiento
+                     descentralizado, mientras ejecutamos simultáneamente sobre Swarm y Almacenamiento RIF.</p>
+                  <p>En esta publicación pondremos de relieve cómo surgió esta sociedad, y en consecuencia, les
+                     ofreceremos un panorama en lenguaje de programación de alto nivel sobre cómo funciona
+                     Almacenamiento RIF.</p>
+                  </p>
+                  <h3 class="mt-5 mb-3">El comienzo de una colaboración</h3>
+                  <p>Tal como han leído en nuestra publicación anterior, el almacenamiento descentralizado es de gran
+                     importancia para que una sociedad más justa sea posible. Dado que este es un componente tan
+                     importante, no sorprende que haya múltiples proyectos tratando de lograrlo. Para nombrar algunos:
+                     <a href="https://ipfs.io/" class="blue_rif" target="_blank" rel="noopener noreferrer">IPFS</a>, <a
+                        href="https://storj.io/" class="blue_rif" target="_blank" rel="noopener noreferrer">Storj</a>,
+                     <a href="https://sia.tech/" class="blue_rif" target="_blank" rel="noopener noreferrer">Sia</a>, <a
+                        href="https://maidsafe.net/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">MaidSafe</a> y <a href="https://swarm.ethereum.org/" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">Swarm</a>. Si bien todos estos proyectos tienen
+                     diferencias importantes, el común denominador es que todos tratan de cambiar la manera en que se
+                     almacena y accede a la información en todo el mundo. Está claro que RIF cuenta en este caso con la
+                     ventaja de quien mueve segundo: nos encontrábamos en una posición en la que podíamos aprender sobre
+                     todos estos proyectos interesantes y sus puntos a favor y en contra. Y así lo hicimos.
+                  </p>
+                  <p>A partir de este análisis, Swarm, para nosotros, era el proyecto más prometedor. Tiene un diseño
+                     ingenioso, una visión fuerte y en todos los proyectos había un camino claro hacia la implementación
+                     de almacenamiento descentralizado incentivado (ahondaré sobre este punto más adelante). </p>
+                  <p>Por esa misma época, Swarm estaba organizando la <a href="https://summit.ethswarm.org/"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">Cumbre Swarm 2019 en Madrid</a>.
+                     Enviamos a nuestros representantes <a href="https://twitter.com/vojtechsimetka" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">Vojtech Simetka</a> y <a
+                        href="https://twitter.com/alebanzas" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">Ale Banzas</a> como asistentes a la cumbre. Aquí, nuestra conclusión
+                     se confirmó y nos quedó mucho más claro el estado del proyecto; mientras que Swarm está bien
+                     pensado y definido a nivel teórico, aparte del almacenamiento central, algunas de las
+                     funcionalidades están aún en etapa experimental o de investigación, como, por ejemplo, el mecanismo
+                     de incentivos. El almacenamiento descentralizado incentivado depende en gran medida de una solución
+                     de pago de segunda capa, dado que los micropagos son cruciales para incentivar a los nodos a que se
+                     comporten de una manera beneficiosa para la red. Como nuestro equipo cuenta con una vasta
+                     experiencia en soluciones de pago de segunda capa (RIF Payments y Lumino), vimos la oportunidad de
+                     colaborar con el equipo de Swarm y hacer realidad la visión del almacenamiento incentivado. </p>
+                  <p>Fue así como nació la sociedad y <a href="https://github.com/orgs/ethersphere/projects/9"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer"> el registro de incentivos</a> Este
+                     registro, bajo la dirección de Fabio Barone de Swarm y coordinado por Vojtech Simetka de RIF
+                     Storage, apuntará a concretar una implementación mínima (ver: el<a
+                        href="https://docs.google.com/document/d/e/2PACX-1vSNhcfNUJRmhDwwJSmLFED6djt_z8br9S2V8-npLFX2p9DfFGfsUDrUjvtP3Vc_71ge06Kyi3yLNxOE/pub"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer"> alcance del MVP</a>) para el
+                     almacenamiento de datos incentivado, apoyándose mucho en las investigaciones realizadas por el
+                     equipo de Swarm. Además, el objetivo es ser compatible tanto con las monedas nativas de EVM (por
+                     ejemplo, RBTC y ETH) como con tokens ERC20 (por ejemplo, RIF) en los próximos 3 meses.</p>
+                  <h3 class="mb-3 mt-5">Conceptos básicos sobre Almacenamiento RIF y Swarm</h3>
+                  <p>En esta parte, nos gustaría explicar de manera general cómo funciona el almacenamiento
+                     descentralizado (en este caso, Swarm) y qué papel juega la incentivación. Para una descripción
+                     completa, consulte la <a href="https://swarm-guide.readthedocs.io/en/latest/" target="_blank"
+                        rel="noreferrer noopener">documentación oficial de Swarm</a>.
+                  </p>
+                  <p>Las dos acciones principales que los usuarios esperan del almacenamiento descentralizado es cargar
+                     y descargar sus archivos. Comencemos por explicar cómo funciona la carga de archivos. Identificamos
+                     los siguientes tres pasos:
+                  </p>
+                  <ul class="custom-counter">
+                     <li>Cargar el archivo a un nodo.</li>
+                     <li>Preparar el archivo (fragmentación y encriptación).</li>
+                     <li>Distribuir los fragmentos por la red.</li>
+                  </ul>
+                  <p>El primer paso es muy directo: el usuario se conecta a un nodo de Swarm en funcionamiento y carga
+                     el archivo, por ejemplo, con el comando swarm up <filename> o, en el futuro cercano, mediante una
+                        interfaz de usuario como la de Almacenamiento RIF. En el segundo paso, se prepara el archivo
+                        para cargarlo a la red: se lo divide en partes muy pequeñas llamadas fragmentos, que luego
+                        pueden encriptarse con el fin de aumentar la seguridad y la privacidad. Pueden ver esto de forma
+                        gráfica en la siguiente imagen gif.</p>
+                  <img src="../../assets/img/blog/es/2.-file-prep.gif" class="img-fluid mb-5 mt-5">
+                  <p>Estos fragmentos se asignan a un árbol de Merkle que proporciona integridad. La siguiente imagen
+                     muestra qué aspecto podría tener un árbol de estas características:</p>
+                  <img src="../../assets/img/blog/3.-merkle-tree.png" class="img-fluid mb-5 mt-5">
+                  <p>En este árbol, las hojas están ocupadas por el hash de cada fragmento, mientras que la raíz del
+                     árbol representa el hash de todo el archivo. Estos hashes se utilizan de dos maneras: como sumas de
+                     comprobación para garantizar la integridad de los fragmentos, y para indicar su ubicación en la
+                     red. Los fragmentos se distribuyen según la distancia XOR entre las direcciones de los nodos y el
+                     hash de su contenido. Esquemáticamente, luce así:</p>
+                  <img src="../../assets/img/blog/4.-distribution-network.gif" class="img-fluid mb-5 mt-5">
+                  <p>El proceso de descarga de un archivo sigue en gran medida el mismo algoritmo, pero en orden
+                     inverso. El usuario solicita a la red un archivo mediante el hash de raíz del árbol de Merkle, que
+                     luego se traduce en solicitudes de fragmentos (los nodos-hojas del árbol de Merkle) de nodos
+                     individuales. Por último, se desencriptan los fragmentos y se ensambla el archivo.
+                  </p>
+                  <h3 class="mt-5 mb-3">Sobre la incentivación</h3>
+                  <p>Tal como dijimos antes, la incentivación es de gran importancia para una red como la que se
+                     describe más arriba. ¿Por qué? Piense por un segundo si le gustaría que su computadora portátil
+                     esté conectada 24 horas al día fraccionando fragmentos, almacenándolos y sirviéndolos desde su
+                     disco rígido. ¿No? Bueno, probablemente no sea el único. Háganse la siguiente pregunta: ¿qué haría
+                     que esté dispuesto a servir fragmentos y contribuir a la salud de la red? </p>
+                  <p>Swarm define el Protocolo Contable de Swarm (SWAP), que es un sistema “ojo por ojo” en el que los
+                     nodos dan cuenta de cuántos datos solicitan y sirven. Básicamente, esto significa que si alguien me
+                     pide un millón de fragmentos, le serviré a cambio un millón de fragmentos. No obstante, ese sistema
+                     tiene un problema en redes de almacenamiento de archivos. Prevemos variabilidad en el uso de la red
+                     (yo podría transmitir un video durante 2 horas y dejar mi PC sin usar durante las 4 horas
+                     siguientes) y diferencias en las capacidades de los nodos (un teléfono no puede servir muchos
+                     fragmentos, mientras que un servidor, sí). SWAP permite que los nodos contabilicen sus saldos y, si
+                     un nodo le solicita muchos fragmentos a usted, usted le emitirá una solicitud de pago por medio de
+                     una solución de pago de segunda capa.</p>
+                  <img src="../../assets/img/blog/es/5.-swap.gif" class="img-fluid mb-5">
+                  <p class="text-center mt-5"><i>Aquí se muestra el mecanismo SWAP, en el que los nodos se intercambian
+                        fragmentos mutuamente y el saldo se liquida cuando el “fragmentómetro” se inclina demasiado
+                        hacia un lado.</i></p>
+                  <p>Aunque simple en su diseño, este concepto es muy potente para redes descentralizadas. Tal como lo
+                     ilustran el crecimiento de Bitcoin y de las criptomonedas, los incentivos, cuando están bien
+                     estructurados, pueden animar a los nodos a que se comporten de cierta manera deseable para la salud
+                     de la red. En este caso, esperamos que, incentivados por las ganancias, se sumen nodos a la red que
+                     sirvan los fragmentos más deseados de servidores de alto rendimiento, lo cual hará que la red sea
+                     más robusta, rápida y difícil de atacar. ¡Y eso es exactamente lo que queremos! Además, un sistema
+                     de estas características también permitiría que cualquiera ingrese sin costo en el ecosistema
+                     RSK/Ethereum.
+                  </p>
+                  <h3 class="mt-5 mb-3">Los próximos pasos</h3>
+                  <p>Como pueden ver, estamos trabajando para proporcionarles una tecnología muy interesante. Pueden
+                     seguir nuestro progreso en el <a href="https://github.com/orgs/ethersphere/projects/9"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">tablero de incentivos</a>. Si usted
+                     es desarrollador, una manera en que puede ayudarnos es escoger uno de los <a
+                        href="https://github.com/ethersphere/swarm/issues?q=is%3Aissue+is%3Aopen+label%3Aincentives"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">problemas de GitHub</a>, con algunas
+                     de las investigaciones, como las relativas a <a
+                        href="https://swarmresear.ch/t/postage-ex-proof-of-burn/30" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">franqueos (postage)</a> o, mejor aún, póngase en contacto con nosotros
+                     y veamos cómo podemos trabajar juntos. Hasta la próxima vez, cuando les mostraremos un adelanto de
+                     la interfaz de usuario de Almacenamiento RIF.</p>
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div style="top: -6px;" class="fb-share-button" data-layout="button" data-size="large">
+                        </div>
+                        <a class="twitter-share-button btn btn btn-primary mr-3" href="https://twitter.com/intent/tweet"
+                           data-size="large">
+                           Tweet</a>
+                        <script async src="https://telegram.org/js/telegram-widget.js?8"
+                           data-telegram-share-url="https://www.rifos.org/es/blog/rif-storage-the-first-chunks.html"
+                           data-size="large"></script>
+                     </div>
+                     <div class="col-lg-12 mt-5">
+                        <a class="btn btn btn-primary mr-3" href="./">Volver</a>
+                     </div>
+                     <div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="twitter-news">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row text-center">
+               <div class="col-lg-12">
+                  <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                        class="fab fa-twitter"></i></a>
+                  <h3 class="bold">Follow our news!</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer -->
+   <footer id="footer" class="section-bg">
+      <div class="footer-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <img src="../../assets/img/powered_by_iov.svg" class="img-fluid powered_by">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-sm-7">
+                        <div class="footer-info">
+                           <p>Los protocolos RIF OS permiten una amplia interoperabilidad y un tiempo de implementación
+                              más rápido, y apuntan a cerrar la brecha entre las tecnologías blockchain y su adopción en
+                              el mercado masivo.</p>
+                        </div>
+                     </div>
+                     <div class="col-sm-5"></div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../../assets/whitepapers/rif-whitepaper-es.pdf" target="_blank"
+                                    rel="noopener noreferrer">Informe técnico</a></li>
+                              <li><a href="./">Blog</a></li>
+                              <li><a href="../index.html#roadmap">Roadmap</a></li>
+                              <li><a href="https://github.com/riflabs" rel="noopener noreferrer"
+                                    target="_blank">Github</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../faqs.html">Preguntas frecuentes</a></li>
+                              <li><a href="../../assets/guidelines/RIF_FullBrandGuidelines_Es.pdf"
+                                    rel="nofollow noopener noreferrer" target="_blank">Manual de marca</a></li>
+                              <li><a class="medium" href="https://www.rsk.co/es/index.html" rel="noopener noreferrer"
+                                    target="_blank">RSK</a></li>
+                              <li><a class="medium" href="https://www.iovlabs.org/es/index.html"
+                                    rel="noopener noreferrer" target="_blank">Acerca de IOVlabs</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a class="medium" href="https://www.iovlabs.org/es/contact.html"
+                                    rel="noopener noreferrer" target="_blank">Contactar IOVlabs</a></li>
+                              <li><a href="../terms-conditions.html">Términos y condiciones</a></li>
+                              <li><a href="../privacy-policy.html">Política de privacidad</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                           class="fab fa-twitter"></i></a>
+                     <a href="https://t.me/rif_os_community" rel="noopener noreferrer" target="_blank"
+                        class="telegram"><i class="fab fa-telegram"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-6 col-xs-12 pl-0-mobile">
+                     <p class="copyright">Copyright © 2015 - 2026 Rif. Todos los derechos reservados.</p>
+                     <p class="copyright mt-0">By <a href="https://taniebrand.com" target="_blank">Taniebrand®</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </footer>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="RIFVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="../../assets/videos/es/RIF_CorpoVideo.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="../../assets/js/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>

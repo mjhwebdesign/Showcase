@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+   <!-- Google Tag Manager -->
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KBG28B4');</script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="description"
+      content="El objetivo principal de los servicios RIF consiste en colocar la tecnología blockchain al alcance de todos, de la manera más sencilla posible para facilitar su uso. Una de las principales dificultades al manejar criptoactivos es la interacción con múltiples direcciones que son difíciles de administrar y recordar.">
+   <meta name="keywords" content="">
+   <meta name="author" content="RIF">
+   <title>Servicios de nombres RIF: el primer DNS que administra dominios desde cualquier blockchain</title>
+   <!-- og info -->
+   <meta property="og:title"
+      content="Servicios de nombres RIF: el primer DNS que administra dominios desde cualquier blockchain">
+   <meta property="og:description"
+      content="El objetivo principal de los servicios RIF consiste en colocar la tecnología blockchain al alcance de todos, de la manera más sencilla posible para facilitar su uso. Una de las principales dificultades al manejar criptoactivos es la interacción con múltiples direcciones que son difíciles de administrar y recordar.">
+   <meta property="og:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <meta property="og:url"
+      content="https://www.rifos.org/es/blog/rif-name-services-first-dns-to-manage-domains-from-any-blockchain.html">
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@rif_os">
+   <meta name="twitter:creator" content="@rif_os">
+   <meta name="twitter:domain" content="https://www.rifos.org/">
+   <meta name="twitter:title"
+      content="Servicios de nombres RIF: el primer DNS que administra dominios desde cualquier blockchain">
+   <meta name="twitter:description"
+      content="El objetivo principal de los servicios RIF consiste en colocar la tecnología blockchain al alcance de todos, de la manera más sencilla posible para facilitar su uso. Una de las principales dificultades al manejar criptoactivos es la interacción con múltiples direcciones que son difíciles de administrar y recordar.">
+   <meta name="twitter:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+   <link rel="manifest" href="../../assets/favicons/site.webmanifest">
+   <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link rel="shortcut icon" href="../../assets/favicons/favicon.ico">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="../../assets/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Main Stylesheet File -->
+   <!-- build:css -->
+   <link rel="stylesheet" href="../../assets/css/theming.css">
+   <!-- endbuild -->
+   <!-- OwlCarrousel CSS Files -->
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.theme.default.min.css">
+   <!-- Libraries CSS Files -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBG28B4" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+   <script>(function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+   <!-- Ends Facebook SDK for JavaScript -->
+   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="../"><img src="../../assets/img/logo.svg" class="logo" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#vision">Visión</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="https://developers.rsk.co/rif/" target="_blank"
+                     rel="noreferrer noopener">Desarrolladores</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#rif-token">RIF Token</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#roadmap">Roadmap</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#get-start">Empezar</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../marketplace.html" class="nav-link">Marketplace</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../directory.html" class="nav-link">Directory</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../payments.html" class="nav-link">Payments</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../storage.html" class="nav-link">Storage</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../gateways.html" class="nav-link">Gateways</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../communications.html" class="nav-link">Communications</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle lang_nav active" href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Español
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item"
+                        href="../../blog/rif-name-services-first-dns-to-manage-domains-from-any-blockchain.html">English</a>
+                     <a class="dropdown-item"
+                        href="../../ko/blog/rif-name-services-first-dns-to-manage-domains-from-any-blockchain.html">한국어</a>
+                     <a class="dropdown-item"
+                        href="../../zh-hans/blog/rif-name-services-first-dns-to-manage-domains-from-any-blockchain.html">简体中文</a>
+                     <a class="dropdown-item"
+                        href="../../ja/blog/rif-name-services-first-dns-to-manage-domains-from-any-blockchain.html">日本語</a>
+                     <a class="dropdown-item"
+                        href="../../pt-pt/blog/rif-name-services-first-dns-to-manage-domains-from-any-blockchain.html">Português</a>
+                     <a class="dropdown-item"
+                        href="../../ru/blog/rif-name-services-first-dns-to-manage-domains-from-any-blockchain.html">Pусский</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">Vea el Video</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <nav id="vertical-nav" class="nav flex-column">
+      <a href="../marketplace.html" class="nav-link">Marketplace</a>
+      <a href="../directory.html" class="nav-link">Directory</a>
+      <a href="../payments.html" class="nav-link">Payments</a>
+      <a href="../storage.html" class="nav-link">Storage</a>
+      <a href="../gateways.html" class="nav-link">Gateways</a>
+      <a href="../communications.html" class="nav-link">Communications</a>
+   </nav>
+   <section id="blog">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row mb-5">
+               <div class="col-lg-9">
+                  <h1><span class="bold">Servicios de nombres RIF</span> – el primer DNS que administra dominios desde
+                     cualquier blockchain</h1>
+                  <h6>June 13, 2019</h6>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-9">
+                  <p>El objetivo principal de los servicios RIF consiste en colocar la tecnología blockchain al alcance
+                     de todos, de la manera más sencilla posible para facilitar su uso. Una de las principales
+                     dificultades al manejar criptoactivos es la interacción con múltiples direcciones que son difíciles
+                     de administrar y recordar.</p>
+                  <p>El Servicio de nombres RIF (RNS) se diseñó para proporcionar una arquitectura que permita
+                     identificar direcciones de blockchain por medio de nombres o alias legibles por las personas, con
+                     el fin de facilitar el uso. Puede usarse para identificar otros recursos personales, como
+                     direcciones de comunicación o pagos. La centralización del acceso a múltiples recursos asociados
+                     con un nombre legible por seres humanos mejora la experiencia del usuario de la plataforma
+                     blockchain. Además, al agregar un servicio de resolución de nombres o “alias”, se reduce la
+                     probabilidad de errores de manera significativa. Como los nombres de los recursos pueden cambiar
+                     con el tiempo, el sistema debe ser flexible, para admitir cambios frecuentes.</p>
+                  <p>Hasta el momento, el Servicio de nombres RIF solo admitía direcciones creadas en la red de RSK,
+                     pero en la actualidad, los usuarios de blockchain manejan numerosos tipos de monedas y activos. Es
+                     algo que puede observarse en todas partes hoy en día: las wallets aceptan diferentes tipos de
+                     monedas, las plataformas de intercambio adquieren y retiran diferentes activos, y los servicios
+                     reciben diferentes métodos de pago. Por esta precisa razón lanzamos el Servicio de nombres RIF
+                     MultiCrypto.</p>
+                  <p>La nueva funcionalidad del RNS hace posible que puedan adherirse implementaciones de diferentes
+                     sistemas de resolución con el fin de facilitar la uniformidad de las resoluciones multimoneda y
+                     mantener los datos de resolución de direcciones activos y accesibles. Esto significa que un alias o
+                     dominio del Servicio de nombres RIF se convierte en el único servicio del mundo que permite a los
+                     usuarios administrar tokens creados sobre cualquier plataforma, lo cual mejora la
+                     interoperabilidad. Esta poderosa función hace que a los usuarios les resulte mucho más fácil mover
+                     activos sin dificultad entre diferentes redes/tokens, una posibilidad que facilita la adopción
+                     masiva de criptoactivos.</p>
+                  <p>Realmente nos enorgullece construir la base que ayudará a que el espacio de las criptomonedas,
+                     blockchain y aplicaciones descentralizadas sea accesible para todos, sin sacrificar los beneficios
+                     que ofrecen estas tecnologías. Si desee leer más información sobre este tema, haga clic en el
+                     siguiente enlace: <a href="https://github.com/rnsdomains/RNSIPs/blob/master/IPs/RNSIP03.md"
+                        class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">https://github.com/rnsdomains/RNSIPs/blob/master/IPs/RNSIP03.md</a>
+                  </p>
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div style="top: -6px;" class="fb-share-button" data-layout="button" data-size="large">
+                        </div>
+                        <a class="twitter-share-button btn btn btn-primary mr-3" href="https://twitter.com/intent/tweet"
+                           data-size="large">
+                           Tweet</a>
+                        <script async src="https://telegram.org/js/telegram-widget.js?8"
+                           data-telegram-share-url="https://www.rifos.org/es/blog/rif-name-services-first-dns-to-manage-domains-from-any-blockchain.html"
+                           data-size="large"></script>
+                     </div>
+                     <div class="col-lg-12 mt-5">
+                        <a class="btn btn btn-primary mr-3" href="./">Volver</a>
+                     </div>
+                     <div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="twitter-news">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row text-center">
+               <div class="col-lg-12">
+                  <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                        class="fab fa-twitter"></i></a>
+                  <h3 class="bold">Follow our news!</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer -->
+   <footer id="footer" class="section-bg">
+      <div class="footer-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <img src="../../assets/img/powered_by_iov.svg" class="img-fluid powered_by">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-sm-7">
+                        <div class="footer-info">
+                           <p>Los protocolos RIF OS permiten una amplia interoperabilidad y un tiempo de implementación
+                              más rápido, y apuntan a cerrar la brecha entre las tecnologías blockchain y su adopción en
+                              el mercado masivo.</p>
+                        </div>
+                     </div>
+                     <div class="col-sm-5"></div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../../assets/whitepapers/rif-whitepaper-es.pdf" target="_blank"
+                                    rel="noopener noreferrer">Informe técnico</a></li>
+                              <li><a href="./">Blog</a></li>
+                              <li><a href="../index.html#roadmap">Roadmap</a></li>
+                              <li><a href="https://github.com/riflabs" rel="noopener noreferrer"
+                                    target="_blank">Github</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../faqs.html">Preguntas frecuentes</a></li>
+                              <li><a href="../../assets/guidelines/RIF_FullBrandGuidelines_Es.pdf"
+                                    rel="nofollow noopener noreferrer" target="_blank">Manual de marca</a></li>
+                              <li><a class="medium" href="https://www.rsk.co/es/index.html" rel="noopener noreferrer"
+                                    target="_blank">RSK</a></li>
+                              <li><a class="medium" href="https://www.iovlabs.org/es/index.html"
+                                    rel="noopener noreferrer" target="_blank">Acerca de IOVlabs</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a class="medium" href="https://www.iovlabs.org/es/contact.html"
+                                    rel="noopener noreferrer" target="_blank">Contactar IOVlabs</a></li>
+                              <li><a href="../terms-conditions.html">Términos y condiciones</a></li>
+                              <li><a href="../privacy-policy.html">Política de privacidad</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                           class="fab fa-twitter"></i></a>
+                     <a href="https://t.me/rif_os_community" rel="noopener noreferrer" target="_blank"
+                        class="telegram"><i class="fab fa-telegram"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-6 col-xs-12 pl-0-mobile">
+                     <p class="copyright">Copyright © 2015 - 2026 Rif. Todos los derechos reservados.</p>
+                     <p class="copyright mt-0">By <a href="https://taniebrand.com" target="_blank">Taniebrand®</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </footer>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="RIFVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="../../assets/videos/es/RIF_CorpoVideo.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="../../assets/js/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>

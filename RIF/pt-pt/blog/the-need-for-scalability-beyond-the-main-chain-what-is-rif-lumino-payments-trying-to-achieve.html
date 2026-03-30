@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+
+<head>
+   <!-- Google Tag Manager -->
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KBG28B4');</script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="description"
+      content="Neste post, analisamos brevemente a abordagem da RIF Lumino Payments em relação à escalabilidade.">
+   <meta name="keywords" content="">
+   <meta name="author" content="RIF">
+   <title>Escalabilidade: qual é o objetivo da RIF Lumino Payments?</title>
+   <!-- og info -->
+   <meta property="og:title" content="Escalabilidade: qual é o objetivo da RIF Lumino Payments?">
+   <meta property="og:description"
+      content="Neste post, analisamos brevemente a abordagem da RIF Lumino Payments em relação à escalabilidade.">
+   <meta property="og:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <meta property="og:url"
+      content="https://www.rifos.org/pt-pt/blog/the-need-for-scalability-beyond-the-main-chain-what-is-rif-lumino-payments-trying-to-achieve.html">
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@rif_os">
+   <meta name="twitter:creator" content="@rif_os">
+   <meta name="twitter:domain" content="https://www.rifos.org/">
+   <meta name="twitter:title" content="Escalabilidade: qual é o objetivo da RIF Lumino Payments?">
+   <meta name="twitter:description"
+      content="Neste post, analisamos brevemente a abordagem da RIF Lumino Payments em relação à escalabilidade.">
+   <meta name="twitter:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+   <link rel="manifest" href="../../assets/favicons/site.webmanifest">
+   <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link rel="shortcut icon" href="../../assets/favicons/favicon.ico">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="../../assets/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Main Stylesheet File -->
+   <!-- build:css -->
+   <link rel="stylesheet" href="../../assets/css/theming.css">
+   <!-- endbuild -->
+   <!-- OwlCarrousel CSS Files -->
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.theme.default.min.css">
+   <!-- Libraries CSS Files -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBG28B4" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+   <script>(function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+   <!-- Ends Facebook SDK for JavaScript -->
+   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="../"><img src="../../assets/img/logo.svg" class="logo" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#vision">Visão</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#build-on-rif">Desenvolvedores</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#rif-token">RIF Token</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#roadmap">Roadmap</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#get-start">Introdução</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../marketplace.html" class="nav-link">Marketplace</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../directory.html" class="nav-link">Directory</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../payments.html" class="nav-link">Payments</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../storage.html" class="nav-link">Storage</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../gateways.html" class="nav-link">Gateways</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../communications.html" class="nav-link">Communications</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle lang_nav active" href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Português
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item"
+                        href="../../blog/the-need-for-scalability-beyond-the-main-chain-what-is-rif-lumino-payments-trying-to-achieve.html">English</a>
+                     <a class="dropdown-item"
+                        href="../../ko/blog/the-need-for-scalability-beyond-the-main-chain-what-is-rif-lumino-payments-trying-to-achieve.html">한국어</a>
+                     <a class="dropdown-item"
+                        href="../../zh-hans/blog/the-need-for-scalability-beyond-the-main-chain-what-is-rif-lumino-payments-trying-to-achieve.html">简体中文</a>
+                     <a class="dropdown-item"
+                        href="../../ja/blog/the-need-for-scalability-beyond-the-main-chain-what-is-rif-lumino-payments-trying-to-achieve.html">日本語</a>
+                     <a class="dropdown-item"
+                        href="../../es/blog/the-need-for-scalability-beyond-the-main-chain-what-is-rif-lumino-payments-trying-to-achieve.html">Español</a>
+                     <a class="dropdown-item"
+                        href="../../ru/blog/the-need-for-scalability-beyond-the-main-chain-what-is-rif-lumino-payments-trying-to-achieve.html">Pусский</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">Assistir ao
+                     Video</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <nav id="vertical-nav" class="nav flex-column">
+      <a href="../marketplace.html" class="nav-link">Marketplace</a>
+      <a href="../directory.html" class="nav-link">Directory</a>
+      <a href="../payments.html" class="nav-link">Payments</a>
+      <a href="../storage.html" class="nav-link">Storage</a>
+      <a href="../gateways.html" class="nav-link">Gateways</a>
+      <a href="../communications.html" class="nav-link">Communications</a>
+   </nav>
+   <section id="blog">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row mb-5">
+               <div class="col-lg-9">
+                  <h1><span class="bold">Escalabilidade</span>: qual é o objetivo da RIF Lumino Payments?</h1>
+                  <span class="blue_rif  d-block mb-3"><i>Neste post, analisamos brevemente a abordagem da RIF Lumino
+                        Payments em relação à escalabilidade.</i></span>
+                  <h6>28 de maio de 2019</h6>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-9">
+                  <p>Quando se trata de soluções de escalabilidade para Bitcoin, SegWit e Lightning Network vêm
+                     imediatamente à mente. Porém, escalabilidade é um desafio para todos os blockchains. A Ethereum,
+                     por exemplo, tem enfrentado grandes dificuldades com esse tema nos últimos dois anos. Recentemente,
+                     a alta congestão na Ethereum foi desencadeada pelo fenômeno <a
+                        href="https://www.coindesk.com/loveable-digital-kittens-clogging-ethereums-blockchain"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">Cryptokitties</a> Como problemas
+                     semelhantes de congestionamento ocorreram em blockchains diferentes, os especialistas concordam que
+                     a escalabilidade é um dos desafios mais importantes para a tecnologia blockchain. Projetar um
+                     blockchain capaz de processar um grande número de transações com rapidez e baixo custo sem
+                     comprometer a descentralização é uma tarefa difícil. No entanto, é algo crucial se quisermos que a
+                     tecnologia blockchain concorra com os processadores de pagamento tradicionais. A narrativa de
+                     armazenamento de valor do Bitcoin é poderosa, mas o benefício real para a sociedade só acontecerá
+                     quando o Bitcoin atingir centenas de milhões de pessoas. No final, tudo se resume a algo muito
+                     simples: casos de uso generalizados.</p>
+                  <p>Como esperamos que a tecnologia blockchain concorra contra as alternativas tradicionais, é
+                     absolutamente necessário aumentar a taxa de TPS (transações por segundo). Nesse sentido, a RIF
+                     Lumino pode fazer a diferença. O que é a RIF Lumino Network e qual é a sua proposta de valor? Antes
+                     de entrar nos detalhes, vale lembrar algumas melhorias anteriores do Bitcoin relacionadas à
+                     escalabilidade.
+                  <p>Em julho de 2017, o soft-fork do SegWit foi ativado na rede Bitcoin para melhorar um pouco a
+                     escalabilidade da rede e corrigir outros problemas de protocolo. Mas o que é o SegWit e como
+                     funciona?
+                  <p>Cada vez que uma transação é transmitida pela rede da Bitcoin, a transação inclui informações como
+                     o valor a ser enviado, endereços que receberão fundos e uma ou mais assinaturas digitais que
+                     autorizam o uso de fundos próprios para cobrir as transferências. Em média, as assinaturas podem
+                     consumir cerca de 25% do espaço da transação. Os blocos de bitcoins têm um tamanho máximo de 1
+                     megabyte. O SegWit move as assinaturas para outra parte do bloco que não é restrita pelo limite de
+                     tamanho de bloco e fornece um pequeno aumento de espaço, o que resulta na possibilidade de
+                     adicionar mais transações a um bloco. A comunidade Bitcoin também está avaliando um novo soft-fork
+                     que permite o uso de <a href="https://en.wikipedia.org/wiki/Schnorr_signature" class="blue_rif"
+                        target="_blank" rel="noopener noreferrer">assinaturas Schnorr</a>, o que poderia reduzir ainda
+                     mais o tamanho das transações ao agregar várias assinaturas em uma só.
+                  </p>
+                  <p>Agora, se já podemos reduzir os tamanhos das transações dentro da cadeia, qual é o objetivo da
+                     Lightning Network?</p>
+                  <p>A Lightning Network é basicamente uma rede de segunda camada construída sobre o conceito de canais
+                     de pagamento. Dois usuários de bitcoin podem abrir um canal de pagamento e depois trocar transações
+                     que podem ser validadas quase instantaneamente. As transações acontecem fora da cadeia, sem os
+                     típicos tempos de espera do blockchain. Cada parte envolvida em um canal de pagamento mantém um
+                     registro do saldo final do canal. O processo termina quando essa informação é enviada para a cadeia
+                     principal, de modo que, após a devida verificação e validação, o saldo seja liquidado na cadeia
+                     principal. Portanto, milhares de transações fora da cadeia poderiam ser consolidadas em poucas
+                     transações em cadeia, gerenciando um canal de pagamento. Agora, embora a Lightning Network e o
+                     SegWit sejam de fato grandes contribuições em termos de escalabilidade e transações mais baratas,
+                     eles não podem dimensionar o Bitcoin para além de certos limites estabelecidos pelo protocolo
+                     Bitcoin. É aí que entra a RIF Lumino Payments. Vamos entrar nesse assunto.</p>
+                  <p>Antes de tudo, é importante esclarecer alguns conceitos-chave para evitar equívocos comuns.<a
+                        href="https://www.rsk.co/noticia/diego-zaldivars-ama-session/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">Como explicado pelo CEO da IOV Labs</a>, o RIF OS (Rootstock
+                     Infrastructure Framework Open Standard) é um conjunto de protocolos abertos de infraestrutura
+                     descentralizada que retransmitem contratos inteligentes baseados em blockchain para permitir o
+                     desenvolvimento mais rápido, fácil e escalável de aplicativos distribuídos (dApps). Os protocolos
+                     iniciais incluem o RIF Directory (protocolo de serviço de nomes), RIF Payments, RIF Data (protocolo
+                     de armazenamento e streaming de dados), RIF Communications (roteamento seguro, sessão e protocolo
+                     de comunicações criptografadas) e RIF Gateways (um protocolo de interoperabilidade que inclui
+                     transferências entre cadeias e serviços de oráculo). No entanto, essa é apenas uma parte da
+                     equação. O RIF também é um token de utilitário, que fornece acesso a todos esses serviços.
+                     Resumindo, o RIF Payments é um dos protocolos da proposta RIF OS em um ecossistema. É um serviço
+                     essencial que permite efetuar, de forma eficiente, o pagamento por serviços fornecidos por alguns
+                     dos componentes restantes nos quais o token RIF é necessário. Agora, ainda falta uma peça do
+                     quebra-cabeça, certo? O que é a Lumino?</p>
+                  <p>Conforme descrito no <a href="https://docs.rsk.co/LuminoTransactionCompressionProtocolLTCP.pdf"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">artigo original</a> do
+                     cientista-chefe da RSK & RIF, Sergio Lerner, o Lumino Transaction Compression é uma alternativa de
+                     escalabilidade para um blockchain que atinge altas taxas de compressão. Sergio e sua equipe
+                     desenvolveram o LTCP (Lumino Transaction Compression Protocol), que remove assinaturas
+                     desnecessárias e também compacta as transações usando predefinições configuradas pelo usuário. <a
+                        href="https://blog.rsk.co/noticia/sergio-lerner-ama-session/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">Tendo em mente que as assinaturas ocupam 70% do espaço de transações
+                        na RSK</a>, é realmente fácil entender o grande valor desse protocolo.</p>
+                  <p>Agora, isso não soa familiar? Falamos anteriormente sobre as contribuições do SegWit & LN para
+                     aumentar as tarifas de espaço e TPS disponíveis em cada bloco. Na mesma direção, a RIF Lumino
+                     Network permite que as partes realizem transações fora da cadeia usando canais de pagamento. Por
+                     que você precisaria da RIF Lumino Network se você já possui a Lightning Network? Porque a <a
+                        href="https://lightning.network/lightning-network-paper.pdf" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">Lightning</a> foi originalmente projetada para fornecer mais
+                     escalabilidade na rede do Bitcoin, enquanto a Lumino traduz esse mesmo conceito para um sidechain
+                     sobre o blockchain do Bitcoin, que é exatamente o que é a RSK. A LN e a RIF Lumino Network não são
+                     concorrentes. Elas trabalham juntas e se complementam para fornecer mais escalabilidade em
+                     diferentes camadas (cadeia principal, cadeias laterais, etc).</p>
+                  <p>Por que você estaria interessado em fornecer escalabilidade em uma camada diferente da cadeia
+                     principal? Porque a rede do Bitcoin não foi originalmente projetada por padrão, como foi o caso da
+                     Ethereum ou de outros blockchains, para permitir que os desenvolvedores codifiquem e executem
+                     contratos inteligentes. A RSK desempenha esse papel, e a RIF Lumino Network é o instrumento para
+                     fornecer escalabilidade para todos os diferentes tokens RRC-20 que desejam usar a rede, na qual os
+                     custos transacionais são pagos em RBTC. A RIF Lumino Network permitirá pagamentos fora da cadeia
+                     para qualquer token existente na rede RSK, algo que é absolutamente necessário para aumentar a
+                     quantidade de pagamentos sem criar congestionamento na rede.</p>
+                  <p>Resumindo, a RIF Lumino Network é uma solução de terceira camada que permite que os canais de
+                     pagamento de cada token construído sobre a RSK aumentem o rendimento da transação e, ao mesmo
+                     tempo, reduzam os custos. Para mais informações, convidamos você a visitar <a
+                        href="https://www.rifos.org/rif-lumino-network/" target="_blank"
+                        rel="noreferrer noopener">https://www.rifos.org/rif-lumino-network/</a>. Comece hoje a
+                     experimentar com a RIF Lumino Network!</p>
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div style="top: -6px;" class="fb-share-button" data-layout="button" data-size="large">
+                        </div>
+                        <a class="twitter-share-button btn btn btn-primary mr-3" href="https://twitter.com/intent/tweet"
+                           data-size="large">
+                           Tweet</a>
+                        <script async src="https://telegram.org/js/telegram-widget.js?8"
+                           data-telegram-share-url="https://www.rifos.org/pt-pt/blog/the-need-for-scalability-beyond-the-main-chain-what-is-rif-lumino-payments-trying-to-achieve.html"
+                           data-size="large"></script>
+                     </div>
+                     <div class="col-lg-12 mt-5">
+                        <a class="btn btn btn-primary mr-3" href="./">Voltar</a>
+                     </div>
+                     <div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="twitter-news">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row text-center">
+               <div class="col-lg-12">
+                  <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                        class="fab fa-twitter"></i></a>
+                  <h3 class="bold">Follow our news!</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer -->
+   <footer id="footer" class="section-bg">
+      <div class="footer-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <img src="../../assets/img/powered_by_iov.svg" class="img-fluid powered_by">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-sm-7">
+                        <div class="footer-info">
+                           <p>O RIF OS fornece ampla interoperabilidade e um tempo de implementação mais rápido,
+                              eliminando a lacuna entre as tecnologias blockchain e sua adoção em massa.</p>
+                        </div>
+                     </div>
+                     <div class="col-sm-5"></div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../../assets/whitepapers/rif-whitepaper-pt.pdf" target="_blank"
+                                    rel="noopener noreferrer">Whitepaper</a></li>
+                              <li><a href="../blog/index.html">Blog</a></li>
+                              <li><a href="../index.html#roadmap">Roteiro</a></li>
+                              <li><a href="https://github.com/riflabs" rel="noopener noreferrer"
+                                    target="_blank">Github</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../faqs.html">Dúvidas frequentes</a></li>
+                              <li><a href="../../assets/guidelines/RIF_FullBrandGuidelines_Pt.pdf"
+                                    rel="nofollow noopener noreferrer" target="_blank">Manual da marca</a></li>
+                              <li><a class="medium" href="https://www.rsk.co/pt-pt/index.html" rel="noopener noreferrer"
+                                    target="_blank">RSK</a></li>
+                              <li><a class="medium" href="https://www.iovlabs.org/pt/index.html"
+                                    rel="noopener noreferrer" target="_blank">Sobre a IOV Labs,</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a class="medium" href="https://www.iovlabs.org/pt/contact.html"
+                                    rel="noopener noreferrer" target="_blank">
+                                    Entre em contato com IOVlabs</a>
+                              </li>
+                              <li><a href="../terms-conditions.html">Termos e condições</a></li>
+                              <li><a href="../privacy-policy.html">Privacidade</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                           class="fab fa-twitter"></i></a>
+                     <a href="https://t.me/rif_os_community" rel="noopener noreferrer" target="_blank"
+                        class="telegram"><i class="fab fa-telegram"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-6 col-xs-12 pl-0-mobile">
+                     <p class="copyright mb-0">Copyright © 2015 - 2019 Rif. Todos os direitos reservados.</p>
+                     <p class="copyright mt-0">By <a href="https://taniebrand.com" target="_blank">Taniebrand®</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </footer>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="RIFVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="../../assets/videos/pt/RIF_CorpoVideo.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="../../assets/js/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>

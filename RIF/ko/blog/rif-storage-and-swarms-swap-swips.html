@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <!-- Google Tag Manager -->
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KBG28B4');</script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="description" content="By Rinke Hendriksen">
+   <meta name="keywords" content="">
+   <meta name="author" content="RIF">
+   <title>RIF Storage and Swarm’s SWAP SWIPs</title>
+   <!-- og info -->
+   <meta property="og:title" content="RIF Storage and Swarm’s SWAP SWIPs">
+   <meta property="og:description" content="By Rinke Hendriksen">
+   <meta property="og:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <meta property="og:url" content="https://www.rifos.org/ko/blog/rif-storage-and-swarms-swap-swips.html">
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@rif_os">
+   <meta name="twitter:creator" content="@rif_os">
+   <meta name="twitter:domain" content="https://www.rifos.org/">
+   <meta name="twitter:title" content="RIF Storage and Swarm’s SWAP SWIPs">
+   <meta name="twitter:description" content="By Rinke Hendriksen">
+   <meta name="twitter:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+   <link rel="manifest" href="../../assets/favicons/site.webmanifest">
+   <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link rel="shortcut icon" href="../../assets/favicons/favicon.ico">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="../../assets/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Main Stylesheet File -->
+   <!-- build:css -->
+   <link rel="stylesheet" href="../../assets/css/theming.css">
+   <!-- endbuild -->
+   <!-- OwlCarrousel CSS Files -->
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.theme.default.min.css">
+   <!-- Libraries CSS Files -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBG28B4" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+   <script>(function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+   <!-- Ends Facebook SDK for JavaScript -->
+   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="../"><img src="../../assets/img/logo.svg" class="logo" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#vision">비전</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="https://developers.rsk.co/rif/" target="_blank"
+                     rel="noreferrer noopener">개발자</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#rif-token">RIF Token</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#roadmap">Roadmap</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#get-start">시작하기</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../marketplace.html" class="nav-link">Marketplace</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../directory.html" class="nav-link">Directory</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../payments.html" class="nav-link">Payments</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../storage.html" class="nav-link">Storage</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../gateways.html" class="nav-link">Gateways</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../communications.html" class="nav-link">Communications</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle lang_nav active" href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     한국어
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item" href="../../blog/rif-storage-and-swarms-swap-swips.html">English</a>
+                     <a class="dropdown-item" href="../../zh-hans/blog/rif-storage-and-swarms-swap-swips.html">简体中文</a>
+                     <a class="dropdown-item" href="../../ja/blog/rif-storage-and-swarms-swap-swips.html">日本語</a>
+                     <a class="dropdown-item" href="../../es/blog/rif-storage-and-swarms-swap-swips.html">Español</a>
+                     <a class="dropdown-item"
+                        href="../../pt-pt/blog/rif-storage-and-swarms-swap-swips.html">Português</a>
+                     <a class="dropdown-item" href="../../ru/blog/rif-storage-and-swarms-swap-swips.html">Pусский</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">비디오 보기</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <nav id="vertical-nav" class="nav flex-column">
+      <a href="../marketplace.html" class="nav-link">Marketplace</a>
+      <a href="../directory.html" class="nav-link">Directory</a>
+      <a href="../payments.html" class="nav-link">Payments</a>
+      <a href="../storage.html" class="nav-link">Storage</a>
+      <a href="../gateways.html" class="nav-link">Gateways</a>
+      <a href="../communications.html" class="nav-link">Communications</a>
+   </nav>
+   <section id="blog">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row mb-5">
+               <div class="col-lg-9">
+                  <h1><span class="bold">RIF Storage</span> and Swarm’s SWAP SWIPs</h1>
+                  <span class="blue_rif  d-block mb-3"><i>By Rinke Hendriksen</i></span>
+                  <h6>September 11, 2019</h6>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-9">
+                  <p>The RIF Storage team has been busy SWIPping, and if you have no idea what that means and you are
+                     curious to find out: please read along!</p>
+                  <p>A SWIP is a Swarm Improvement Proposal. It essentially is a process through which anybody can
+                     propose new ideas to become part of the open-source Swarm project. The SWIP process is largely
+                     similar to the <a href="https://eips.ethereum.org/" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">Ethereum Improvement Proposal (EIP)</a> or the <a
+                        href="https://github.com/rsksmart/RSKIPs" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">RSK Improvement Proposal (RSKIP)</a> processes. Knowing this, you can
+                     probably figure out what SWIPping means… Indeed! We have been submitting proposals to improve
+                     Swarm!</p>
+                  <p>Via this article, we love to share with you what these proposals are about and why they are
+                     important for RIF and Swarm, but first… a little background for those who have missed out:</p>
+                  <p>RIF Labs (which recently changed its name to IOV Labs) previously explained <a
+                        href="rif-storage-a-decentralized-storage-solution.html" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">why decentralized storage is so important</a> and presented <a
+                        href="rif-storage-the-first-chunks.html" class="blue_rif" target="_blank"
+                        rel="noopener noreferrer">a high-level overview of Swarm</a>. Why Swarm? As you might know, RIF
+                     Labs is building a decentralized storage protocol (RIF Storage), and to start we <a
+                        href="https://www.iovlabs.org/press/partnership-between-swarm-and-rsk-infrastructure-framework-rif-to-develop-a-breakthrough-storage-solution.html"
+                        class="blue_rif" target="_blank" rel="noopener noreferrer">partnered up with Swarm</a>.</p>
+                  <p>Recently we submitted three SWIPs detailing the SWAP functionality and where the incentivization is
+                     heading. We will give you a brief explanation for every SWIP; why they are important and what
+                     motivated us to submit them. The SWIP process is completely open for everyone to participate, so we
+                     invite you to leave your feedback and contribute as well!</p>
+                  <h4 class="mt-5 mb-3">SWIP #22: MULTIPLE PAYMENTS PROCESSING SWIP</h4>
+                  <a class="btn btn-primary mb-3"
+                     href="https://github.com/ethersphere/SWIPs/blob/1577e688ae4cc414dedbd9c9f1006df6fa264154/SWIPs/swip-22-multiple_payment_processing_support.md"
+                     target="_blank" rel="noopener noreferrer">Github</a>
+                  <h3 class="mb-3">Content:</h3>
+                  <p>This SWIP proposes to make Swarm more modular, allowing peers to negotiate on how to settle their
+                     payments. A payment module contains a choice for a currency (e.g. RIF, Ether or Bitcoin) a payment
+                     method (e.g. via the chequebook smart contracts, Lumino, Lightning Network, or even good old postal
+                     service) and acs honey-to-money oracle. Peers will be able to list a preference for each payment
+                     module and if two peers prefer one module over the other, this module will be used from that point
+                     onwards.</p>
+                  <h3 class="mt-5 mb-3">Motivation:</h3>
+                  <p>Swarm is a decentralized storage and communications project and for this to be successful, we need
+                     an incentives layer. Nevertheless, how a payment is executed should not be a matter for the
+                     functioning of the rest of the Swarm. Allowing nodes to settle their payments via their preferred
+                     method is expected to increase the adoption and resilience of Swarm. Guess what will be the
+                     currency for the first 3rd party payment module? Exactly, RIF!</p>
+                  <h4 class="mt-5 mb-3">SWIP #21: MESSAGE TO HONEY ORACLE </h4>
+                  <a class="btn btn-primary mb-3"
+                     href="https://github.com/ethersphere/SWIPs/blob/19b40a9d9f3af4183f5b2b2128e49a3d5adc872f/SWIPs/swip-21-message_to_honey.md"
+                     target="_blank" rel="noopener noreferrer">Github</a>
+                  <h3 class="mb-3">Content:</h3>
+                  <p>Swarm messages (such as a chunk request or delivery) all have various loads on Swarm peers. This
+                     load is reflected in the relative price of each message versus the other messages. The Message To
+                     Honey Oracle SWIP proposes a mechanism which allows future atomic updates of the price for all
+                     nodes without requiring code changes in the software every time prices are updated. We propose to
+                     utilize smart-contracts from which the latest message prices can be read and where a simple and
+                     upgradable governance mechanism allows for updating the prices. What is Honey, you may ask? Honey
+                     is an internal accounting unit, used by Swarm nodes to do their accounting and converted to a
+                     currency upon payment (see Honey To Money SWIP).</p>
+                  <h3 class="mt-5 mb-3">Motivation:</h3>
+                  <p>In the ideal world, the price of a message should be relative to its computational load on the
+                     peers. In practice, achieving exactly this is very difficult, as there are multiple types of
+                     messages and they will be used for purposes which we can’t even imagine yet. The best thing to do
+                     is to come up with a sensible estimate and see how the network will behave when it is live (this is
+                     how it is done for the pricing of OPCODES in Gas in RSK or Ethereum as well). For this to work,
+                     however, there needs to be a way to update the price of messages. Importantly, a price update
+                     should be atomically applied by the nodes, or otherwise, accounting imbalances (leading eventually
+                     to disconnects) will start to appear.
+                  </p>
+                  <h4 class="mt-5 mb-3">SWIP #20: HONEY TO MONEY ORACLE
+                  </h4>
+                  <a class="btn btn-primary mb-3"
+                     href="https://github.com/ethersphere/SWIPs/blob/5b3a74ca263a3c84d099274ae968306bdaeaf8ca/SWIPs/swip-20-honey_to_money.md"
+                     target="_blank" rel="noopener noreferrer">Github</a>
+                  <h3 class="mb-3">Content:</h3>
+                  <p>The concept of Honey was previously explained as “an internal accounting unit, used by Swarm nodes
+                     to do their accounting and converted to a currency upon payment”. This SWIP is about the conversion
+                     of honey to a currency in which the debt can be settled. Just as was the case in the Message To
+                     Honey Oracle, we propose for one endpoint to resolve the latest honey-price. This SWIP is somewhat
+                     more general: we don’t require this endpoint to be an on-chain smart contract, but we propose an
+                     initial implementation where the implementation of the endpoint will be very similar to that of the
+                     message to honey oracle.</p>
+                  <h3 class="mt-5 mb-3">Motivation:</h3>
+                  <p>The same reasoning for the need of atomic upgrades applies as was the case for pricing of messages.
+                     The choice for doing the accounting in a different currency than payment was made to reduce the
+                     computational overload on peers: if peers would have to find out what is the most current actual
+                     price for a message every time a message is sent, this would be a big burden. Agreeing on a neutral
+                     honey price and only converting this to a currency at a later point is more efficient. Furthermore,
+                     separating honey from currency is good for modularity: the accounting module is concerned with
+                     honey only, the payment module converts this to a currency and does the payment. </p>
+                  <p>END NOTE</p>
+                  <p>We invite you to read up about all SWIPs on Github (especially #20, #21 and #22). Currently, the
+                     SWIPs are in Draft stage, meaning that they are open for any feedback and they may be changed based
+                     on this. As RIF Storage will be utilized by you, and Swarm is an important component, we’d love to
+                     hear your feedback.</p>
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div style="top: -6px;" class="fb-share-button" data-layout="button" data-size="large">
+                        </div>
+                        <a class="twitter-share-button btn btn btn-primary mr-3" href="https://twitter.com/intent/tweet"
+                           data-size="large">
+                           Tweet</a>
+                        <script async src="https://telegram.org/js/telegram-widget.js?8"
+                           data-telegram-share-url="https://www.rifos.org/ko/blog/rif-storage-and-swarms-swap-swips.html"
+                           data-size="large"></script>
+                     </div>
+                     <div class="col-lg-12 mt-5">
+                        <a class="btn btn btn-primary mr-3" href="./">뒤로</a>
+                     </div>
+                     <div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="twitter-news">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row text-center">
+               <div class="col-lg-12">
+                  <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                        class="fab fa-twitter"></i></a>
+                  <h3 class="bold">Follow our news!</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer -->
+   <footer id="footer" class="section-bg">
+      <div class="footer-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <img src="../../assets/img/powered_by_iov.svg" class="img-fluid powered_by">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-sm-7">
+                        <div class="footer-info">
+                           <p>RIF OS는 광범위한 상호 운용성과 더 빠른 배포 시간을 제공해 블록체인 기술과 해당 기술의 대중 시장 채택 간의 격차를 해소한다. </p>
+                        </div>
+                     </div>
+                     <div class="col-sm-5"></div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../../assets/whitepapers/rif-whitepaper-ko.pdf" target="_blank"
+                                    rel="noopener noreferrer">백서</a></li>
+                              <li><a href="../blog/">블로그</a></li>
+                              <li><a href="../index.html#roadmap">Roadmap</a></li>
+                              <li><a href="https://github.com/riflabs" rel="noopener noreferrer"
+                                    target="_blank">Github</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../faqs.html">자주 묻는 질문</a></li>
+                              <li><a href="../../assets/guidelines/RIF_FullBrandGuidelines_Ko.pdf"
+                                    rel="nofollow noopener noreferrer" target="_blank">브랜드 매뉴얼</a></li>
+                              <li><a class="medium" href="https://www.rsk.co/ko/" rel="noopener noreferrer"
+                                    target="_blank">RSK</a></li>
+                              <li><a class="medium" href="https://www.iovlabs.org/ko/index.html"
+                                    rel="noopener noreferrer" target="_blank">IOVlabs 소개</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a class="medium" href="https://www.iovlabs.org/ko/contact.html"
+                                    rel="noopener noreferrer" target="_blank">IOVlabs에 문의</a></li>
+                              <li><a href="../terms-conditions.html">이용 약관</a></li>
+                              <li><a href="../privacy-policy.html">개인 정보 보호 정책</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                           class="fab fa-twitter"></i></a>
+                     <a href="https://t.me/rif_os_community" rel="noopener noreferrer" target="_blank"
+                        class="telegram"><i class="fab fa-telegram"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-6 col-xs-12 pl-0-mobile">
+                     <p class="copyright mb-0">Copyright © 2015 - 2026 Rif. All rights reserved.</p>
+                     <p class="copyright mt-0">By <a href="https://taniebrand.com" target="_blank">Taniebrand®</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </footer>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="RIFVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="../../assets/videos/ko/RIF_CorpoVideo.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="../../assets/js/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>

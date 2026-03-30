@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <!-- Google Tag Manager -->
+   <script>(function (w, d, s, l, i) {
+         w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+               new Date().getTime(), event: 'gtm.js'
+         }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+               'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-KBG28B4');</script>
+   <!-- End Google Tag Manager -->
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <meta name="description"
+      content="Доступ к сервисам для извлечения внешних данных, в которых используются смарт-контракты, создание безопасных связей между участниками сети или обработка большого количества микроплатежей — это лишь часть проблем, которые приходится решать разработчикам при создании и внедрении децентрализованных приложений блокчейн. Система RIFOS поддерживает набор протоколов, правил и интерфейсов доступа к децентрализованным услугам, которые, по нашему мнению, могут потребоваться для большинства блокчейн-приложений.">
+   <meta name="keywords" content="">
+   <meta name="author" content="RIF">
+   <title>Архитекура RIF — сервисные протоколы</title>
+   <!-- og info -->
+   <meta property="og:title" content="Архитекура RIF — сервисные протоколы">
+   <meta property="og:description"
+      content="Доступ к сервисам для извлечения внешних данных, в которых используются смарт-контракты, создание безопасных связей между участниками сети или обработка большого количества микроплатежей — это лишь часть проблем, которые приходится решать разработчикам при создании и внедрении децентрализованных приложений блокчейн. Система RIFOS поддерживает набор протоколов, правил и интерфейсов доступа к децентрализованным услугам, которые, по нашему мнению, могут потребоваться для большинства блокчейн-приложений.">
+   <meta property="og:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <meta property="og:url" content="https://www.rifos.org/ru/blog/rif-architecture-service-protocols.html">
+   <!-- Twitter Card data -->
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:site" content="@rif_os">
+   <meta name="twitter:creator" content="@rif_os">
+   <meta name="twitter:domain" content="https://www.rifos.org/">
+   <meta name="twitter:title" content="Архитекура RIF — сервисные протоколы">
+   <meta name="twitter:description"
+      content="Доступ к сервисам для извлечения внешних данных, в которых используются смарт-контракты, создание безопасных связей между участниками сети или обработка большого количества микроплатежей — это лишь часть проблем, которые приходится решать разработчикам при создании и внедрении децентрализованных приложений блокчейн. Система RIFOS поддерживает набор протоколов, правил и интерфейсов доступа к децентрализованным услугам, которые, по нашему мнению, могут потребоваться для большинства блокчейн-приложений.">
+   <meta name="twitter:image" content="https://www.rifos.org/assets/img/RIF.jpg">
+   <!-- favicons -->
+   <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicons/favicon-16x16.png">
+   <link rel="manifest" href="../../assets/favicons/site.webmanifest">
+   <link rel="mask-icon" href="../../assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+   <link rel="shortcut icon" href="../../assets/favicons/favicon.ico">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="../../assets/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+      rel="stylesheet">
+   <!-- Bootstrap core CSS -->
+   <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Main Stylesheet File -->
+   <!-- build:css -->
+   <link rel="stylesheet" href="../../assets/css/theming.css">
+   <!-- endbuild -->
+   <!-- OwlCarrousel CSS Files -->
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.carousel.min.css">
+   <link rel="stylesheet" href="../../assets/css/owlcarousel/owl.theme.default.min.css">
+   <!-- Libraries CSS Files -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+</head>
+
+<body>
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBG28B4" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+   <!-- End Google Tag Manager (noscript) -->
+   <!-- Load Facebook SDK for JavaScript -->
+   <div id="fb-root"></div>
+   <script>(function (d, s, id) {
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) return;
+         js = d.createElement(s); js.id = id;
+         js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+         fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+   <!-- Ends Facebook SDK for JavaScript -->
+   <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+      <div class="container">
+         <a class="navbar-brand" href="../"><img src="../../assets/img/logo.svg" class="logo" alt="logo"></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#vision">Концепция
+                  </a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#build-on-rif">Разработчики</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#rif-token">RIF Token
+                  </a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#roadmap">Roadmap
+                  </a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="../index.html#get-start">Начало работы
+                  </a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../marketplace.html" class="nav-link">Marketplace</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../directory.html" class="nav-link">Directory</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../payments.html" class="nav-link">Payments</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../storage.html" class="nav-link">Storage</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../gateways.html" class="nav-link">Gateways</a>
+               </li>
+               <li class="nav-item mobile-services">
+                  <a href="../communications.html" class="nav-link">Communications</a>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle lang_nav active" href="" id="navbarDropdownMenuLink"
+                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Pусский
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                     <a class="dropdown-item" href="../../blog/rif-architecture-service-protocols.html">English</a>
+                     <a class="dropdown-item" href="../../ko/blog/rif-architecture-service-protocols.html">한국어</a>
+                     <a class="dropdown-item" href="../../zh-hans/blog/rif-architecture-service-protocols.html">简体中文</a>
+                     <a class="dropdown-item" href="../../ja/blog/rif-architecture-service-protocols.html">日本語</a>
+                     <a class="dropdown-item" href="../../es/blog/rif-architecture-service-protocols.html">Español</a>
+                     <a class="dropdown-item"
+                        href="../../pt-pt/blog/rif-architecture-service-protocols.html">Português</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" data-toggle="modal" data-target="#homeVideo" onclick="playVid()">Смотреть
+                     Видео</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <nav id="vertical-nav" class="nav flex-column">
+      <a href="../marketplace.html" class="nav-link">Marketplace</a>
+      <a href="../directory.html" class="nav-link">Directory</a>
+      <a href="../payments.html" class="nav-link">Payments</a>
+      <a href="../storage.html" class="nav-link">Storage</a>
+      <a href="../gateways.html" class="nav-link">Gateways</a>
+      <a href="../communications.html" class="nav-link">Communications</a>
+   </nav>
+   <section id="blog">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row mb-5">
+               <div class="col-lg-9">
+                  <h1><span class="bold">Архитекура RIF </span> — сервисные протоколы</h1>
+                  <h6>13 декабря 2018 г.</h6>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-9">
+                  <p>Доступ к сервисам для извлечения внешних данных, в которых используются смарт-контракты, создание
+                     безопасных связей между участниками сети или обработка большого количества микроплатежей — это лишь
+                     часть проблем, которые приходится решать разработчикам при создании и внедрении децентрализованных
+                     приложений блокчейн. Система RIFOS поддерживает набор протоколов, правил и интерфейсов доступа к
+                     децентрализованным услугам, которые, по нашему мнению, могут потребоваться для большинства
+                     блокчейн-приложений. Чтобы ускорить внедрение технологий блокчейн, каждая служба работает так, что
+                     позволяет любому разработчику стать поставщиком услуг, помогая ему внедрять свои услуги и извлекать
+                     выгоду из их интеграции в экосистему RIFOS. Например, разработчик может создать и внедрить новую
+                     децентрализованную сеть хранения, совместимую с протоколами хранения данных RIF, и зарегистрировать
+                     ее, чтобы она стала автоматически доступной для любого устройства с поддержкой RIFOS, которое
+                     использует пользовательский интерфейс хранения. Этот проект поддерживает расширение справедливого
+                     рынка распределенных инфраструктурных услуг, которым может пользоваться любой человек. На первом
+                     этапе протоколы включают: </p>
+                  <h3 class="mb-3 mt-5">RIF Directory</h3>
+                  <p>Одним из основных препятствий для использования технологии блокчейн является присущая ей сложность.
+                     Бесполезно надеяться, что технология, в которой для передачи или получения цифровых активов
+                     пользователи должны копировать и вставлять длинные шестнадцатеричные адреса, станет очень
+                     популярной. Кроме того, при ручном вводе адреса можно ошибиться, а даже простая опечатка может
+                     привести к потере средств. Использование службы преобразования имен значительно снижает вероятность
+                     ошибок и кажущуюся сложность системы. Чем проще технология в пользовании, тем быстрее ее можно
+                     внедрить. Целью протокола RIF Directory (RDP) является присвоение различным ресурсам простых
+                     доменных имен. Это позволит пользователям легко покупать, продавать и проводить аукционы для
+                     доменных имен. </p>
+                  <h3 class="mb-3 mt-5">RIF Secure Communications</h3>
+                  <p>Каждому участнику одноранговой сети необходимо найти партнеров и установить с ними безопасную
+                     связь. Такие каналы связи должны обеспечивать, по меньшей мере, конфиденциальность (сторонние лица
+                     не могут читать отправленные сообщения), целостность (сторонние лица не могут вносить изменения в
+                     отправленные сообщения) и аутентичность (ни одна сторона не может выдавать себя за другую).
+                     Протокол RIF Secure Communications создан таким образом, чтобы соответствовать всем перечисленным
+                     требованиям. Он позволяет участникам публиковать псевдонимы в RIF Directory и связывать такие
+                     псевдонимы с общедоступным ключом для связи и необходимыми сведениями. Все участники поддерживают
+                     распределенные хэш- таблицы (DHT), что обеспечивает высокую доступность и актуальность информации.
+                     Мы определяем примитив взаимодействия - потоковый канал - для проверки подлинности сообщений,
+                     обеспечивая механизм для подтверждения того, что определенное взаимодействие состоялось.</p>
+                  <h3 class="mb-3 mt-5">RIF Payments</h3>
+                  <p>Высокая плата за пользование блокчейном во время пиковых нагрузок сделала невозможным использование
+                     платежей в сети блокчейн для сделок с низкой номинальной стоимостью, например, оплаты кофе или
+                     контента с платой за просмотр. Более того, задержка подтверждения платежа на несколько минут для
+                     многих приложений просто неприемлема. Именно это является причиной создания вторичных сетей вне
+                     цепочки блокчейн, таких как Lightning Network, Raiden или Perun. Тем не менее, внутри сообщества
+                     блокчейн продолжается дискуссия о том, какой должна быть архитектура платежных сетей. RIF Payments
+                     — это протокол, предназначенный для использования прозрачных внесетевых платежных систем,
+                     развернутых поверх RSK, которые поддерживают как смарт-биткойны, так и стандартные токены.
+                     Предоставленные API обеспечивают стандартное взаимодействие между пользователем, RIF-совместимым
+                     кошельком и отдельными платежными сетями. API для RIF Payments позволяют ускорить соединение
+                     различных сетей. Конечная цель сети RIF Payments заключается в создании конкурентной среды, в
+                     которой платежные сети могут активно развиваться, предлагая низкие тарифы, минимальную задержку,
+                     масштабирование в зависимости от объема операций, что перекрывает возможности устаревших сетей
+                     кредитных карт.</p>
+                  <h3 class="mb-3 mt-5">RIF Data Storage</h3>
+                  <p>Децентрализованные приложения часто нуждаются в хранении или использовании внешних данных в виде
+                     файлов. Использование блокчейна в качестве хранилища для таких данных не подходит из-за ограничений
+                     на объем хранимых данных. Более того, блокчейн постоянно сохраняет полученные данные, поэтому
+                     увеличение числа приложений приводит к увеличению размера сети. Использование централизованных
+                     служб облачного хранения также имеет свои недостатки. Эти службы не могут гарантировать
+                     устойчивость к необъяснимым ошибкам и отсутствие цензуры. Существующие распределенные хранилища
+                     данных имеют разную стоимость, топологии, структуры стимулирования и рабочие характеристики. Они
+                     предназначены либо для хранения личных данных, либо для распространения контента, хотя некоторые
+                     виды хранилищ могут поддерживать оба варианта. Для адаптации топологии к различным шаблонам
+                     использования хранилища данных RSK используют протоколы, которые предназначены для поддержки как
+                     хранения личных данных, так и распространения контента. Это дает пользователям широкие возможности
+                     при интеграции с существующими решениями. Таким образом, его можно адаптировать для работы с
+                     будущими сетями хранения данных. </p>
+                  <h3 class="mb-3 mt-5">RIF Data Services</h3>
+                  <p>Распределенные реальные приложения, основанные на использовании встроенных смарт-контрактов,
+                     нуждаются в доступе к каналам реальных данных. Эту потребность необходимо удовлетворить,
+                     предоставив безопасное и защищенное от несанкционированного доступа решение, которое гарантирует
+                     детерминированный выход (все узлы майнинга должны получать одинаковое значение на конкретный запрос
+                     очереди) для значений, полученных из внешних источников. Например, распределенная саморегулируемая
+                     программа страхования урожая должна получать информацию о погоде, чтобы решить, необходимо ли
+                     делать платеж в случае таких событий как град, наводнение или засуха. Протоколы блокчейн общаются с
+                     внешними системами через Oracles. RIF Data Services позволяет потреблять внешние данные из
+                     источников, которые полагаются на существующие или новые решения Oracle, и обеспечивает уровень
+                     интерфейса, который унифицирует доступ к таким службам. Эти поставщики берут на себя
+                     ответственность за передачу информации, которая запрашивается в блокчейне. RIF Data Services
+                     предлагает независимый протокол для использования внешних данных через поставщиков услуг обработки
+                     данных.</p>
+                  <h3 class="mb-3 mt-5">RIF Explorer</h3>
+                  <p>Платформа RIFOS предоставляет набор абстракций и протоколов, которые поддерживают сторонние
+                     компании в реализации услуг RIFOS. Каждая такая компания является поставщиком услуг. Развязка
+                     стандартизованных протоколов и реализаций позволяет пользователям, по мере развития технологий и
+                     появления новых решений, выбирать новые, потенциально более совершенные варианты реализации. Кроме
+                     того, это позволяет внешним сторонним провайдерам переносить свои решения и интегрировать их в
+                     экосистему RIFOS. В этой связи требуются механизмы для регистрации и поиска таких способов
+                     внедрения, которые позволяют разработчикам и клиентам выбрать наиболее подходящий вариант для
+                     каждого отдельного случая. RIF Explorer — это протокол, разработанный для платформы RIFOS, который
+                     предоставляет необходимые функции для регистрации и идентификации услуг сторонних разработчиков на
+                     платформе RIFOS. RIF Explorer расширяет возможности протокола RIF Directory, позволяя
+                     восстанавливать адреса поставщиков услуг не только по имени домена, но и по другим критериям,
+                     например, типу услуги или дополнительным метаданным. Например, разработчик может создать и внедрить
+                     новую децентрализованную сеть хранения и зарегистрировать ее в RIF Explorer, чтобы сделать ее
+                     автоматически доступной для любого устройства с поддержкой RIFOS, которое использует
+                     пользовательский интерфейс хранения. </p>
+                  <h3 class="mb-3 mt-5">Заключение</h3>
+                  <p>Мы разработали набор протоколов RIFOS, которые позволяют децентрализованным приложениям опираться
+                     на сбалансированную инфраструктуру. Все протоколы и поставщики услуг без проблем взаимодействуют с
+                     RIF token. В RIF Labs мы создали первую службу для реализации одного из таких протоколов. Это RIF
+                     Directory на базе RSK blockchain, которая позволяет пользоваться возможностями смарт-контрактов и
+                     идеально подходит для предоставления услуг RIF. Мы продолжаем работу над созданием поставщиков
+                     услуг, совместимых с RIF, для остальных упомянутых ранее протоколов. Они будут опираться на RIF
+                     tokens, при этом основная функция токенов будет использоваться в качестве механизма координации
+                     протоколов.</p>
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div style="top: -6px;" class="fb-share-button" data-layout="button" data-size="large">
+                        </div>
+                        <a class="twitter-share-button btn btn btn-primary mr-3" href="https://twitter.com/intent/tweet"
+                           data-size="large">
+                           Tweet</a>
+                        <script async src="https://telegram.org/js/telegram-widget.js?8"
+                           data-telegram-share-url="https://www.rifos.org/ru/blog/rif-architecture-service-protocols.html"
+                           data-size="large"></script>
+                     </div>
+                     <div class="col-lg-12 mt-5">
+                        <a class="btn btn btn-primary mr-3" href="./">возвращайся</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="twitter-news">
+      <div class="container-fluid">
+         <div class="container">
+            <div class="row text-center">
+               <div class="col-lg-12">
+                  <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                        class="fab fa-twitter"></i></a>
+                  <h3 class="bold">Follow our news!</h3>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- footer -->
+   <footer id="footer" class="section-bg">
+      <div class="footer-top">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg-12">
+                  <img src="../../assets/img/powered_by_iov.svg" class="img-fluid powered_by">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-sm-7">
+                        <div class="footer-info">
+                           <p>RIF OS обеспечивает взаимную согласованность и ускоренное развертывание, а также позволяет
+                              преодолеть разрыв между современными технологиями блокчейн и их массовым использованием.
+                           </p>
+                        </div>
+                     </div>
+                     <div class="col-sm-5"></div>
+                  </div>
+               </div>
+               <div class="col-lg-6">
+                  <div class="row">
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../../assets/whitepapers/rif-whitepaper-ru.pdf" target="_blank"
+                                    rel="noopener noreferrer">Проектный документ</a></li>
+                              <li><a href="../blog/index.html">Блог
+                                 </a>
+                              </li>
+                              <li><a href="../index.html#roadmap">Roadmap
+                                 </a>
+                              </li>
+                              <li><a href="https://github.com/riflabs" rel="noopener noreferrer"
+                                    target="_blank">Github</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a href="../faqs.html">Часто задаваемые вопросы
+                                 </a>
+                              </li>
+                              <li><a href="../../assets/guidelines/RIF_FullBrandGuidelines_Ru.pdf"
+                                    rel="nofollow noopener noreferrer" target="_blank">Руководство по стилю
+                                 </a>
+                              </li>
+                              <li><a class="medium" href="https://www.rsk.co/ru/index.html" rel="noopener noreferrer"
+                                    target="_blank">RSK</a></li>
+                              <li><a class="medium" href="https://www.iovlabs.org/ru/index.html"
+                                    rel="noopener noreferrer" target="_blank">О компании IOV Labs</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                     <div class="col-md-4">
+                        <div class="footer-links">
+                           <ul>
+                              <li><a class="medium" href="https://www.iovlabs.org/ru/contact.html"
+                                    rel="noopener noreferrer" target="_blank">Контакты IOVlabs</a></li>
+                              <li><a href="../terms-conditions.html">Правила и условия</a></li>
+                              <li><a href="../privacy-policy.html">Конфиденциальность</a></li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://twitter.com/rif_os" rel="noopener noreferrer" target="_blank" class="twitter"><i
+                           class="fab fa-twitter"></i></a>
+                     <a href="https://t.me/rif_os_community" rel="noopener noreferrer" target="_blank"
+                        class="telegram"><i class="fab fa-telegram"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="col-md-12">
+               <div class="row">
+                  <div class="col-md-6 col-xs-12 pl-0-mobile">
+                     <p class="copyright mb-0">Copyright © 2015 - 2026 Rif. Все права защищены.</p>
+                     <p class="copyright mt-0">By <a href="https://taniebrand.com" target="_blank">Taniebrand®</a></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+   </footer>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="RIFVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="../../assets/videos/ru/RIF_CorpoVideo.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="../../assets/vendor/jquery/jquery.min.js"></script>
+   <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="../../assets/js/main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+   <script>
+      new WOW().init();
+   </script>
+   <script src="../../assets/js/owlcarousel/owl.carousel.min.js"></script>
+</body>
+
+</html>
