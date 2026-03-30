@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="description" content="">
+   <meta name="author" content="IOVLabs">
+   <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+
+   <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#00d27d">
+   <link rel="shortcut icon" href="img/favicons/favicon.ico">
+   <meta name="apple-mobile-web-app-title" content="IOVlabs">
+   <meta name="application-name" content="IOVlabs">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-config" content="img/favicons/browserconfig.xml">
+   <meta name="theme-color" content="#ffffff">
+   <title>IOVLabs | Contact Us</title>
+   <!-- Bootstrap core CSS -->
+   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <!-- animate Stylesheets -->
+   <link href="css/animate.css" rel="stylesheet">
+
+
+   <!-- Owl Stylesheets -->
+   <link rel="stylesheet" href="vendor/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+   <link rel="stylesheet" href="vendor/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+   <!-- IOV Stylesheets -->
+   <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body class="body-contact">
+
+   <!-- Navigation -->
+   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+      <div class="container-fluid">
+         <a class="navbar-brand" href="./"><img src="img/logos/logo.png" class="logoinner"></a>
+         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+               <li class="nav-item">
+                  <a class="nav-link level1_nav white hide_block_desktop" href="about_us.html">about us</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link level1_nav white hide_block_desktop" href="our_mission.html">our mission</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link level1_nav white hide_block_desktop" href="team.html">team</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link level1_nav white hide_block_desktop" href="press.html">press</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link level1_nav green hide_block_desktop" href="careers.html">careers</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link level1_nav green hide_block_desktop" href="platforms.html">platforms</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link level1_nav green hide_block_desktop" href="contact.html">contact</a>
+               </li>
+
+               <li class="nav-item">
+                  <a class="nav-link video_nav white hide_block_desktop" data-toggle="modal" data-target="#homeVideo"
+                     onclick="playVid()">watch video <img src="img/icons/play_icon.png" class="playicon"></a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <!-- Page Content -->
+   <div class="container-fluid">
+      <div class="row vh-100 full_header d-flex contact_top_header_bg">
+         <div class="row contactrow justify-content-center align-self-center pl-100">
+            <div class="col-md-6 white contact_inner_nav">
+               <span class="d-block green Objective_bold pb-30">IOVlabs</span>
+               <a href="about_us.html" class="d-block white text-decoration-none contactlink">about us</a>
+               <a href="our_mission.html" class="d-block white text-decoration-none contactlink">our mission</a>
+               <a href="team.html" class="d-block white text-decoration-none contactlink">team</a>
+               <a href="press.html" class="d-block white text-decoration-none contactlink">press</a>
+               <a href="careers.html" class="d-block white text-decoration-none contactlink">careers</a>
+               <a href="platforms.html" class="d-block white text-decoration-none contactlink">platforms</a>
+               <a href="contact.html" class="d-block white text-decoration-none contactlink">contact</a>
+            </div>
+            <div class="col-md-6 white">
+               <span class="d-block green Objective_bold pb-30">Info</span>
+               <span class="d-block white">Contact us at</span>
+               <a href="mailto:press@iovlabs.org"
+                  class="d-block green text-decoration-none contactlink">press@iovlabs.org</a>
+               <a href="mailto:careers@iovlabs.org"
+                  class="d-block green text-decoration-none contactlink">careers@iovlabs.org</a>
+               <a href="mailto:info@iovlabs.org"
+                  class="d-block green text-decoration-none contactlink mb-30">info@iovlabs.org</a>
+               <a href="https://www.linkedin.com/company/iovlabs/?originalSubdomain=ar" target="_blank"
+                  rel="noreferrer noopener" class="d-block white text-decoration-none contactlink">Connect with us <img
+                     src="img/icons/linkedin.png"></a>
+            </div>
+         </div>
+         <div class="contact_disclaimer contactrow Objective_medium white pl-100">
+            © 2019 IOVLabs. All Rights Reserved.<br>
+            Terms Privacy
+         </div>
+      </div>
+   </div>
+   <!-- VIDEO MODAL -->
+   <div class="modal fade" id="homeVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+         <div class="modal-content">
+            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="pauseVid()">X</button>
+            <div class="embed-responsive embed-responsive-16by9">
+               <video id="IOVVideo" class="embed-responsive-item" controls="controls" width="100%" height="auto">
+                  <source src="img/videos/IOV_FINAL.mp4" type="video/mp4">
+               </video>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- VIDEO MODAL ENDS -->
+   <!-- Bootstrap core JavaScript -->
+   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <!-- Owl JavaScript -->
+   <script src="vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+
+   <script src="js/wow.js"></script>
+   <script src="js/main.js"></script>
+</body>
+
+</html>
