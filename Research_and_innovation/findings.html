@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Above and Beyond the Future">
+    <meta name="author" content="Research & Innovation - Powered by IOVlabs">
+    <title>Research & Innovation | Findings</title>
+    <!-- og info -->
+    <meta property="og:title" content="Research & Innovation | Findings">
+    <meta property="og:description" content="Above and Beyond the Future">
+    <meta property="og:image" content="https://innovation.iovlabs.org/img/og.jpg">
+    <meta property="og:url" content="https://innovation.iovlabs.org/findings.html">
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Research & Innovation | Findings">
+    <meta name="twitter:description" content="Above and Beyond the Future">
+    <meta name="twitter:image" content="https://innovation.iovlabs.org/img/og.jpg">
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicons/favicon-16x16.png">
+
+    <link rel="mask-icon" href="img/favicons/safari-pinned-tab.svg" color="#1c2c35">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#1c2c35">
+    <meta name="msapplication-config" content="img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#1c2c35">
+    <!-- Google fonts-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&family=Jura:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Theming-->
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body class="body-findings">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="./"><img src="img/logo.svg" alt="Research & Innovation" class="logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="team.html">Team
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="here_and_now.html">Here & Now</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="findings.html">Findings
+                            <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="labs.html">Labs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ecosystem.html">Ecosystem</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Content -->
+    <div class="container-fluid finding-header">
+        <div class="discover_link"><a href="#findings" name="findings">DISCOVER BELOW<br><i class="fa fa-chevron-down"
+                    aria-hidden="true"></i></a></div>
+    </div>
+    <div id="findings" class="container">
+        <div class="row mt-5 d-none d-lg-block">
+            <div class="col-lg-8 offset-lg-2">
+                <span class="sub-nav-findings select" onclick="toggle_visibility('RSK_Architecture');">
+                    RSK Architecture
+                </span>
+                <span class="sub-nav-findings" onclick="toggle_visibility('RIF_Architecture');">
+                    RIF Architecture
+                </span>
+                <!-- <span onclick="toggle_visibility('Storage');"  class="sub-nav-findings">
+                    STORAGE
+                </span>
+                <span onclick="toggle_visibility('Gateways');"  class="sub-nav-findings">
+                    gateways
+                </span>
+                <span onclick="toggle_visibility('Payments');"  class="sub-nav-findings">
+                    Payments
+                </span> -->
+                <span class="sub-nav-findings" onclick="toggle_visibility('Sync_Chain');">
+                    Sync Chain
+                </span>
+            </div>
+        </div>
+    </div>
+    <div id="findings_elements" class="container">
+        <div class="row">
+            <div class="col-12 col-lg-12">
+                <!-- RSK ARCHITECTURE -->
+                <div class="findings_collapse" style="max-height:100%; opacity: 1;" id="RSK_Architecture">
+                    <div class="text-center mt-5 d-lg-none">
+                        <div class="secondary-buttons">RSK Architecture</div>
+                    </div>
+                    <!-- carousel -->
+                    <div id="rskControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <!--item 1-->
+                            <div class="carousel-item active">
+                                <div class="row findings-item pt-5 pb-5">
+                                    <div class="col-lg-5  col-md-4 superimposed-img rsk-architecture"><img
+                                            src="img/findings/rsk-architecture.jpg" alt="RSK Architecture"
+                                            class="img-fluid finding-image"></div>
+                                    <div class="col-lg-7 col-md-8 superimposed-text my-auto ">
+                                        <div class="superimposed-text-content">
+                                            <div class="title text-lg-right">White Paper Overview | Why RSK is Important
+                                                for the Bitcoin Ecosystem</div>
+                                            <p class="text-lg-right">In 2008 Satoshi Nakamoto revolutionized payments by
+                                                creating Bitcoin. Bitcoin included a very limited implementation of the
+                                                so-called “smart contracts,” a concept introduced back in 1993 by Nick
+                                                Szabo.</p>
+                                            <div class="superimposed-text-meta mt-3">
+                                                <div class="row">
+                                                    <div class="meta-image-container">
+                                                        <img src="img/author/sergio.jpg" alt="Sergio Demian Lerner"
+                                                            class="meta-img img-fluid">
+                                                    </div>
+                                                    <div
+                                                        class="col-9 col-sm-7 offset-sm-2 col-md-9 offset-md-0 my-auto">
+                                                        <div class="meta-author">Sergio Demian Lerner</div>
+                                                        <div class="meta-date">NOV 19, 2015 · 45 min read</div>
+                                                    </div>
+                                                    <div class="col-sm-3 my-auto pt-sm-15 text-left text-sm-right">
+                                                        <a href="https://www.rsk.co/Whitepapers/RSK_White_Paper-ORIGINAL.pdf"
+                                                            class="tertiary-buttons float-sm-right" target="_blank"
+                                                            rel="noopener noreferrer">READ</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- item 2 -->
+                            <div class="carousel-item">
+                                <div class="row findings-item pt-5 pb-5">
+                                    <div class="col-lg-5  col-md-4 superimposed-img rsk-architecture"><img
+                                            src="img/findings/rsk-architecture.jpg" alt="RSK Architecture"
+                                            class="img-fluid finding-image"></div>
+                                    <div class="col-lg-7 col-md-8 superimposed-text my-auto ">
+                                        <div class="superimposed-text-content">
+                                            <div class="title text-lg-right">White Paper Overview Updated | RSK
+                                                Rootstock Platform | Bitcoin Powered Smart Contract</div>
+                                            <p class="text-lg-right">In 2008 Satoshi Nakamoto revolutionized payments by
+                                                creating Bitcoin. Bitcoin included a very limited implementation of the
+                                                so-called “smart contracts,” a concept introduced back in 1993 by Nick
+                                                Szabo.</p>
+                                            <div class="superimposed-text-meta">
+                                                <div class="row">
+                                                    <div class="meta-image-container">
+                                                        <img src="img/author/sergio.jpg" alt="Sergio Demian Lerner"
+                                                            class="meta-img img-fluid">
+                                                    </div>
+                                                    <div
+                                                        class="col-9 col-sm-7 offset-sm-2 col-md-9 offset-md-0 my-auto">
+                                                        <div class="meta-author">Sergio Demian Lerner</div>
+                                                        <div class="meta-date">JUA 29, 2019 · 45 min read</div>
+                                                    </div>
+                                                    <div class="col-sm-3 my-auto pt-sm-15 text-left text-sm-right">
+                                                        <a href="https://www.rsk.co/Whitepapers/RSK-White-Paper-Updated.pdf"
+                                                            class="tertiary-buttons float-sm-right" target="_blank"
+                                                            rel="noopener noreferrer">READ</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end item 2-->
+                        </div>
+                        <a class="carousel-control-prev" href="#rskControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#rskControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row d-block d-lg-none">
+                    <div class="col-lg-12">
+                        <div class="separador mt-5 mb-5"></div>
+                    </div>
+                </div>
+                <!--  RIF ARCHITECTURE-->
+                <div class="findings_collapse" id="RIF_Architecture" data-ride="carousel">
+                    <div class="text-center mt-5 d-lg-none">
+                        <div class="secondary-buttons">RIF Architecture</div>
+                    </div>
+                    <div id="rifControls" class="carousel slide">
+                        <div class="carousel-inner">
+                            <!-- item 1 -->
+                            <div class="carousel-item active">
+                                <div class="row findings-item reverse-item pt-5 pb-5">
+                                    <div class="col-lg-5  col-md-4 superimposed-img rif-architecture order-md-2"><img
+                                            src="img/findings/rif-architecture.jpg" alt="RIF Architecture"
+                                            class="img-fluid finding-image"></div>
+                                    <div class="col-lg-7 col-md-8 superimposed-text my-auto order-md-1">
+                                        <div class="superimposed-text-content">
+                                            <div class="title">White Paper Overview | THE ROOT INFRASTRUCTURE FRAMEWORK
+                                            </div>
+                                            <p>Building the infrastructure for the next generation of distributed
+                                                applications. The document you’re about to read introduces The Root
+                                                Infrastructure Framework Token (the ‘RIF
+                                                Token’) and The Root Infrastructure Framework Open Standard (the
+                                                ‘RIFOS’). As described in
+                                                further detail below, the RIFOS aims to bridge the gap that exists today
+                                                between Blockchain </p>
+                                            <div class="superimposed-text-meta">
+                                                <div class="row">
+                                                    <div class="meta-image-container">
+                                                        <img src="img/author/rif.jpg" alt="Sergio Demian Lerner"
+                                                            class="meta-img img-fluid">
+                                                    </div>
+                                                    <div
+                                                        class="col-9 col-sm-7 offset-sm-2 col-md-9 offset-md-0 my-auto">
+                                                        <div class="meta-author">RIF Labs’ Founding Team</div>
+                                                        <div class="meta-date">30 min read</div>
+                                                    </div>
+                                                    <div class="col-sm-3 my-auto pt-sm-15 text-left text-sm-right">
+                                                        <a href="https://www.rifos.org/assets/whitepapers/rif-whitepaper-en.pdf"
+                                                            class="tertiary-buttons float-sm-right" target="_blank"
+                                                            rel="noopener noreferrer">READ</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev d-none" href="#rifControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next d-none" href="#rifControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row d-block d-lg-none">
+                    <div class="col-lg-12">
+                        <div class="separador mt-5 mb-5"></div>
+                    </div>
+                </div>
+                <!-- STORAGE -->
+                <!--  <div class="findings_collapse" id="Storage">
+                <div class="text-center mt-5 d-lg-none">
+                        <div class="secondary-buttons">Storage</div>
+                    </div>
+                 <div id="storageControls" class="carousel slide">
+  <div class="carousel-inner">
+   <div class="carousel-item active">
+                                <div class="row findings-item pt-5 pb-5">
+                                    <div class="col-lg-5  col-md-4 superimposed-img storage"><img src="img/findings/storage.jpg" alt="Storage" class="img-fluid finding-image"></div>
+                                    <div class="col-lg-7 col-md-8 superimposed-text my-auto ">
+                                        <div class="superimposed-text-content">
+                                            <div class="title text-lg-right">White Paper Overview | Why RSK is Important for the Bitcoin Ecosystem</div>
+                                            <p class="text-lg-right">In 2008 Satoshi Nakamoto revolutionized payments by creating Bitcoin. Bitcoin included a very limited implementation of the so-called “smart contracts,” a concept introduced back in 1993 by Nick Szabo.</p>
+                                            <div class="superimposed-text-meta mt-3">
+                                                <div class="row">
+                                                    <div class="meta-image-container">
+                                                        <img src="img/author/sergio.jpg" alt="Sergio Demian Lerner" class="meta-img img-fluid">
+                                                    </div>
+                                                    <div class="col-9 col-sm-7 offset-sm-2 col-md-9 offset-md-0 my-auto">
+                                                        <div class="meta-author">Sergio Demian Lerner</div>
+                                                        <div class="meta-date">NOV 19, 2015 · 45 min read</div>
+                                                    </div>
+                                                    <div class="col-sm-3 my-auto pt-sm-15 text-left text-sm-right">
+                                                        <a href="https://www.rsk.co/Whitepapers/RSK_White_Paper-ORIGINAL.pdf" class="tertiary-buttons float-sm-right" target="_blank" rel="noopener noreferrer">READ</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+  </div>
+  <a class="carousel-control-prev" href="#storageControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#storageControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div> 
+
+   <div class="row d-block d-lg-none">
+            <div class="col-lg-12">
+                <div class="separador mt-5 mb-5"></div>
+            </div>
+        </div>
+        -->
+                <!-- GATEWAYS -->
+                <!-- <div class="findings_collapse" id="Gateways">
+         <div class="text-center mt-5 d-lg-none">
+                        <div class="secondary-buttons">Gateways</div>
+                    </div>  
+                 <div id="gatewaysControls" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+                                <div class="row findings-item reverse-item pt-5 pb-5">
+                                    <div class="col-lg-5  col-md-4 superimposed-img gateways order-md-2"><img src="img/findings/gateways.jpg" alt="Gateways" class="img-fluid finding-image"></div>
+                                    <div class="col-lg-7 col-md-8 superimposed-text my-auto order-md-1">
+                                        <div class="superimposed-text-content">
+                                            <div class="title">White Paper Overview | THE ROOT INFRASTRUCTURE FRAMEWORK</div>
+                                            <p>Building the infrastructure for the next generation of distributed applications</p>
+                                            <div class="superimposed-text-meta">
+                                                <div class="row">
+                                                    <div class="meta-image-container">
+                                                        <img src="img/author/rif.jpg" alt="Sergio Demian Lerner" class="meta-img img-fluid">
+                                                    </div>
+                                                    <div class="col-9 col-sm-7 offset-sm-2 col-md-9 offset-md-0 my-auto">
+                                                        <div class="meta-author">RIF Labs’ Founding Team</div>
+                                                        <div class="meta-date">30 min read</div>
+                                                    </div>
+                                                    <div class="col-sm-3 my-auto pt-sm-15 text-left text-sm-right">
+                                                        <a href="https://www.rifos.org/assets/whitepapers/rif-whitepaper-en.pdf" class="tertiary-buttons float-sm-right" target="_blank" rel="noopener noreferrer">READ</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+  </div>
+  <a class="carousel-control-prev" href="#gatewaysControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#gatewaysControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+
+   <div class="row d-block d-lg-none">
+            <div class="col-lg-12">
+                <div class="separador mt-5 mb-5"></div>
+            </div>
+        </div>
+
+         -->
+                <!-- PAYMENTS-->
+                <!--   <div class="findings_collapse" id="Payments">
+          <div class="text-center mt-5 d-lg-none">
+                        <div class="secondary-buttons">Payments</div>
+                    </div>
+                 <div id="paymentsControls" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+                                <div class="row findings-item pt-5 pb-5">
+                                    <div class="col-lg-5  col-md-4 superimposed-img payments"><img src="img/findings/payments.jpg" alt="Payments" class="img-fluid finding-image"></div>
+                                    <div class="col-lg-7 col-md-8 superimposed-text my-auto ">
+                                        <div class="superimposed-text-content">
+                                            <div class="title text-lg-right">White Paper Overview | Why RSK is Important for the Bitcoin Ecosystem</div>
+                                            <p class="text-lg-right">In 2008 Satoshi Nakamoto revolutionized payments by creating Bitcoin. Bitcoin included a very limited implementation of the so-called “smart contracts,” a concept introduced back in 1993 by Nick Szabo.</p>
+                                            <div class="superimposed-text-meta mt-3">
+                                                <div class="row">
+                                                    <div class="meta-image-container">
+                                                        <img src="img/author/sergio.jpg" alt="Sergio Demian Lerner" class="meta-img img-fluid">
+                                                    </div>
+                                                    <div class="col-9 col-sm-7 offset-sm-2 col-md-9 offset-md-0 my-auto">
+                                                        <div class="meta-author">Sergio Demian Lerner</div>
+                                                        <div class="meta-date">NOV 19, 2015 · 45 min read</div>
+                                                    </div>
+                                                    <div class="col-sm-3 my-auto pt-sm-15 text-left text-sm-right">
+                                                        <a href="https://www.rsk.co/Whitepapers/RSK_White_Paper-ORIGINAL.pdf" class="tertiary-buttons float-sm-right" target="_blank" rel="noopener noreferrer">READ</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+  </div>
+  <a class="carousel-control-prev d-none" href="#paymentsControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next d-none" href="#paymentsControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div> 
+
+   <div class="row d-block d-lg-none">
+            <div class="col-lg-12">
+                <div class="separador mt-5 mb-5"></div>
+            </div>
+        </div>
+        -->
+                <!-- SYNC CHAIN -->
+                <div class="findings_collapse" id="Sync_Chain">
+                    <div class="text-center mt-5 d-lg-none">
+                        <div class="secondary-buttons">Sync Chain</div>
+                    </div>
+                    <!-- carousel -->
+                    <div id="syncControls" class="carousel slide">
+                        <div class="carousel-inner">
+                            <!--item 1-->
+                            <div class="carousel-item active">
+                                <div class="row findings-item pt-5 pb-5">
+                                    <div class="col-lg-5  col-md-4 superimposed-img syncchain"><img
+                                            src="img/findings/syncchain.jpg" alt="Sync Chain"
+                                            class="img-fluid finding-image"></div>
+                                    <div class="col-lg-7 col-md-8 superimposed-text my-auto ">
+                                        <div class="superimposed-text-content">
+                                            <div class="title text-lg-right">SyncChain: Synchronized Sidechains for
+                                                Improved Security and Usability</div>
+                                            <p class="text-lg-right">We invented a new type of merge-mined sidechain we
+                                                call SyncChain, which enables fast peg-ins and peg-out (between Bitcoin
+                                                and RSK, this is as low as 30 minutes for peg-ins and as low as 2 hours
+                                                for peg-outs)...</p>
+                                            <div class="superimposed-text-meta">
+                                                <div class="row">
+                                                    <div class="meta-image-container">
+                                                        <img src="img/author/sergio.jpg" alt="Sergio Demian Lerner"
+                                                            class="meta-img img-fluid">
+                                                    </div>
+                                                    <div
+                                                        class="col-9 col-sm-7 offset-sm-2 col-md-9 offset-md-0 my-auto">
+                                                        <div class="meta-author">Sergio Demian Lerner</div>
+                                                        <div class="meta-date">30 min read</div>
+                                                    </div>
+                                                    <div class="col-sm-3 my-auto pt-sm-15 text-left text-sm-right">
+                                                        <a href="https://blog.rsk.co/noticia/syncchain-synchronized-sidechains-for-improved-security-and-usability/"
+                                                            class="tertiary-buttons float-sm-right" target="_blank"
+                                                            rel="noopener noreferrer">READ</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- item 2 -->
+                            <!-- item 3 -->
+                            <!-- fin item 3 -->
+                        </div>
+                        <a class="carousel-control-prev d-none" href="#syncControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next d-none" href="#syncControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                    <!-- fin carousel -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-8 col-lg-6">
+                    <div id="footer-links" class="d-block d-sm-flex align-items-start">
+                        <div class="col-one">
+                            <a href="https://www.iovlabs.org/about_us.html" target="_blank"
+                                rel="noreferrer noopener">About IOVlabs</a>
+                            <a href="https://www.iovlabs.org/contact.html" target="_blank"
+                                rel="noopener noreferrer">Contact IOVlabs</a>
+                            <a href="mailto:innovation@iovlab.org">Contact us</a>
+                        </div>
+                        <div class="col-two">
+                            <a href="https://www.rsk.co/" target="_blank" rel="noreferrer noopener">rsk</a>
+                            <a href="https://www.rifos.org/" target="_blank" rel="noreferrer noopener">rif</a>
+                            <a href="https://www.taringa.net/" target="_blank" rel="noreferrer noopener">Taringa!</a>
+                        </div>
+                        <div class="col-three">
+                            <a href="https://mining.rsk.co/" target="_blank" rel="noreferrer noopener">Merged Mining</a>
+                            <a href="https://explorer.rsk.co/" target="_blank" rel="noreferrer noopener">RSK
+                                Explorer</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-6">
+                    <div class="social-media mt-3 mt-lg-0 text-lg-right">
+                        <a href="https://twitter.com/rsksmart" target="_blank" rel="noreferrer noopener">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                                <i class="fa fa-twitter fa-stack-1x"></i>
+                            </span>
+                        </a>
+                        <a href="https://www.youtube.com/rsksmart" target="_blank" rel="noreferrer noopener">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                                <i class="fa fa-youtube-play fa-stack-1x"></i>
+                            </span>
+                        </a>
+                        <a href="https://www.facebook.com/RSKsmart/" target="_blank" rel="noreferrer noopener">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                                <i class="fa fa-facebook fa-stack-1x"></i>
+                            </span>
+                        </a>
+                        <a href="https://gitter.im/rsksmart" target="_blank" rel="noreferrer noopener">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                                <i class="fab fa-gitter fa-stack-1x"></i>
+                            </span>
+                        </a>
+                        <a href="https://www.reddit.com/r/rootstock/" target="_blank" rel="noreferrer noopener">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                                <i class="fa fa-reddit-alien fa-stack-1x"></i>
+                            </span>
+                        </a>
+                        <a href="https://t.me/rskofficialcommunity" target="_blank" rel="noreferrer noopener">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                                <i class="fa fa-telegram fa-stack-1x"></i>
+                            </span>
+                        </a>
+                        <a href="https://medium.com/@RSKNews" target="_blank" rel="noreferrer noopener">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                                <i class="fa fa-medium fa-stack-1x"></i>
+                            </span>
+                        </a>
+                        <a href="https://t.me/rsksmartcontract" target="_blank" rel="noreferrer noopener">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                                <i class="fa fa-telegram fa-stack-1x"></i>
+                            </span>
+                        </a>
+                        <a href="https://www.instagram.com/rsksmart/" target="_blank" rel="noreferrer noopener">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                                <i class="fa fa-instagram fa-stack-1x"></i>
+                            </span>
+                        </a>
+                        <a href="https://twitter.com/rif_os" target="_blank" rel="noreferrer noopener">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                                <i class="fa fa-twitter fa-stack-1x"></i>
+                            </span>
+                        </a>
+                        <a href="https://t.me/rif_os_community" target="_blank" rel="noreferrer noopener">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                                <i class="fa fa-telegram fa-stack-1x"></i>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 disclaimer text-lg-right">
+                            © <span id="year"></span> Research & Innovation <a
+                                href="https://www.rsk.co/terms-conditions" class="tou" target="_blank"
+                                rel="noopener noreferrer">Terms of use</a> <a href="https://www.rsk.co/privacy-policy"
+                                class="pp" target="_blank" rel="noopener noreferrer">Privacy policy</a><br><a
+                                href="https://taniebrand.com" class="pp" target="_blank" rel="noopener noreferrer">By
+                                Taniebrand®</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jquery  -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.19/jquery.touchSwipe.min.js"
+        integrity="sha512-YYiD5ZhmJ0GCdJvx6Xe6HzHqHvMpJEPomXwPbsgcpMFPW+mQEeVBU6l9n+2Y+naq+CLbujk91vHyN18q6/RSYw=="
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
